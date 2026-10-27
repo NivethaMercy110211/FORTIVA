@@ -1,0 +1,422 @@
+/* ============================================================
+   FORTIVA — installation.css — Precision Installation & Logistics
+   ============================================================ */
+
+.install-hero {
+  min-height: 620px;
+  padding: 110px 0 90px;
+  display: flex;
+  align-items: center;
+  background: var(--deep-navy);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.install-hero__bg,
+.installation-cta__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.install-hero__bg { object-position: center 48%; }
+.install-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7,16,22,0.40) 0%, rgba(10,24,32,0.22) 48%, rgba(12,28,38,0.08) 100%);
+}
+
+.install-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.install-hero h1 {
+  color: var(--white);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+.install-hero p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.45);
+  text-align: center;
+  margin-inline: auto;
+}
+.install-hero__actions,
+.installation-cta__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.install-hero__actions { margin-top: 28px; }
+.install-hero__actions .btn,
+.installation-cta__actions .btn { min-height: 48px; }
+
+/* Closing consultation banner */
+.installation-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+}
+.installation-cta__bg { z-index: -2; object-position: center; }
+.installation-cta__overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.20);
+}
+.installation-cta__content { position: relative; }
+.installation-cta__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--radius-xl);
+  background: rgba(8, 12, 15, 0.34);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+  backdrop-filter: none;
+}
+.installation-cta__eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--brass-light);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.installation-cta h2 {
+  color: var(--white);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.installation-cta p {
+  color: rgba(255,255,255,0.86);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.installation-cta__actions { justify-content: center; gap: 16px; }
+
+@media (max-width: 767px) {
+  .install-hero { min-height: 660px; padding: 88px 0 64px; }
+  .install-hero__overlay { background: linear-gradient(90deg, rgba(7,16,22,0.42), rgba(10,24,32,0.22)); }
+  .install-hero__actions,
+  .installation-cta__actions { flex-direction: column; }
+  .install-hero__actions .btn,
+  .installation-cta__actions .btn { width: 100%; }
+  .installation-cta { min-height: 580px; }
+  .installation-cta__inner { padding: 32px 22px; }
+}
+
+/* 6-Step Installation Journey */
+.journey-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  position: relative;
+  margin: var(--space-2xl) 0;
+}
+.journey-timeline::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 28px;
+  width: 2px;
+  background: var(--border-color);
+  z-index: 1;
+}
+[dir="rtl"] .journey-timeline::before {
+  left: auto;
+  right: 28px;
+}
+[data-theme="dark"] .journey-timeline::before {
+  background: var(--dark-border);
+}
+
+.journey-step-card {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+[data-theme="dark"] .journey-step-card {
+  background: var(--dark-cards);
+  border-color: var(--dark-border);
+}
+.journey-step-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(180,148,100,0.3);
+  box-shadow: var(--shadow-md);
+}
+[dir="rtl"] .journey-step-card:hover {
+  transform: translateX(-6px);
+}
+
+.step-marker-number {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--slate-navy);
+  color: var(--brass);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--bg-card);
+}
+[data-theme="dark"] .step-marker-number {
+  background: var(--dark-bg);
+  box-shadow: 0 0 0 4px var(--dark-cards);
+}
+
+.step-details-body {
+  flex: 1;
+}
+.step-details-body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-heading);
+}
+[data-theme="dark"] .step-details-body h3 {
+  color: var(--dark-heading);
+}
+
+/* Feasibility Calculator */
+.feasibility-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+}
+[data-theme="dark"] .feasibility-box {
+  background: var(--dark-cards);
+  border-color: var(--dark-border);
+}
+
+.feasibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.feasibility-result-alert {
+  background: rgba(32,59,74,0.05);
+  border: 1px solid rgba(32,59,74,0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+[data-theme="dark"] .feasibility-result-alert {
+  background: rgba(180,148,100,0.08);
+  border-color: rgba(180,148,100,0.25);
+}
+
+/* Anchor Technology Comparison */
+.anchor-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+.anchor-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+[data-theme="dark"] .anchor-card {
+  background: var(--dark-cards);
+  border-color: var(--dark-border);
+}
+.anchor-card:hover {
+  border-color: var(--brass);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.anchor-card-media {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background: var(--slate-navy);
+}
+.anchor-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.anchor-card:hover .anchor-card-media img {
+  transform: scale(1.06);
+}
+.anchor-card-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(16, 26, 32, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--brass-light);
+  border: 1px solid rgba(180, 148, 100, 0.35);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+}
+.anchor-card-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+.anchor-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(180,148,100,0.12);
+  color: var(--brass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+/* Journey Step Media Enhancements */
+.journey-step-card--with-media {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 280px;
+  gap: var(--space-lg);
+  align-items: center;
+}
+.journey-step-media {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--slate-navy);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(180, 148, 100, 0.2);
+}
+.journey-step-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.journey-step-card:hover .journey-step-media img {
+  transform: scale(1.05);
+}
+.journey-step-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(16, 26, 32, 0.9);
+  backdrop-filter: blur(6px);
+  color: var(--brass-light);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(180, 148, 100, 0.3);
+}
+
+@media (max-width: 991px) {
+  .journey-step-card--with-media {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+  .journey-step-media {
+    grid-column: 1 / -1;
+    height: 220px;
+  }
+  .anchor-tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .journey-timeline::before {
+    display: none;
+  }
+  .journey-step-card,
+  .journey-step-card--with-media {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+  }
+  .journey-step-media {
+    width: 100%;
+    height: 180px;
+  }
+  .journey-step-card .step-details-body > .badge {
+    display: table;
+    margin-inline: auto;
+    text-align: center;
+  }
+  .feasibility-grid {
+    grid-template-columns: 1fr;
+  }
+  .feasibility-result-alert {
+    width: 100%;
+    padding: 18px;
+    gap: 12px;
+    text-align: start;
+  }
+  .feasibility-result-alert > div {
+    min-width: 0;
+    flex: 1;
+  }
+  .anchor-card,
+  .anchor-card-body,
+  .anchor-card-body h3,
+  .anchor-card-body p {
+    text-align: start !important;
+  }
+  .anchor-card-body {
+    align-items: flex-start;
+  }
+  .anchor-card-icon {
+    margin-inline: 0;
+  }
+}

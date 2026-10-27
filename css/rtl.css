@@ -1,0 +1,168 @@
+/* ============================================================
+   FORTIVA — rtl.css — Right-to-Left Language Support
+   ============================================================ */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* ── Logo ── */
+[dir="rtl"] .header-logo,
+[dir="rtl"] .footer-logo,
+[dir="rtl"] .footer-brand .header-logo {
+  direction: ltr;
+  flex-direction: row-reverse;
+  text-align: left;
+}
+[dir="rtl"] .logo-text {
+  direction: ltr;
+  text-align: left;
+}
+[dir="rtl"] .site-header .header-logo {
+  justify-self: end;
+  min-width: max-content;
+  padding-inline: 4px;
+  white-space: nowrap;
+}
+
+/* ── Navigation ── */
+[dir="rtl"] .dropdown-link { flex-direction: row-reverse; }
+[dir="rtl"] .nav-dropdown {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%) translateY(8px);
+}
+[dir="rtl"] .nav-item:hover .nav-dropdown {
+  transform: translateX(50%) translateY(0);
+}
+
+/* ── Mobile Menu ── */
+[dir="rtl"] .mobile-menu { transform: translateX(-100%); }
+[dir="rtl"] .mobile-menu.open { transform: translateX(0); }
+[dir="rtl"] .mobile-submenu { padding-left: 0; padding-right: var(--space-md); }
+
+/* ── Header Actions ── */
+[dir="rtl"] .header-inner {
+  grid-template-columns: 1fr auto 1fr;
+}
+[dir="rtl"] .header-actions { justify-content: flex-start; }
+
+/* ── Brass Divider ── */
+[dir="rtl"] .brass-divider { margin-right: 0; }
+[dir="rtl"] .brass-divider--center { margin-inline: auto; }
+
+/* ── Section Eyebrow / Accent Line ── */
+[dir="rtl"] .accent-line { flex-direction: row-reverse; }
+[dir="rtl"] .accent-line::before { order: 2; }
+
+/* ── Footer ── */
+[dir="rtl"] .footer-grid > *,
+[dir="rtl"] .footer-bottom {
+  direction: ltr;
+  text-align: left;
+}
+[dir="rtl"] .footer-brand,
+[dir="rtl"] .footer-col { min-width: 0; }
+[dir="rtl"] .footer-col-title::after { left: 0; right: auto; }
+[dir="rtl"] .footer-nav-list a { flex-direction: row; }
+[dir="rtl"] .footer-nav-list a:hover {
+  padding-left: 4px;
+  padding-right: 0;
+}
+[dir="rtl"] .footer-contact-item { direction: ltr; text-align: left; }
+[dir="rtl"] .footer-hours,
+[dir="rtl"] .footer-contact-item a,
+[dir="rtl"] .footer-contact-item span {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+[dir="rtl"] .footer-social { justify-content: flex-start; }
+
+/* ── Product Cards ── */
+[dir="rtl"] .product-card__badge-wrap { left: auto; right: var(--space-md); }
+[dir="rtl"] .product-card__compare { right: auto; left: var(--space-md); }
+
+/* ── Spec Drawer ── */
+[dir="rtl"] .spec-drawer {
+  right: auto;
+  left: 0;
+  border-left: none;
+  border-right: 1px solid var(--border-color);
+  transform: translateX(-100%);
+}
+[dir="rtl"] .spec-drawer.open { transform: translateX(0); }
+
+/* ── Forms ── */
+[dir="rtl"] .form-select-wrap::after { right: auto; left: 14px; }
+[dir="rtl"] select.form-control { padding-right: 16px; padding-left: 36px; }
+[dir="rtl"] .input-icon { left: auto; right: 14px; }
+[dir="rtl"] .input-icon-wrap .form-control { padding-left: 16px; padding-right: 40px; }
+[dir="rtl"] .form-label .req { margin-left: 0; margin-right: 3px; }
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="url"] {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: plaintext;
+}
+
+/* Keep international telephone numbers and their caret stable in RTL forms. */
+[dir="rtl"] #book-phone,
+[dir="rtl"] #contact-phone {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: isolate;
+}
+
+[dir="rtl"] #book-phone::placeholder,
+[dir="rtl"] #contact-phone::placeholder {
+  direction: ltr;
+  text-align: right;
+}
+
+[dir="rtl"] #contact-phone + .form-error {
+  direction: ltr;
+  justify-content: flex-end;
+  width: 100%;
+  text-align: right;
+}
+
+/* ── Filters ── */
+[dir="rtl"] .spec-drawer { border-right: 1px solid var(--border-color); }
+[dir="rtl"] [data-theme="dark"] .spec-drawer { border-left: none; border-right: 1px solid var(--dark-border); }
+
+/* ── Icon Wrap ── */
+[dir="rtl"] .footer-contact-item i { margin-right: 0; }
+[dir="rtl"] .footer-brand { text-align: left; }
+[dir="rtl"] .footer-brand .header-logo { margin-left: 0; margin-right: auto; }
+
+/* ── Buttons ── */
+[dir="rtl"] .btn-arrow:hover i { transform: translateX(-3px); }
+
+/* ── Guide Nav ── */
+[dir="rtl"] .guide-nav-link.active {
+  border-left: none;
+  border-right: 2px solid var(--brass);
+  padding-left: var(--space-md);
+  padding-right: calc(var(--space-md) - 2px);
+}
+
+/* ── Process Steps ── */
+[dir="rtl"] .process-steps::before {
+  left: 24px;
+  right: 24px;
+}
+
+/* ── Pricing Table ── */
+[dir="rtl"] .pricing-feature { flex-direction: row-reverse; }
+
+/* ── Toast ── */
+[dir="rtl"] .toast { right: auto; left: 24px; }
+
+/* ── Compare Bar ── */
+[dir="rtl"] .compare-bar { flex-direction: row-reverse; }
+
+/* ── Breadcrumb ── */
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+  content: '\f104';
+}

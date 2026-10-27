@@ -1,0 +1,236 @@
+/* ============================================================
+   FORTIVA — pricing.css — Transparent Investment & Cost Breakdown
+   ============================================================ */
+
+.pricing-hero {
+  padding: calc(var(--space-2xl) + 20px) 0 var(--space-xl);
+  background: var(--bg-page);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+[data-theme="dark"] .pricing-hero {
+  border-bottom-color: var(--dark-border);
+}
+
+.pricing-hero-inner {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+/* Pricing Model Tiers */
+.pricing-tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+  align-items: stretch;
+}
+
+.tier-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+[data-theme="dark"] .tier-card {
+  background: var(--dark-cards);
+  border-color: var(--dark-border);
+}
+.tier-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tier-card.featured {
+  border: 2px solid var(--brass);
+  box-shadow: 0 12px 36px rgba(180,148,100,0.15);
+}
+.tier-card.featured:hover {
+  transform: translateY(-6px);
+}
+
+.tier-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--brass);
+  color: var(--white);
+  padding: 4px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.tier-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+.tier-description {
+  min-height: 4.6em;
+  margin: 0;
+  color: var(--text-body);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+[data-theme="dark"] .tier-name {
+  color: var(--dark-heading);
+}
+
+.tier-price-box {
+  margin: var(--space-md) 0 var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+}
+[data-theme="dark"] .tier-price-box {
+  border-bottom-color: var(--dark-border);
+}
+.tier-price-amount {
+  font-size: clamp(1.65rem, 2.2vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text-heading);
+  line-height: 1;
+  white-space: nowrap;
+}
+[data-theme="dark"] .tier-price-amount {
+  color: var(--dark-heading);
+}
+.tier-price-sub {
+  font-size: 0.8rem;
+  color: var(--text-body);
+  margin-top: 6px;
+}
+
+.tier-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-xl) 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tier-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-heading);
+}
+.tier-feature-item span { white-space: nowrap; }
+[data-theme="dark"] .tier-feature-item {
+  color: var(--dark-body);
+}
+.tier-feature-item i {
+  color: var(--brass);
+  margin-top: 3px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1180px) and (min-width: 992px) {
+  .tier-card { padding-inline: 18px; }
+  .tier-feature-item { font-size: 0.74rem; gap: 7px; }
+}
+
+@media (max-width: 991px) {
+  .tier-description { min-height: 0; }
+  .tier-feature-item span { white-space: normal; }
+}
+
+/* Interactive Calculator Container */
+.calculator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+}
+[data-theme="dark"] .calculator-card {
+  background: var(--dark-cards);
+  border-color: var(--dark-border);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.calc-result-display {
+  background: var(--slate-navy);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  position: sticky;
+  top: 100px;
+}
+.calc-result-display h3 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+.calc-estimate-range {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--brass);
+  margin-bottom: var(--space-sm);
+  line-height: 1.1;
+}
+.calc-result-notes {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 991px) {
+  .pricing-tiers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tier-card.featured {
+    transform: none;
+  }
+  .tier-card.featured:hover {
+    transform: translateY(-6px);
+  }
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+  .calc-result-display {
+    position: static;
+  }
+}
+/* Installation logistics — image-led pricing matrix */
+.logistics-layout { display:grid; grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr); gap:clamp(24px,4vw,48px); align-items:stretch; }
+.logistics-visual { position:relative; min-height:520px; margin:0; overflow:hidden; border-radius:var(--radius-xl); background:var(--slate-navy); box-shadow:var(--shadow-md); }
+.logistics-visual img { width:100%; height:100%; object-fit:cover; }
+.logistics-visual::after { content:''; position:absolute; inset:35% 0 0; background:linear-gradient(transparent,rgba(7,18,24,.94)); }
+.logistics-visual figcaption { position:absolute; z-index:1; inset:auto 24px 24px; color:#fff; }
+.logistics-visual figcaption strong { display:block; margin-bottom:6px; font-size:1.15rem; }
+.logistics-visual figcaption span { color:rgba(255,255,255,.72); font-size:.84rem; line-height:1.55; }
+.logistics-content { display:flex; flex-direction:column; justify-content:center; }
+.logistics-content__head { margin-bottom:22px; }
+.logistics-content__head h2 { margin:10px 0; font-size:clamp(1.8rem,3vw,2.35rem); color:var(--text-heading); }
+.logistics-content__head p { max-width:650px; margin:0; color:var(--text-body); line-height:1.7; }
+.logistics-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.logistics-card { display:grid; grid-template-rows:auto auto 1fr auto; gap:9px; min-height:190px; padding:20px; border:1px solid var(--border-color); border-radius:var(--radius-lg); background:var(--bg-card); box-shadow:0 10px 28px rgba(24,43,52,.06); }
+.logistics-card__top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.logistics-card__icon { display:grid; place-items:center; width:38px; height:38px; flex:0 0 38px; border-radius:10px; color:var(--brass); background:var(--ivory-deep); }
+.logistics-card__level { font-size:.68rem; font-weight:800; letter-spacing:.08em; color:var(--brass-dark); text-transform:uppercase; }
+.logistics-card h3 { margin:0; font-size:.98rem; line-height:1.35; color:var(--text-heading); }
+.logistics-card p { margin:0; color:var(--text-body); font-size:.8rem; line-height:1.5; }
+.logistics-card__price { padding-top:10px; border-top:1px solid var(--border-color); color:var(--text-heading); font-size:1.05rem; font-weight:800; }
+@media (max-width:900px) { .logistics-layout { grid-template-columns:1fr; } .logistics-visual { min-height:380px; } }
+@media (max-width:560px) { .logistics-grid { grid-template-columns:1fr; } .logistics-visual { min-height:300px; } .logistics-card { min-height:0; padding:18px; } }

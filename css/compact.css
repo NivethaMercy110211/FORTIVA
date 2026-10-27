@@ -1,0 +1,581 @@
+/* FORTIVA compact layout layer — loaded last on every page. */
+:root {
+  --container-max: 1180px;
+  --space-lg: 20px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 68px;
+  --space-4xl: 88px;
+}
+
+html { overflow-x: clip; }
+
+body { font-size: .94rem; line-height: 1.62; }
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h2 { font-size: clamp(1.55rem, 3vw, 2.25rem); }
+h3 { font-size: clamp(1.15rem, 2vw, 1.45rem); }
+h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
+
+/* Keep every numbered section label consistently centered. */
+.section-eyebrow {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.section, .section--lg { padding-block: 68px; }
+.section--sm { padding-block: 48px; }
+.section-header {
+  margin-bottom: 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-title {
+  margin-bottom: 12px;
+  text-align: center;
+}
+.section-desc {
+  max-width: 560px;
+  font-size: .96rem;
+  line-height: 1.65;
+  text-align: center;
+  margin-inline: auto;
+}
+.section-eyebrow,
+.hero-eyebrow,
+.page-hero__eyebrow,
+.editorial-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-inline: auto;
+}
+.page-hero__inner {
+  max-width: 620px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-hero__desc {
+  font-size: .98rem;
+  line-height: 1.65;
+  text-align: center;
+  margin-inline: auto;
+}
+.about-hero .container > div,
+.pricing-hero-inner,
+.vault-hero .container > div,
+.faq-hero .container > div,
+.contact-hero .container > div,
+.page-image-banner .container > div,
+.page-image-cta .container > div {
+  text-align: center;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grid { gap: 18px; }
+.grid-auto { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.card__body { padding: 18px; }
+.card__footer { padding: 12px 18px; }
+.icon-wrap--lg { width: 52px; height: 52px; }
+
+.page-hero { height: 420px; }
+.page-image-banner { min-height: 360px !important; padding-block: 64px !important; }
+.page-image-cta { min-height: 380px; }
+.install-hero--simple { min-height: 380px; padding-block: 64px; }
+.install-hero--simple .install-hero-content { max-width: 680px; }
+.install-hero--simple .install-hero-content p { margin-bottom: 0; }
+.hero-split { min-height: 600px; }
+.hero-fullbleed { min-height: 620px; }
+.hero-showcase { min-height: 680px; }
+
+.featured-grid { gap: 18px !important; }
+.featured-card__body { padding: 18px !important; }
+.featured-card__footer { padding-top: 14px !important; }
+.protection-bento { gap: 10px !important; }
+.prot-cell, .spec-exp-cell { padding: 20px !important; }
+.prot-cell--img { padding: 0 !important; min-height: 170px !important; }
+.prot-cell--img .overlay-content { padding: 20px !important; }
+
+.products-layout { grid-template-columns: 250px 1fr; gap: 24px; }
+.products-grid { gap: 18px; }
+.product-card__body, .pricing-card, .form-card, .guide-card, .installation-card { padding: 20px; }
+.footer-main { padding-block: 56px; }
+.footer-grid { gap: 28px; }
+
+.protection-stats {
+  margin-block: -28px 68px;
+}
+
+@media (min-width: 1200px) {
+  h1 { font-size: 3.2rem; }
+  h2 { font-size: 2.25rem; }
+  .section, .section--lg { padding-block: 72px; }
+}
+
+@media (max-width: 991px) {
+  :root { --container-pad: 22px; }
+  .section, .section--lg { padding-block: 54px; }
+  .page-hero { height: 380px; }
+  .hero-fullbleed { min-height: 560px; }
+  .products-layout { grid-template-columns: 1fr; }
+}
+
+/* ── iPad Mini (768x1024) & iPad Pro (1024x1366) Odd Grid Alignment ──
+   When a section grid has an odd number of items, align the last grid
+   card into the center without changing its card size. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .featured-grid,
+  .install-example-grid,
+  .pricing-tiers-grid,
+  .maintenance-grid,
+  .anchor-tech-grid,
+  .size-showcase-grid,
+  .contact-cards-grid,
+  .products-grid:not(.list-view) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    --grid-gap: 18px;
+    gap: var(--grid-gap) !important;
+  }
+
+  /* Center the last card in odd-numbered grids while preserving exact card size */
+  .grid-2 > :last-child:nth-child(odd),
+  .grid-3 > :last-child:nth-child(odd),
+  .grid-4 > :last-child:nth-child(odd),
+  .grid-auto > :last-child:nth-child(odd),
+  .products-grid:not(.list-view) > :last-child:nth-child(odd),
+  .products-grid:not(.list-view) > .grid-last-odd,
+  .featured-grid > :last-child:nth-child(odd),
+  .install-example-grid > :last-child:nth-child(odd),
+  .pricing-tiers-grid > :last-child:nth-child(odd),
+  .maintenance-grid > :last-child:nth-child(odd),
+  .anchor-tech-grid > :last-child:nth-child(odd),
+  .size-showcase-grid > :last-child:nth-child(odd),
+  .contact-cards-grid > :last-child:nth-child(odd),
+  .section .grid > :last-child:nth-child(odd),
+  .section [class*="grid-"]:not(.footer-grid):not(.category-selector):not(.protection-bento):not(.portfolio-grid):not(.anatomy-grid):not(.lock-types-grid) > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    margin-inline: auto !important;
+    width: calc((100% - var(--grid-gap, 18px)) / 2) !important;
+    max-width: calc((100% - var(--grid-gap, 18px)) / 2) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+
+@media (max-width: 767px) {
+  :root { --container-pad: 16px; --space-2xl: 38px; --space-3xl: 52px; }
+  body { font-size: .9rem; }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.45rem; }
+  h3 { font-size: 1.15rem; }
+  .section, .section--lg, .section--sm { padding-block: 44px; }
+  .section-header { margin-bottom: 28px; }
+  .section-desc { font-size: .9rem; }
+  .grid { gap: 14px; }
+  .card__body, .product-card__body, .pricing-card, .form-card, .guide-card, .installation-card { padding: 16px; }
+  .page-hero { height: 330px; }
+  .page-image-banner { min-height: 360px !important; padding-block: 52px !important; }
+  .page-image-cta { min-height: 390px; }
+  .install-hero--simple { min-height: 360px; padding-block: 52px; }
+  .hero-fullbleed { min-height: 520px; }
+  .hero-showcase { min-height: 560px; }
+  .hero-image-col { height: 220px; }
+  .hero-content { padding-block: 36px; }
+  .hero-showcase__grid,
+  .hero-showcase__content,
+  .hero-showcase__stage,
+  .hero-showcase__eyebrow,
+  .hero-stage-card { min-width: 0; max-width: 100%; }
+  .hero-eyebrow-text { overflow-wrap: anywhere; }
+  .hero-showcase__title em { display: inline; }
+  .hero-config-tabs { max-width: 100%; }
+
+  /* ── All Over Website: Center Section Names and Headings on Mobile ── */
+  h1, h2, h3, h4, h5, h6,
+  .section-title,
+  .section-header,
+  .section-eyebrow,
+  .hero-eyebrow,
+  .hero-eyebrow-text,
+  .page-hero__title,
+  .page-hero__eyebrow,
+  .page-hero__desc,
+  .section-desc,
+  .brass-divider,
+  .guide-section-block h2,
+  .custom-section-title {
+    text-align: center !important;
+    margin-inline: auto !important;
+    justify-content: center !important;
+  }
+
+  .section-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* ── Every Grid Aligned One by One (1 Column) Without Overlap ── */
+  .grid, .grid-2, .grid-3, .grid-4, .grid-auto,
+  .category-selector, .featured-grid, .protection-bento, .prot-proof-grid,
+  .spec-explainer, .install-example-grid, .anatomy-grid, .space-grid,
+  .compare-selector, .maintenance-grid, .portfolio-grid, .bento-grid,
+  .hero-spec-strip-cards, .hero-showcase__grid, .split-section,
+  .stats-row, .finder-options, .visualizer-planning-grid, .visualizer-split,
+  .size-showcase-grid, .products-grid, .products-layout, .product-hero-grid,
+  .pricing-tiers-grid, .calc-grid, .lock-types-grid, .guide-layout,
+  .feasibility-grid, .anchor-tech-grid, .vault-feature-grid, .contact-grid-main,
+  .footer-grid, .form-grid, .date-time-row, .editorial-split-grid,
+  .form-row[style*="grid"], [style*="grid-template-columns"], div[style*="grid-template-columns"],
+  [style*="display:grid"], [style*="display: grid"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
+  /* Reset all grid child span classes to prevent overflow and overlap */
+  .grid > *, .grid-2 > *, .grid-3 > *, .grid-4 > *, .grid-auto > *,
+  .category-selector > *, .featured-grid > *, .protection-bento > *,
+  .prot-proof-grid > *, .spec-explainer > *, .install-example-grid > *,
+  .anatomy-grid > *, .space-grid > *, .compare-selector > *,
+  .maintenance-grid > *, .portfolio-grid > *, .bento-grid > *,
+  .hero-spec-strip-cards > *, .split-section > *, .stats-row > *,
+  .products-grid > *, .pricing-tiers-grid > *, .calc-grid > *,
+  .lock-types-grid > *, .feasibility-grid > *, .anchor-tech-grid > *,
+  .vault-feature-grid > *, .footer-grid > *, .form-grid > *,
+  [class*="span-"], .prot-cell, .bento-cell, .portfolio-item,
+  .spec-exp-cell, .anatomy-cell, .form-col-full, .tier-card,
+  .pillar-card, .cat-card, .featured-card, .space-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .cat-card {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    text-align: center !important;
+    background: var(--bg-card) !important;
+  }
+  .cat-card-image {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .cat-card-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 14px 14px !important;
+    text-align: center !important;
+    background: var(--bg-card) !important;
+  }
+  .cat-card-label {
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    color: var(--text-heading) !important;
+    margin-bottom: 2px !important;
+  }
+  .cat-card-count {
+    font-size: 0.78rem !important;
+    color: var(--text-body) !important;
+  }
+
+  .cta-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+  .cta-group .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .spec-exp-cell:first-child { flex-direction: column !important; align-items: flex-start !important; }
+  .prot-cell, .spec-exp-cell { padding: 16px !important; }
+  .footer-main { padding-block: 44px; }
+
+  .stat-trio {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px 28px !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+  }
+  .stat-trio > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    flex: 1 1 90px !important;
+    max-width: 150px !important;
+  }
+
+  /* Center all brass badges in mobile view across every page */
+  .badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
+  .badge--brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
+  .badge.badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge) {
+    display: flex !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --container-pad: 12px;
+  }
+  body, html, main, .container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  h1 { font-size: 1.65rem !important; }
+  h2 { font-size: 1.35rem !important; }
+  h3 { font-size: 1.1rem !important; }
+  .btn { padding: 11px 16px !important; font-size: 0.82rem !important; }
+  .card__body, .product-card__body, .pricing-card, .form-card, .guide-card, .installation-card {
+    padding: 14px !important;
+  }
+  .cat-card {
+    padding: 0 !important;
+  }
+}
+
+/* Final alignment guard: section labels stay centered in every layout context. */
+.section-eyebrow {
+  display: flex !important;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+/* ============================================================
+   FORTIVA — Scroll to Top Floating Button
+   ============================================================ */
+.btn-scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--slate-navy, #132A36);
+  color: var(--brass, #B49464);
+  border: 1.5px solid rgba(180, 148, 100, 0.45);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 8px 24px rgba(16, 42, 55, 0.28), 0 2px 6px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(18px) scale(0.92);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              color 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+  outline: none;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.btn-scroll-top:hover {
+  background: var(--brass, #B49464) !important;
+  color: #FFFFFF !important;
+  border-color: var(--brass, #B49464) !important;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(180, 148, 100, 0.42), 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-scroll-top:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.btn-scroll-top:focus-visible {
+  outline: 2px solid var(--brass, #B49464);
+  outline-offset: 3px;
+}
+
+.btn-scroll-top i {
+  transition: transform 0.25s ease;
+}
+
+.btn-scroll-top:hover i {
+  transform: translateY(-2px);
+}
+
+/* RTL layout support */
+[dir="rtl"] .btn-scroll-top {
+  right: auto;
+  left: 28px;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .btn-scroll-top {
+  background: #11222C;
+  border-color: rgba(180, 148, 100, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(180, 148, 100, 0.15);
+}
+
+[data-theme="dark"] .btn-scroll-top:hover {
+  background: var(--brass, #B49464) !important;
+  color: #FFFFFF !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .btn-scroll-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 0.95rem;
+  }
+  [dir="rtl"] .btn-scroll-top {
+    right: auto;
+    left: 20px;
+  }
+}
+
+/* ============================================================
+   FORTIVA — Universal Lightened Banner Overlays (High Image Visibility)
+   ============================================================ */
+.page-image-banner::before,
+.page-image-cta::before,
+.install-hero__bg,
+.hero-fullbleed__bg,
+.page-hero__bg,
+.installation-cta__bg,
+.cta-section__bg {
+  opacity: 1 !important;
+  filter: brightness(1.08) contrast(1.04) !important;
+}
+
+/* Reduced light overlay gradient so background images are vibrant and clearly visible */
+.page-image-banner::after,
+.page-image-cta::after,
+.page-hero__overlay,
+.install-hero__overlay,
+.hero-fullbleed__overlay,
+.installation-cta__overlay,
+.cta-section__overlay {
+  background: linear-gradient(90deg, rgba(10, 20, 26, 0.40) 0%, rgba(12, 24, 32, 0.22) 50%, rgba(16, 28, 36, 0.08) 100%) !important;
+}
+
+/* Crisp text contrast over lightened overlays */
+.page-image-banner h1,
+.page-image-cta h2,
+.install-hero h1,
+.hero-fullbleed__title,
+.cta-section__title,
+.installation-cta h2,
+.about-hero h1,
+.contact-hero h1,
+.faq-hero h1,
+.guide-hero h1,
+.pricing-hero h1,
+.vault-hero h1 {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+}
+
+.page-image-banner p,
+.page-image-cta p,
+.install-hero p,
+.hero-fullbleed__desc,
+.cta-section__desc,
+.installation-cta p,
+.about-hero p,
+.contact-hero p,
+.faq-hero p,
+.guide-hero p,
+.pricing-hero p,
+.vault-hero p {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75) !important;
+}
+
+/* Readable glass panels for CTA content only. The background photography
+   remains unobscured outside the centered content card. */
+.page-image-cta > .container > div,
+.cta-section__inner,
+.installation-cta__inner {
+  width: min(100%, 780px);
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: clamp(18px, 2.5vw, 28px);
+  background: linear-gradient(135deg, rgba(7, 17, 23, 0.48), rgba(12, 27, 35, 0.28));
+  box-shadow: 0 22px 60px rgba(2, 8, 12, 0.28);
+  -webkit-backdrop-filter: blur(7px) saturate(112%) !important;
+  backdrop-filter: blur(7px) saturate(112%) !important;
+}
+
+[data-theme="light"] .page-image-cta > .container > div,
+[data-theme="light"] .cta-section__inner,
+[data-theme="light"] .installation-cta__inner {
+  background: linear-gradient(135deg, rgba(10, 24, 32, 0.42), rgba(10, 24, 32, 0.24));
+}
+
+@media (max-width: 767px) {
+  .page-image-cta > .container > div,
+  .cta-section__inner,
+  .installation-cta__inner {
+    width: 100%;
+    padding: 24px 18px;
+  }
+}

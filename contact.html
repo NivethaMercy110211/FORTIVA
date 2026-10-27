@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Contact &amp; Private Consultation | FORTIVA Safe &amp; Vault Solutions</title>
+  <meta name="description" content="Request a confidential residential safe consultation, schedule a private Mayfair showroom appointment, or speak with our chartered security engineering director.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/editorial.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <style>
+    .contact-hero {
+      padding: calc(var(--space-2xl) + 20px) 0 var(--space-xl);
+      background: var(--bg-page);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* ── Section 1: Contact Hub Cards Grid (Separate section, no empty space) ── */
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      align-items: stretch;
+    }
+    .contact-hub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    [data-theme="dark"] .contact-hub-card {
+      background: var(--dark-cards);
+      border-color: var(--dark-border);
+    }
+    .contact-hub-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(180, 148, 100, 0.4);
+    }
+    .contact-hub-card--navy {
+      background: var(--slate-navy);
+      color: var(--white);
+      border-color: rgba(180, 148, 100, 0.3);
+    }
+    [data-theme="dark"] .contact-hub-card--navy {
+      background: #14242F;
+    }
+    .contact-hub-card--navy h3 {
+      color: var(--white);
+    }
+    .contact-hub-card--navy p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+    .contact-hub-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .contact-hub-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(180, 148, 100, 0.12);
+      color: var(--brass);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    .contact-hub-icon--gold {
+      background: rgba(180, 148, 100, 0.22);
+      color: var(--brass-light);
+    }
+    .contact-hub-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-heading);
+    }
+    .contact-hub-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 18px;
+    }
+    .contact-hub-details {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-hub-details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-heading);
+    }
+    .contact-hub-card--navy .contact-hub-details li {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    /* Navy card contrast must win over the generic card typography below. */
+    .contact-hub-card.contact-hub-card--navy h3 {
+      color: #FFFFFF;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+    }
+    .contact-hub-card.contact-hub-card--navy p {
+      color: rgba(255, 255, 255, 0.82);
+    }
+    .contact-hub-card.contact-hub-card--navy .contact-hub-details li,
+    .contact-hub-card.contact-hub-card--navy .contact-hub-details a {
+      color: rgba(255, 255, 255, 0.94);
+    }
+    .contact-hub-card.contact-hub-card--navy .contact-hub-btn {
+      background: var(--brass);
+      border-color: var(--brass);
+      color: #102733;
+      font-weight: 800;
+    }
+    .contact-hub-card.contact-hub-card--navy .contact-hub-btn:hover {
+      background: var(--brass-light);
+      border-color: var(--brass-light);
+      color: #0B1C25;
+    }
+    .contact-hub-details li i {
+      color: var(--brass);
+      font-size: 0.95rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .contact-hub-details li a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition-fast);
+    }
+    .contact-hub-details li a:hover {
+      color: var(--brass);
+    }
+    .contact-hub-btn {
+      margin-top: auto;
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ── Section 2: Form & Protocol Balanced Layout (Zero empty space) ── */
+    .contact-form-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-2xl);
+      align-items: stretch;
+    }
+    .contact-form-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    [data-theme="dark"] .contact-form-panel {
+      background: var(--dark-cards);
+      border-color: var(--dark-border);
+    }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-protocol-panel {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+      height: 100%;
+    }
+    .protocol-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="dark"] .protocol-card {
+      background: var(--dark-cards);
+      border-color: var(--dark-border);
+    }
+    .protocol-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .protocol-card h4 i {
+      color: var(--brass);
+    }
+    .protocol-card p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-body);
+      margin: 0;
+    }
+    .protocol-steps-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    [data-theme="dark"] .protocol-steps-box {
+      background: var(--dark-cards);
+      border-color: var(--dark-border);
+    }
+    .protocol-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .protocol-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(180, 148, 100, 0.15);
+      color: var(--brass);
+      font-size: 0.8rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .protocol-step-item strong {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--text-heading);
+      margin-bottom: 3px;
+    }
+    .protocol-step-item p {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: var(--text-body);
+      margin: 0;
+    }
+    .protocol-cert-box {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .cert-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+      padding: 9px 12px;
+      background: #ffffff;
+      border: 1px solid rgba(32, 59, 74, 0.18);
+      border-radius: var(--radius-md);
+      font-size: 0.74rem;
+      line-height: 1.3;
+      font-weight: 700;
+      color: #132A36;
+    }
+    [data-theme="dark"] .cert-pill {
+      background: #F7F5F0;
+      border-color: rgba(180, 148, 100, 0.42);
+      color: #132A36;
+    }
+    .cert-pill i {
+      color: var(--brass);
+    }
+
+    /* ── Section 3: Interactive Showroom Map Section ── */
+    .contact-map-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: var(--space-xl);
+      align-items: stretch;
+    }
+    .contact-map-container {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      min-height: 440px;
+      box-shadow: var(--shadow-md);
+      background: var(--bg-card);
+    }
+    [data-theme="dark"] .contact-map-container {
+      border-color: var(--dark-border);
+    }
+    .contact-map-iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      border: 0;
+      display: block;
+    }
+    [data-theme="dark"] .contact-map-iframe {
+      filter: contrast(1.05) brightness(0.92) hue-rotate(185deg) invert(0.92);
+    }
+    .contact-map-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(16, 26, 32, 0.88);
+      color: #FFFFFF;
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(180, 148, 100, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+    }
+    .contact-map-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .map-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    [data-theme="dark"] .map-detail-card {
+      background: var(--dark-cards);
+      border-color: var(--dark-border);
+    }
+    .map-detail-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .map-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: rgba(180, 148, 100, 0.12);
+      color: var(--brass);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .map-transit-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .map-transit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+    .map-transit-item i {
+      color: var(--brass);
+      font-size: 1rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .map-transit-item strong {
+      display: block;
+      color: var(--text-heading);
+      margin-bottom: 2px;
+      font-size: 0.9rem;
+    }
+    .map-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .map-actions-row .btn {
+      flex: 0 0 auto;
+      min-width: 0;
+      min-height: 42px;
+      padding: 9px 14px;
+      font-size: 0.78rem;
+      justify-content: center;
+    }
+
+    /* ── Responsive Rules ── */
+    @media (max-width: 991px) {
+      .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .contact-form-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+      }
+      .contact-map-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+      }
+      .contact-map-container {
+        min-height: 350px;
+      }
+      .contact-map-iframe {
+        min-height: 350px;
+      }
+    }
+    @media (max-width: 767px) {
+      .contact-form-panel > div:first-child > p {
+        text-align: center;
+        max-width: 30rem;
+        margin-inline: auto !important;
+      }
+      .map-detail-header,
+      .map-detail-header > div:last-child,
+      .map-detail-header h3,
+      .map-detail-header p {
+        text-align: start !important;
+        margin-inline: 0 !important;
+        justify-content: flex-start !important;
+      }
+      .contact-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .map-actions-row {
+        flex-direction: column;
+      }
+      .map-actions-row .btn {
+        width: 100%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/compact.css">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="header-logo" aria-label="FORTIVA — Home">
+          <div class="logo-mark">
+            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22 2L38 10V26C38 34.8 31 42 22 42C13 42 6 34.8 6 26V10L22 2Z" fill="#203B4A" stroke="#B49464" stroke-width="1.5"/>
+              <path d="M22 6L34 13V26C34 33.2 28.6 39.2 22 39.2C15.4 39.2 10 33.2 10 26V13L22 6Z" fill="#162D39"/>
+              <text x="22" y="28" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="16" font-weight="800" fill="#B49464">F</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-brand">Fortiva</span>
+            <span class="logo-tagline">Secure Living</span>
+          </div>
+        </a>
+        <nav class="header-nav" role="navigation" aria-label="Main navigation">
+          <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+          <div class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></div>
+          <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+          <div class="nav-item"><a href="products.html" class="nav-link">Products</a></div>
+          <div class="nav-item"><a href="installation.html" class="nav-link">Installation</a></div>
+          <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+          <div class="nav-item"><a href="security-guide.html" class="nav-link">Security Guide</a></div>
+
+          <div class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></div>
+        </nav>
+        <div class="header-actions">
+          <button class="toggle-btn" data-theme-toggle title="Toggle dark mode" aria-label="Toggle dark mode">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <button class="toggle-btn" data-rtl-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction">
+            <i class="fas fa-align-right" aria-hidden="true"></i>
+          </button>
+          <a href="book-consultation.html" class="btn btn-primary btn-sm" id="btn-book-consultation">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Consultation
+          </a>
+          <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="home2.html" class="mobile-nav-link">Home 2</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="products.html" class="mobile-nav-link">Products</a>
+        <a href="installation.html" class="mobile-nav-link">Installation</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing Guide</a>
+        <a href="security-guide.html" class="mobile-nav-link">Security Guide</a>
+
+        <a href="contact.html" class="mobile-nav-link active">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="book-consultation.html" class="btn btn-primary btn-block"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Consultation</a>
+      </div>
+    </nav>
+  </header>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- ═══════════════════════════ MAIN CONTENT ═══════════════════════════ -->
+  <main id="main-content">
+    
+    <!-- Hero -->
+    <section class="contact-hero page-image-banner" style="--page-image:url('../assets/images/cta/contact.png');">
+      <div class="container text-center">
+        <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+          <span class="editorial-eyebrow" style="color:var(--brass-light); margin-bottom:12px;">Confidential Inquiries</span>
+          <h1 style="font-size:clamp(2.2rem, 3.6vw, 3.2rem); font-weight:800; color:var(--text-heading); margin-bottom:14px;">
+            Contact
+          </h1>
+          <p style="color:var(--text-body); font-size:1.1rem; line-height:1.7; margin:0;">
+            Speak privately with a residential security specialist about your property, architectural safe integration, and protection specifications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 01. DIRECT CONTACT CHANNELS (SEPARATE SECTION — ZERO EMPTY SPACE) ── -->
+    <section class="section" id="contact-channels">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">01 — Direct Channels</span>
+          <h2 class="section-title">How to Reach Our Security Team</h2>
+          <p class="section-desc">Direct, encrypted access to senior vault engineers and private client directors.</p>
+        </div>
+
+        <div class="contact-cards-grid">
+          <!-- Card 1: London Consultation Suite -->
+          <div class="contact-hub-card">
+            <div class="contact-hub-header">
+              <div class="contact-hub-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+              <span class="badge badge-brass">Private Showroom</span>
+            </div>
+            <h3>London Consultation Suite</h3>
+            <p>Private appointment suite showcasing operational Eurograde safes, bespoke walnut interiors, Swiss watch winders, and vault door mechanisms in total privacy.</p>
+            <ul class="contact-hub-details">
+              <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>12 Meridian House, London, EC2A 4PT</span></li>
+              <li><i class="fas fa-car" aria-hidden="true"></i> <span>Secure subterranean valet parking</span></li>
+              <li><i class="fas fa-door-closed" aria-hidden="true"></i> <span>By prior confidential appointment</span></li>
+            </ul>
+            <a href="#map-section" class="btn btn-outline btn-sm contact-hub-btn" id="btn-view-map-jump">
+              <i class="fas fa-map-location-dot" aria-hidden="true"></i> View Showroom Map &amp; Transit
+            </a>
+          </div>
+
+          <!-- Card 2: Confidential Enquiries -->
+          <div class="contact-hub-card">
+            <div class="contact-hub-header">
+              <div class="contact-hub-icon"><i class="fas fa-phone-volume" aria-hidden="true"></i></div>
+              <span class="badge badge-brass">Immediate Advisory</span>
+            </div>
+            <h3>Direct Enquiries &amp; Advisory</h3>
+            <p>Speak directly with a chartered engineer for preliminary advice, architectural drawings review, or initial safe sizing recommendations.</p>
+            <ul class="contact-hub-details">
+              <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+441234567890">+44 (0) 1234 567 890</a></li>
+              <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:enquiries@fortiva.co.uk">enquiries@fortiva.co.uk</a></li>
+              <li><i class="fas fa-clock" aria-hidden="true"></i> <span>Monday – Friday: 8:00 AM – 6:00 PM</span></li>
+            </ul>
+            <a href="tel:+441234567890" class="btn btn-outline btn-sm contact-hub-btn" id="btn-call-direct">
+              <i class="fas fa-phone" aria-hidden="true"></i> Call Engineering Director
+            </a>
+          </div>
+
+          <!-- Card 3: 24/7 Client Priority Dispatch -->
+          <div class="contact-hub-card contact-hub-card--navy">
+            <div class="contact-hub-header">
+              <div class="contact-hub-icon contact-hub-icon--gold"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+              <span class="badge badge-brass" style="background:rgba(180,148,100,0.25); color:var(--brass-light); border-color:var(--brass);">Active Clients</span>
+            </div>
+            <h3>24/7 Emergency Support</h3>
+            <p>Rapid assistance for active FORTIVA clients requiring urgent lock diagnostics, access recovery, or emergency technical guidance throughout the UK.</p>
+            <ul class="contact-hub-details">
+              <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+442079460912">+44 (0) 20 7946 0912</a></li>
+              <li><i class="fas fa-user-shield" aria-hidden="true"></i> <span>Priority engineer dispatch</span></li>
+              <li><i class="fas fa-calendar-check" aria-hidden="true"></i> <span>Available 24/7</span></li>
+            </ul>
+            <a href="tel:+442079460912" class="btn btn-primary btn-sm contact-hub-btn" id="btn-priority-dispatch">
+              <i class="fas fa-headset" aria-hidden="true"></i> Access Priority Line
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 02. CONFIDENTIAL CONSULTATION FORM (SEPARATE SECTION — BALANCED) ── -->
+    <section class="section bg-ivory" id="consultation-form-section">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">02 — Site Assessment</span>
+          <h2 class="section-title">Confidential Inquiry &amp; Feasibility Review</h2>
+          <p class="section-desc">Submit your project details for an encrypted assessment and fixed-price engineering proposal.</p>
+        </div>
+
+        <div class="contact-form-layout">
+          
+          <!-- Confidential Form -->
+          <div class="contact-form-panel">
+            <div style="margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color);">
+              <span class="badge badge-brass" style="margin-bottom:8px;">Direct Engineering Dispatch</span>
+              <h3 style="font-size:1.35rem; font-weight:800; color:var(--text-heading); margin-bottom:4px;">
+                Request Confidential Assessment
+              </h3>
+              <p style="font-size:0.88rem; color:var(--text-body); margin:0;">
+                All inquiries are encrypted and handled exclusively by our senior security directors under our client discretion protocol.
+              </p>
+            </div>
+
+            <form id="contact-consult-form" data-validate action="consultation-confirmation.html" method="GET">
+              
+              <div class="form-body">
+                
+                <div class="form-row form-grid-2">
+                  <div class="form-group">
+                    <label for="contact-name" class="form-label">Full Name <span style="color:#c0392b;">*</span></label>
+                    <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g. Lord Harrington / A. Davies" required>
+                    <div class="form-error">Please enter your name.</div>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-phone" class="form-label">Confidential Telephone <span style="color:#c0392b;">*</span></label>
+                    <input type="tel" id="contact-phone" name="phone" class="form-control" placeholder="+44 7700 900000" inputmode="tel" autocomplete="tel" dir="ltr" required>
+                    <div class="form-error">Please provide a valid phone number.</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address <span style="color:#c0392b;">*</span></label>
+                  <input type="email" id="contact-email" name="email" class="form-control" placeholder="name@domain.com" required>
+                  <div class="form-error">Please enter a valid email address.</div>
+                </div>
+
+                <div class="form-row form-grid-2">
+                  <div class="form-group">
+                    <label for="contact-interest" class="form-label">Solution of Interest</label>
+                    <select id="contact-interest" name="solution" class="form-control form-select">
+                      <option value="sovereign">Fortiva Sovereign Grade III Safe</option>
+                      <option value="eurograde-2">Fortiva Aegis Grade II Safe</option>
+                      <option value="jewelry">Bespoke Horology &amp; Jewelry Safe</option>
+                      <option value="vault-room">Residential Vault Room / Panic Door</option>
+                      <option value="general-consult">Comprehensive In-Home Security Review</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-property" class="form-label">Property Typology</label>
+                    <select id="contact-property" name="property" class="form-control form-select">
+                      <option value="london-townhome">Central London Townhome</option>
+                      <option value="country-estate">Rural Country Estate</option>
+                      <option value="penthouse">Modern Penthouse / Apartment</option>
+                      <option value="new-build">Architectural New Build in Construction</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-channel" class="form-label">Preferred Contact Discretion</label>
+                  <select id="contact-channel" name="channel" class="form-control form-select">
+                    <option value="encrypted-email">Encrypted Email Correspondence Only</option>
+                    <option value="phone-discrete">Direct Discrete Telephone Call</option>
+                    <option value="signal-app">Signal / Encrypted Messaging</option>
+                    <option value="private-mayfair">Private Appointment at Mayfair Suite</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-notes" class="form-label">Project Details / Architectural Notes</label>
+                  <textarea id="contact-notes" name="notes" class="form-control form-textarea" rows="3" placeholder="Provide any details regarding floor substrate, specific valuables or insurance requirements..."></textarea>
+                </div>
+
+                <div class="form-group" style="margin-top:10px;">
+                  <label class="form-check-label" style="display:flex; align-items:flex-start; gap:10px; cursor:pointer;">
+                    <input type="checkbox" name="nda_required" value="yes" checked style="margin-top:3px; accent-color:var(--brass);">
+                    <span style="font-size:0.85rem; color:var(--text-heading); font-weight:600;">
+                      Execute Mutual Non-Disclosure Agreement (NDA) prior to initial residence visit.
+                    </span>
+                  </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:20px;" id="btn-submit-consultation">
+                  <i class="fas fa-lock" aria-hidden="true"></i> Submit Confidential Request
+                </button>
+
+              </div>
+
+              <!-- Inline Success State -->
+              <div class="form-success-msg" style="display:none; text-align:center; padding:30px 10px;">
+                <div style="width:60px; height:60px; border-radius:50%; background:rgba(180,148,100,0.1); color:var(--brass); display:inline-flex; align-items:center; justify-content:center; font-size:1.8rem; margin-bottom:16px;">
+                  <i class="fas fa-check" aria-hidden="true"></i>
+                </div>
+                <h3 style="color:var(--text-heading); font-size:1.3rem;">Confidential Request Received</h3>
+                <p style="color:var(--text-body); font-size:0.9rem; max-width:440px; margin:0 auto 20px;">
+                  Your reference has been generated. A Senior Security Director will contact you via your preferred channel within 24 hours.
+                </p>
+                <a href="consultation-confirmation.html" class="btn btn-outline btn-sm">View Confirmation Details &rarr;</a>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Protocol & Security Assurances Side Panel (Balances the Form Height) -->
+          <div class="contact-protocol-panel">
+            
+            <div class="protocol-card">
+              <h4><i class="fas fa-user-shield" aria-hidden="true"></i> Client Discretion Protocol</h4>
+              <p>Every inquiry is routed through an encrypted channel. We never share client property data, safe specifications, or installation locations with third parties.</p>
+            </div>
+
+            <div class="protocol-steps-box">
+              <h4 style="font-size:1.05rem; font-weight:800; color:var(--text-heading); margin-bottom:16px;">
+                Consultation Journey &amp; Milestones
+              </h4>
+              
+              <div class="protocol-step-item">
+                <div class="protocol-step-num">1</div>
+                <div>
+                  <strong>Desk Feasibility &amp; Spec Review</strong>
+                  <p>Our senior engineer reviews floor loading capabilities, structural substrate, and insurance rating tier.</p>
+                </div>
+              </div>
+
+              <div class="protocol-step-item">
+                <div class="protocol-step-num">2</div>
+                <div>
+                  <strong>Mutual NDA Execution</strong>
+                  <p>Bilateral non-disclosure agreement countersigned before any residential survey or architectural review.</p>
+                </div>
+              </div>
+
+              <div class="protocol-step-item">
+                <div class="protocol-step-num">3</div>
+                <div>
+                  <strong>Discrete Physical Survey</strong>
+                  <p>Conducted in unmarked vehicles by security-vetted master technicians with laser floor level instrumentation.</p>
+                </div>
+              </div>
+
+              <div class="protocol-step-item">
+                <div class="protocol-step-num">4</div>
+                <div>
+                  <strong>Fixed-Price Engineering Plan</strong>
+                  <p>Complete turnkey proposal including certified structural anchoring, white-glove delivery, and client handover.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="protocol-cert-box">
+              <div class="cert-pill"><i class="fas fa-certificate" aria-hidden="true"></i> VdS Certified Class 2/3</div>
+              <div class="cert-pill"><i class="fas fa-shield-alt" aria-hidden="true"></i> ECB•S European Standard</div>
+              <div class="cert-pill"><i class="fas fa-key" aria-hidden="true"></i> Master Locksmiths Association</div>
+              <div class="cert-pill"><i class="fas fa-award" aria-hidden="true"></i> ISO 9001 Quality Assured</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── 03. INTERACTIVE SHOWROOM MAP SECTION (NEW DEDICATED SECTION) ── -->
+    <section class="section" id="map-section">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">03 — Showroom Location</span>
+          <h2 class="section-title">Visit Our London Consultation Suite</h2>
+          <p class="section-desc">Centrally situated in London, EC2A with private subterranean vehicle access and private consultation suites.</p>
+        </div>
+
+        <div class="contact-map-layout">
+          
+          <!-- Interactive Map Container -->
+          <div class="contact-map-container">
+            <iframe
+              title="FORTIVA London Consultation Suite Location Map"
+              src="https://maps.google.com/maps?q=12+Meridian+House,+London+EC2A+4PT&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              class="contact-map-iframe"
+              loading="lazy"
+              allowfullscreen=""
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="contact-map-badge">
+              <i class="fas fa-compass" aria-hidden="true"></i> 12 Meridian House, London EC2A 4PT
+            </div>
+          </div>
+
+          <!-- Location & Transit Details Panel -->
+          <div class="contact-map-details">
+            <div class="map-detail-card">
+              
+              <div class="map-detail-header">
+                <div class="map-icon-box"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                <div>
+                  <h3 style="font-size:1.15rem; font-weight:800; color:var(--text-heading); margin-bottom:4px;">
+                    FORTIVA London Headquarters
+                  </h3>
+                  <p style="font-size:0.88rem; color:var(--text-body); margin:0;">
+                    12 Meridian House, London, EC2A 4PT, United Kingdom
+                  </p>
+                </div>
+              </div>
+
+              <div class="map-transit-grid">
+                <div class="map-transit-item">
+                  <i class="fas fa-train-subway" aria-hidden="true"></i>
+                  <div>
+                    <strong>Underground &amp; Elizabeth Line</strong>
+                    <span>Liverpool Street Station (4 min walk) &bull; Moorgate (6 min walk) &bull; Old Street (7 min walk).</span>
+                  </div>
+                </div>
+
+                <div class="map-transit-item">
+                  <i class="fas fa-car-side" aria-hidden="true"></i>
+                  <div>
+                    <strong>Private Subterranean Valet Parking</strong>
+                    <span>Secure gated underground garage entrance with private EV rapid chargers and direct private lift to consultation rooms.</span>
+                  </div>
+                </div>
+
+                <div class="map-transit-item">
+                  <i class="fas fa-clock" aria-hidden="true"></i>
+                  <div>
+                    <strong>Suite Operating Hours</strong>
+                    <span>Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 4:00 PM (By Appointment Only)<br>Sunday: Closed (Private Vault Client Access Only)</span>
+                  </div>
+                </div>
+
+                <div class="map-transit-item">
+                  <i class="fas fa-id-card-clip" aria-hidden="true"></i>
+                  <div>
+                    <strong>Security Clearance Notice</strong>
+                    <span>Visits are strictly by prior appointment. Guests are checked in at the private concierge desk with their consultation reference code.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="map-actions-row">
+                <a href="https://maps.google.com/?q=12+Meridian+House,+London+EC2A+4PT" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-get-directions">
+                  <i class="fas fa-diamond-turn-right" aria-hidden="true"></i> Directions
+                </a>
+                <a href="#consultation-form-section" class="btn btn-outline" id="btn-book-from-map">
+                  <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Visit
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── 04. ASSURANCE GUARANTEE STRIP ── -->
+    <section class="section--sm bg-navy" style="color:var(--white); border-top:1px solid rgba(255,255,255,0.1);">
+      <div class="container text-center">
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:32px;">
+          <div style="display:flex; align-items:center; gap:10px; font-size:0.86rem; font-weight:600; color:rgba(255,255,255,0.9);">
+            <i class="fas fa-file-contract" style="color:var(--brass-light); font-size:1.1rem;" aria-hidden="true"></i>
+            <span>Bilateral NDA Standard Protocol</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:0.86rem; font-weight:600; color:rgba(255,255,255,0.9);">
+            <i class="fas fa-truck" style="color:var(--brass-light); font-size:1.1rem;" aria-hidden="true"></i>
+            <span>Unmarked Stealth Fleet Delivery</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:0.86rem; font-weight:600; color:rgba(255,255,255,0.9);">
+            <i class="fas fa-certificate" style="color:var(--brass-light); font-size:1.1rem;" aria-hidden="true"></i>
+            <span>VdS &amp; ECB•S Certified Engineers</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:0.86rem; font-weight:600; color:rgba(255,255,255,0.9);">
+            <i class="fas fa-lock" style="color:var(--brass-light); font-size:1.1rem;" aria-hidden="true"></i>
+            <span>Air-Gapped Client Code Registry</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo" aria-label="FORTIVA — Home" style="margin-bottom:16px;display:inline-flex;">
+            <div class="logo-mark">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M22 2L38 10V26C38 34.8 31 42 22 42C13 42 6 34.8 6 26V10L22 2Z" fill="#203B4A" stroke="#B49464" stroke-width="1.5"/>
+                <path d="M22 6L34 13V26C34 33.2 28.6 39.2 22 39.2C15.4 39.2 10 33.2 10 26V13L22 6Z" fill="#162D39"/>
+                <text x="22" y="28" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="16" font-weight="800" fill="#B49464">F</text>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-brand">Fortiva</span>
+              <span class="logo-tagline">Secure Living</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">Premium residential safe and vault installation. Protecting what matters most with engineered precision and professional care.</p>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item"><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+441234567890">+44 (0) 1234 567 890</a></li>
+            <li class="footer-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:enquiries@fortiva.co.uk">enquiries@fortiva.co.uk</a></li>
+            <li class="footer-contact-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>12 Meridian House, London, EC2A 4PT</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Our Safes</h3>
+          <ul class="footer-nav-list">
+            <li><a href="products.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Eurograde Safes</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Fire-Resistant Cabinets</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Bespoke Jewelry Safes</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Concealed Wall Safes</a></li>
+            <li><a href="service-details.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Residential Vault Doors</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Company</h3>
+          <ul class="footer-nav-list">
+            <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Fortiva</a></li>
+            <li><a href="home2.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home 2</a></li>
+            <li><a href="installation.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Installation Engineering</a></li>
+            <li><a href="security-guide.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Security Ratings Guide</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Pricing &amp; Transparency</a></li>
+            <li><a href="book-consultation.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Private Consultation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Opening Hours</h3>
+          <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);line-height:1.9;margin:0;">
+            Monday – Friday: 8:00 AM – 6:00 PM<br>
+            Saturday: 9:00 AM – 4:00 PM<br>
+            Sunday: Private Appointments Only<br>
+            24/7 Rapid Emergency Response
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Fortiva Safe &amp; Vault Solutions Ltd. All rights reserved.</p>
+        <nav class="footer-legal">
+          <a href="#">Privacy Protocol &amp; NDA</a>
+          <a href="#">Terms of Security Supply</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+/* ============================================================
+   FORTIVA — forms.css
+   ============================================================ */
+
+/* ── Form Layout ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.form-col-full { grid-column: 1 / -1; }
+
+/* ── Form Group ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Labels ── */
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-heading);
+  text-transform: uppercase;
+}
+
+.form-label .req {
+  color: var(--brass);
+  margin-left: 3px;
+}
+
+/* ── Inputs ── */
+.form-control {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg-page);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-heading);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+[data-theme="dark"] .form-control {
+  background: rgba(255,255,255,0.04);
+}
+
+.form-control::placeholder { color: var(--text-body); opacity: 0.5; }
+
+.form-control:hover { border-color: rgba(180,148,100,0.4); }
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--brass);
+  box-shadow: 0 0 0 3px rgba(180,148,100,0.15);
+  background: var(--bg-card);
+}
+
+.form-control.error { border-color: #c0392b; }
+.form-control.success { border-color: #27ae60; }
+
+/* ── Textarea ── */
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* ── Select ── */
+.form-select-wrap {
+  position: relative;
+}
+
+.form-select-wrap::after {
+  content: '\f078';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-body);
+  pointer-events: none;
+  font-size: 0.7rem;
+}
+
+[dir="rtl"] .form-select-wrap::after { right: auto; left: 14px; }
+
+select.form-control {
+  cursor: pointer;
+  padding-right: 36px;
+}
+
+/* Native dropdown panels do not reliably inherit the select's theme colors. */
+select.form-control option,
+select.form-control optgroup {
+  background-color: #FFFFFF;
+  color: #142A35;
+}
+
+[data-theme="dark"] select.form-control option,
+[data-theme="dark"] select.form-control optgroup {
+  background-color: #182B35;
+  color: #F7F4EE;
+}
+
+select.form-control option:checked {
+  background-color: #B49464;
+  color: #0B1C25;
+}
+
+[dir="rtl"] select.form-control { padding-right: 16px; padding-left: 36px; }
+
+/* ── Checkbox / Radio ── */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brass);
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.form-check-label {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+/* ── Validation Messages ── */
+.form-error {
+  font-size: 0.75rem;
+  color: #c0392b;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-hint {
+  font-size: 0.75rem;
+  color: var(--text-body);
+  opacity: 0.7;
+}
+
+/* ── Input with Icon ── */
+.input-icon-wrap {
+  position: relative;
+}
+
+.input-icon-wrap .form-control { padding-left: 40px; }
+[dir="rtl"] .input-icon-wrap .form-control { padding-left: 16px; padding-right: 40px; }
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-body);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+[dir="rtl"] .input-icon { left: auto; right: 14px; }
+
+/* ── Date / Time Picker Styling ── */
+input[type="date"].form-control,
+input[type="time"].form-control {
+  color: var(--text-heading);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: opacity(0.5);
+  cursor: pointer;
+}
+
+/* ── Form Card ── */
+.form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Form Success State ── */
+.form-success-msg {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-2xl);
+  gap: var(--space-lg);
+}
+
+.form-success-msg.show { display: flex; }
+.form-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(39,174,96,0.12);
+  color: #27ae60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+/* ── Quote Builder Steps ── */
+.quote-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: var(--space-2xl);
+  overflow-x: auto;
+  padding-bottom: var(--space-sm);
+}
+
+.quote-step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+}
+
+.quote-step-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.quote-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--border-color);
+  color: var(--text-body);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.quote-step.active .quote-step-num,
+.quote-step.done .quote-step-num {
+  background: var(--brass);
+  color: var(--white);
+}
+
+.quote-step-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-body);
+  white-space: nowrap;
+}
+
+.quote-step.active .quote-step-label { color: var(--brass); }
+
+.quote-step-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+  margin: 0;
+  transition: background var(--transition-base);
+}
+
+.quote-step.done ~ .quote-step-line { background: var(--brass); }
+
+.quote-step-content { display: none; }
+.quote-step-content.active { display: block; }
+
+/* ── Datepicker ── */
+.date-time-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}

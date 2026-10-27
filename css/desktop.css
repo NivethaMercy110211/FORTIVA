@@ -1,0 +1,26 @@
+/* ============================================================
+   FORTIVA — desktop.css — 1440px+ Layout Enhancements
+   ============================================================ */
+
+@media (min-width: 1440px) {
+  :root { --container-max: 1380px; }
+
+  h1 { font-size: 4rem; }
+  h2 { font-size: 3rem; }
+
+  .section { padding-block: 110px; }
+
+  .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .products-layout { grid-template-columns: 300px 1fr; }
+
+  .hero-split { min-height: 720px; }
+  .hero-content { max-width: 680px; }
+
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .header-inner { height: 72px; }
+  .mobile-toggle { display: none; }
+  .header-nav { display: flex; }
+}

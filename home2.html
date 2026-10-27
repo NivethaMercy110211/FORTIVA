@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Home 2 | Precision Security Engineering | FORTIVA Safe &amp; Vault Solutions</title>
+  <meta name="description" content="Engineered for security, installed with precision. Explore FORTIVA's technical approach to residential safe and vault solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/editorial.css">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <style>
+    .anatomy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border-radius: var(--radius-xl); overflow: hidden; }
+    [data-theme="dark"] .anatomy-grid { background: var(--dark-border); }
+    .anatomy-cell { background: var(--bg-card); padding: 32px; display: flex; gap: 20px; transition: background var(--transition-base); }
+    .anatomy-cell:hover { background: #F8F4EC; }
+    .anatomy-cell h4 { color: var(--heading); font-weight: 700; margin-bottom: 6px; }
+    .anatomy-cell p { color: var(--body-text); font-weight: 450; line-height: 1.6; }
+    .anatomy-cell--dark { background: var(--dark-cards); }
+    .anatomy-cell--dark:hover { background: #243842; }
+    .anatomy-cell--dark h4 { color: var(--dark-heading); }
+    .anatomy-cell--dark p { color: var(--dark-body); }
+    .anatomy-cell--navy { background: var(--slate-navy); grid-column: span 2; }
+    .anatomy-cell--navy:hover { background: var(--deep-navy); }
+    .anatomy-cell--navy h3 { color: #FFFFFF; font-weight: 800; }
+    .anatomy-cell--navy p { color: #F0F4F7; font-weight: 450; line-height: 1.7; }
+    .anatomy-cell--navy:hover h3 { color: #FFFFFF; }
+    .anatomy-cell--navy:hover p { color: #F0F4F7; }
+    .anatomy-cell--navy > * { position: relative; z-index: 3; }
+    .anatomy-showcase--3d { overflow:visible; margin-bottom:92px; }
+    .anatomy-showcase--3d img { aspect-ratio:16 / 9; object-fit:cover; border-radius:inherit; }
+    .anatomy-float-grid {
+      position:absolute;
+      left:clamp(18px,4vw,56px);
+      right:clamp(18px,4vw,56px);
+      bottom:-68px;
+      z-index:4;
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+    }
+    .anatomy-float-card {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+      min-height:76px;
+      padding:14px;
+      border:1px solid rgba(180,148,100,.42);
+      border-radius:var(--radius-md);
+      background:rgba(13,31,41,.94);
+      color:#fff;
+      box-shadow:0 16px 30px rgba(4,15,21,.25);
+      backdrop-filter:blur(10px);
+    }
+    .anatomy-float-card i { color:var(--brass-light); font-size:1rem; flex:0 0 auto; }
+    .anatomy-float-card strong { display:block; font-size:.78rem; line-height:1.25; }
+    .anatomy-float-card span { display:block; margin-top:3px; color:rgba(255,255,255,.68); font-size:.68rem; line-height:1.25; }
+    [data-theme="dark"] .anatomy-cell:not(.anatomy-cell--navy):not(.anatomy-cell--dark):hover { background:#243842; }
+    [data-theme="dark"] .anatomy-cell:not(.anatomy-cell--navy) h4 { color:var(--dark-heading); }
+    [data-theme="dark"] .anatomy-cell:not(.anatomy-cell--navy) p { color:var(--dark-body); }
+
+    /* Keep all readable card content above the cursor-following hover layer. */
+    .card__body,
+    .space-content,
+    .journey-item > *,
+    .size-showcase-body,
+    .maintenance-card > * {
+      position:relative;
+      z-index:3;
+    }
+
+    .space-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
+    .space-card { border-radius: var(--radius-lg); overflow: hidden; position: relative; min-height: 280px; background: #0A1318; box-shadow: var(--shadow-sm); }
+    .space-card img { width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.85;transition:all var(--transition-slow); }
+    .space-card:hover img { opacity: 1; transform: scale(1.04); }
+    .space-content { position:absolute;bottom:0;left:0;right:0;padding:22px 20px;background:linear-gradient(to top, rgba(8,16,22,0.96) 0%, rgba(8,16,22,0.7) 65%, transparent 100%);color:#FFFFFF; }
+    .space-content h4 { color:#FFFFFF;font-size:1.05rem;font-weight:700;margin-bottom:4px;text-shadow:0 1px 4px rgba(0,0,0,0.5); }
+    .space-content p { color:#E8EEF2;font-size:0.8rem;font-weight:500;margin:0;line-height:1.5;text-shadow:0 1px 3px rgba(0,0,0,0.5); }
+
+    .journey-item { background: var(--bg-card); border: 1.5px solid var(--border); }
+    .journey-item h4 { color: var(--heading); font-weight: 700; }
+    .journey-item p { color: var(--body-text); font-weight: 450; }
+    [data-theme="dark"] .journey-item { background: var(--dark-cards); border-color: var(--dark-border); }
+    [data-theme="dark"] .journey-item h4 { color: var(--dark-heading); }
+    [data-theme="dark"] .journey-item p { color: var(--dark-body); }
+    .journey-item.active {
+      background:var(--slate-navy) !important;
+      border-color:var(--brass) !important;
+      box-shadow:0 10px 26px rgba(16,42,55,.16);
+    }
+    .journey-item.active h4 { color:#FFFFFF !important; }
+    .journey-item.active p { color:rgba(255,255,255,.82) !important; }
+    .journey-item.active .process-step__num { background:var(--brass); color:#FFFFFF; }
+
+    .compare-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-bottom: var(--space-xl); }
+    .compare-col-header { text-align: center; background: var(--bg-card); border: 2px solid var(--border-color); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: var(--space-lg); }
+    .compare-col-header.highlight { border-color: var(--brass); background: rgba(180,148,100,0.06); }
+
+    .maintenance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+    .maintenance-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-xl); }
+    .maintenance-card h4 { color: var(--heading); font-weight: 700; margin-bottom: 8px; }
+    .maintenance-card p { color: var(--body-text); font-weight: 450; line-height: 1.6; }
+    [data-theme="dark"] .maintenance-card { background: var(--dark-cards); border-color: var(--dark-border); }
+    [data-theme="dark"] .maintenance-card h4 { color: var(--dark-heading); }
+    [data-theme="dark"] .maintenance-card p { color: var(--dark-body); }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+    .portfolio-item { border-radius: var(--radius-lg); overflow: hidden; position: relative; background: var(--dark-bg); }
+    .portfolio-item img { width:100%;height:100%;object-fit:cover;min-height:200px;transition: opacity var(--transition-base); }
+    .portfolio-item:hover img { opacity: 0.85; }
+    .portfolio-item.large { grid-column: span 8; }
+    .portfolio-item.medium { grid-column: span 4; }
+    .portfolio-item.half { grid-column: span 6; }
+
+    /* Ivory sections stay light in dark mode, so their headings require dark ink. */
+    [data-theme="dark"] .bg-ivory .section-title { color:#132A36; }
+    [data-theme="dark"] .bg-ivory .section-desc { color:#526873; }
+
+    @media (max-width: 991px) {
+      .anatomy-grid { grid-template-columns: 1fr; }
+      .anatomy-cell--navy { grid-column: auto; }
+      .anatomy-showcase--3d { margin-bottom:128px; }
+      .anatomy-float-grid { grid-template-columns:repeat(2,minmax(0,1fr)); bottom:-108px; }
+      .space-grid { grid-template-columns: repeat(2, 1fr); }
+      .compare-selector { grid-template-columns: 1fr; }
+      .maintenance-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-item.large, .portfolio-item.medium, .portfolio-item.half { grid-column: span 6; }
+    }
+    @media (max-width: 767px) {
+      .anatomy-grid, .space-grid, .compare-selector, .maintenance-grid, .portfolio-grid { grid-template-columns: 1fr; }
+      .anatomy-cell--navy { grid-column: auto; }
+      .anatomy-showcase--3d { margin-bottom:18px; }
+      .anatomy-showcase--3d img { min-height:300px; }
+      .anatomy-float-grid { position:relative; left:auto; right:auto; bottom:auto; grid-template-columns:1fr; margin-top:12px; }
+      .portfolio-item, .portfolio-item.large, .portfolio-item.medium, .portfolio-item.half { grid-column: auto; }
+    }
+  </style>
+  <link rel="stylesheet" href="css/compact.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER (same structure as index.html) -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="header-logo" aria-label="FORTIVA — Home">
+          <div class="logo-mark">
+            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22 2L38 10V26C38 34.8 31 42 22 42C13 42 6 34.8 6 26V10L22 2Z" fill="#203B4A" stroke="#B49464" stroke-width="1.5"/>
+              <path d="M22 6L34 13V26C34 33.2 28.6 39.2 22 39.2C15.4 39.2 10 33.2 10 26V13L22 6Z" fill="#162D39"/>
+              <text x="22" y="28" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="16" font-weight="800" fill="#B49464">F</text>
+            </svg>
+          </div>
+          <div class="logo-text"><span class="logo-brand">Fortiva</span><span class="logo-tagline">Secure Living</span></div>
+        </a>
+        <nav class="header-nav" role="navigation" aria-label="Main navigation">
+          <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+          <div class="nav-item"><a href="home2.html" class="nav-link active">Home 2</a></div>
+          <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+          <div class="nav-item"><a href="products.html" class="nav-link">Products</a></div>
+          <div class="nav-item"><a href="installation.html" class="nav-link">Installation</a></div>
+          <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+          <div class="nav-item"><a href="security-guide.html" class="nav-link">Security Guide</a></div>
+
+          <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+        </nav>
+        <div class="header-actions">
+          <button class="toggle-btn" data-theme-toggle title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
+          <button class="toggle-btn" data-rtl-toggle title="Toggle RTL" aria-label="Toggle text direction"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+          <a href="book-consultation.html" class="btn btn-primary btn-sm" id="btn-book-consultation">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Consultation
+          </a>
+          <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="home2.html" class="mobile-nav-link active">Home 2</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="products.html" class="mobile-nav-link">Products</a>
+        <a href="installation.html" class="mobile-nav-link">Installation</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing Guide</a>
+        <a href="security-guide.html" class="mobile-nav-link">Security Guide</a>
+
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="book-consultation.html" class="btn btn-primary btn-block"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Consultation</a>
+        <div class="mobile-toggles">
+          <span class="mobile-toggle-label">Theme:</span>
+          <button class="toggle-btn" data-theme-toggle aria-label="Toggle dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
+          <span class="mobile-toggle-label" style="margin-left:16px;">Direction:</span>
+          <button class="toggle-btn" data-rtl-toggle aria-label="Toggle RTL"><i class="fas fa-align-right" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <main id="main-content">
+    <!-- ── HERO FULL BLEED ── -->
+    <section class="hero-fullbleed" aria-labelledby="h2-hero-title">
+      <img src="assets/images/hero/hero-home2.jpg" alt="Close-up of precision-engineered safe door with steel locking bolts" class="hero-fullbleed__bg" loading="eager">
+      <div class="hero-fullbleed__overlay"></div>
+      <div class="hero-fullbleed__scanner" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-fullbleed__layout">
+        <div class="hero-fullbleed__inner">
+          <div class="hero-fullbleed__eyebrow"><i class="fas fa-cog" aria-hidden="true"></i> Precision Security Engineering</div>
+          <h1 class="hero-fullbleed__title" id="h2-hero-title">
+            Engineered for Security.<br>
+            <em>Installed with Precision.</em>
+          </h1>
+          <p class="hero-fullbleed__desc">We combine independently verified safe technology with professional installation expertise. Every product we recommend is selected for engineering quality, not just appearance.</p>
+          <div class="cta-group">
+            <a href="products.html" class="btn btn-brass btn-xl" id="h2-hero-discover"><i class="fas fa-th-large" aria-hidden="true"></i> Discover Our Solutions</a>
+            <a href="book-consultation.html" class="btn btn-outline-white btn-xl" id="h2-hero-specialist">Speak to a Specialist</a>
+          </div>
+          <div class="hero-fullbleed__metrics">
+            <div class="hero-metric"><span class="hero-metric-value" data-count="15">15+</span><span class="hero-metric-label">Years Installing</span></div>
+            <div class="hero-metric"><span class="hero-metric-value" data-count="500">500+</span><span class="hero-metric-label">Safes Installed</span></div>
+            <div class="hero-metric"><span class="hero-metric-value" data-count="98">98%</span><span class="hero-metric-label">Satisfaction Rate</span></div>
+          </div>
+        </div>
+        <aside class="hero-signal-card" aria-label="FORTIVA protection profile">
+          <div class="hero-signal-card__top"><span>Protection profile</span><span class="hero-signal-card__live">Live</span></div>
+          <div class="hero-signal-card__index"><strong>03</strong><span>layers of<br>verified security</span></div>
+          <div class="hero-signal-card__line"><span>01</span><b>Certified safe engineering</b></div>
+          <div class="hero-signal-card__line"><span>02</span><b>Architectural integration</b></div>
+          <div class="hero-signal-card__line"><span>03</span><b>Specialist installation</b></div>
+          <div class="hero-signal-card__seal"><i class="fas fa-shield-halved" aria-hidden="true"></i> Independently rated</div>
+        </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 01. ANATOMY OF PROTECTION ── -->
+    <section class="section" id="anatomy" aria-labelledby="anatomy-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">01 — Engineering Breakdown</span>
+          <h2 class="section-title" id="anatomy-title">The Anatomy of Protection</h2>
+          <p class="section-desc">Understanding what's inside a quality safe helps you choose with confidence.</p>
+        </div>
+        <div class="anatomy-showcase anatomy-showcase--3d reveal">
+          <img src="assets/images/security/locker-system-3d-v2.png" alt="Three-dimensional cutaway of a premium safe locking system showing internal bolts, gears, biometric lock and composite barrier layers">
+          <div class="anatomy-float-grid" aria-label="Safe locking system highlights">
+            <div class="anatomy-float-card"><i class="fas fa-fingerprint" aria-hidden="true"></i><div><strong>Biometric Control</strong><span>Encrypted live access</span></div></div>
+            <div class="anatomy-float-card"><i class="fas fa-circle-dot" aria-hidden="true"></i><div><strong>Active Steel Bolts</strong><span>Multi-point protection</span></div></div>
+            <div class="anatomy-float-card"><i class="fas fa-shield-halved" aria-hidden="true"></i><div><strong>Glass Relocker</strong><span>Attack-triggered deadlock</span></div></div>
+            <div class="anatomy-float-card"><i class="fas fa-layer-group" aria-hidden="true"></i><div><strong>Composite Barrier</strong><span>Layered drill resistance</span></div></div>
+          </div>
+        </div>
+        <div class="anatomy-grid reveal reveal--delay-1">
+          <div class="anatomy-cell anatomy-cell--navy">
+            <div class="icon-wrap icon-wrap--lg" style="background:rgba(255,255,255,0.1);color:var(--brass-light);flex-shrink:0;"><i class="fas fa-cube" aria-hidden="true"></i></div>
+            <div>
+              <h3 style="margin-bottom:8px;">What Makes a Safe, A Safe?</h3>
+              <p>A residential safe is defined by the thickness and grade of its steel body, the quality of its locking mechanism, the number and diameter of its locking bolts, and independent verification of its resistance to physical attack. Never assess a safe solely by weight or appearance.</p>
+            </div>
+          </div>
+          <div class="anatomy-cell">
+            <div class="icon-wrap" style="flex-shrink:0;"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+            <div><h4>Steel Body &amp; Construction</h4><p class="fs-sm">Door and body steel thickness varies by grade. Higher-grade safes feature composite or concrete-filled walls that resist drilling, cutting and prying beyond basic steel plate.</p></div>
+          </div>
+          <div class="anatomy-cell">
+            <div class="icon-wrap" style="flex-shrink:0;"><i class="fas fa-circle-dot" aria-hidden="true"></i></div>
+            <div><h4>Locking Bolts</h4><p class="fs-sm">High-grade safes deploy multiple hardened steel bolts on three or four sides of the door. Bolt diameter and hardening treatment are critical to attack resistance.</p></div>
+          </div>
+          <div class="anatomy-cell">
+            <div class="icon-wrap" style="flex-shrink:0;"><i class="fas fa-lock" aria-hidden="true"></i></div>
+            <div><h4>Locking Mechanism</h4><p class="fs-sm">Electronic keypads, mechanical combination dials and biometric units each offer different reliability, convenience and durability profiles. Independent certification matters here.</p></div>
+          </div>
+          <div class="anatomy-cell">
+            <div class="icon-wrap" style="flex-shrink:0;"><i class="fas fa-fire-flame-curved" aria-hidden="true"></i></div>
+            <div><h4>Fire-Resistant Liner</h4><p class="fs-sm">In fire-rated safes, insulating material between the outer steel and inner compartment absorbs heat. Paper and data ratings require different liner specifications.</p></div>
+          </div>
+          <div class="anatomy-cell">
+            <div class="icon-wrap" style="flex-shrink:0;"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+            <div><h4>Relocking Devices</h4><p class="fs-sm">Premium safes include internal relocking mechanisms that automatically engage if an attack is detected, blocking access even if the primary lock is compromised.</p></div>
+          </div>
+          <div class="anatomy-cell">
+            <div class="icon-wrap" style="flex-shrink:0;"><i class="fas fa-anchor" aria-hidden="true"></i></div>
+            <div><h4>Certified Anchoring</h4><p class="fs-sm">Engineered fixing points secure the safe to a suitable floor or wall substrate, reducing removal risk while preserving the cabinet's tested structural integrity.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 02. EXPLORE BY SECURITY REQUIREMENT ── -->
+    <section class="section bg-ivory" id="by-requirement" aria-labelledby="req-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-eyebrow">02 — Product Categories</span>
+          <h2 class="section-title" id="req-title">Explore by Security Requirement</h2>
+          <p class="section-desc">Match your protection need to the right product category.</p>
+        </div>
+        <div class="grid grid-3 reveal reveal--delay-1" role="list" aria-label="Security requirement categories">
+          <a href="products.html?req=burglary" class="card" style="text-decoration:none; overflow:hidden;" role="listitem" id="cat-burglary">
+            <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
+              <img src="assets/images/safes/safe-sovereign.jpg" alt="Burglary Resistance Safes" style="width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(16,26,32,0.85) 0%, transparent 60%); display:flex; align-items:flex-end; padding:12px 16px;">
+                <span class="badge badge-brass"><i class="fas fa-shield-halved"></i> EN 1143-1 Certified</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;">Burglary Resistance</h3>
+              <p class="fs-sm">EN 1143-1 certified. Grade 0 to IV available. For homes with higher-value contents or insurance requirements.</p>
+              <span class="btn-arrow" style="margin-top:12px;">Browse Options <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="products.html?req=fire" class="card" style="text-decoration:none; overflow:hidden;" role="listitem" id="cat-fire-req">
+            <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
+              <img src="assets/images/safes/safe-pyroshield.jpg" alt="Fire Resistance Safes" style="width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(16,26,32,0.85) 0%, transparent 60%); display:flex; align-items:flex-end; padding:12px 16px;">
+                <span class="badge badge-brass"><i class="fas fa-fire-flame-curved"></i> NT FIRE 017</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;">Fire Resistance</h3>
+              <p class="fs-sm">EN 1047-1 certified. 30, 60, 90 or 120-minute ratings. Separate standards for paper and data protection.</p>
+              <span class="btn-arrow" style="margin-top:12px;">Browse Options <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="products.html?req=both" class="card" style="text-decoration:none; overflow:hidden;" role="listitem" id="cat-both">
+            <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
+              <img src="assets/images/safes/safe-sentinel.jpg" alt="Dual-Certified Protection" style="width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(16,26,32,0.85) 0%, transparent 60%); display:flex; align-items:flex-end; padding:12px 16px;">
+                <span class="badge badge-brass"><i class="fas fa-layer-group"></i> Dual Certified</span>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;">Dual-Certified Protection</h3>
+              <p class="fs-sm">Safes offering both burglary resistance and fire resistance. Note: always verify both certifications independently.</p>
+              <span class="btn-arrow" style="margin-top:12px;">Browse Options <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 03. INSIDE THE SAFE ── -->
+    <section class="split-section split-section--reverse" id="inside-safe" aria-labelledby="inside-title">
+      <div class="split-image">
+        <img src="assets/images/security/guide-insurance-3d.png" alt="Three-dimensional secure storage interior for insured valuables" loading="lazy">
+      </div>
+      <div class="split-content split-content--navy">
+        <div class="split-content__inner">
+          <span class="section-eyebrow" style="color:var(--brass-light);">03 — Interior</span>
+          <h2 class="section-title" id="inside-title" style="color:var(--white);">Inside the Safe</h2>
+          <div class="brass-divider"></div>
+          <p style="color:rgba(255,255,255,0.75);">Interior organization defines how useful a safe actually is. Our safes offer adjustable shelves, velvet-lined compartments for jewelry, removable dividers and dedicated document drawers.</p>
+          <ul class="inside-features" aria-label="Safe interior features">
+            <li style="display:flex;gap:12px;color:rgba(255,255,255,0.75);">
+              <i class="fas fa-check" style="color:var(--brass-light);flex-shrink:0;margin-top:3px;" aria-hidden="true"></i>
+              <span class="fs-sm">Adjustable and removable shelving</span>
+            </li>
+            <li style="display:flex;gap:12px;color:rgba(255,255,255,0.75);">
+              <i class="fas fa-check" style="color:var(--brass-light);flex-shrink:0;margin-top:3px;" aria-hidden="true"></i>
+              <span class="fs-sm">Velvet-lined jewelry trays and watch compartments</span>
+            </li>
+            <li style="display:flex;gap:12px;color:rgba(255,255,255,0.75);">
+              <i class="fas fa-check" style="color:var(--brass-light);flex-shrink:0;margin-top:3px;" aria-hidden="true"></i>
+              <span class="fs-sm">Document drawers and hanging file options</span>
+            </li>
+            <li style="display:flex;gap:12px;color:rgba(255,255,255,0.75);">
+              <i class="fas fa-check" style="color:var(--brass-light);flex-shrink:0;margin-top:3px;" aria-hidden="true"></i>
+              <span class="fs-sm">Interior LED lighting on selected models</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04. BUILT FOR DIFFERENT SPACES ── -->
+    <section class="section" id="spaces" aria-labelledby="spaces-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-eyebrow">04 — Location Guide</span>
+          <h2 class="section-title" id="spaces-title">Built for Different Spaces</h2>
+          <p class="section-desc">Each location in your home presents different installation opportunities and considerations.</p>
+        </div>
+        <div class="space-grid reveal reveal--delay-1" role="list" aria-label="Installation locations">
+          <div class="space-card" role="listitem">
+            <img src="assets/images/interiors/dressing-room-safe.jpg" alt="Safe in master bedroom wardrobe" loading="lazy">
+            <div class="space-content">
+              <h4>Master Bedroom</h4>
+              <p>Close at hand. Wall-mounted or concealed in fitted wardrobes.</p>
+            </div>
+          </div>
+          <div class="space-card" role="listitem">
+            <img src="assets/images/safes/safe-monaco.jpg" alt="Bespoke safe for a private home study" loading="lazy">
+            <div class="space-content">
+              <h4>Home Study</h4>
+              <p>Ideal for document safes and larger floor-standing models.</p>
+            </div>
+          </div>
+          <div class="space-card" role="listitem">
+            <img src="assets/images/vaults/modular-door.jpg" alt="Modular security door suited to a utility room installation" loading="lazy">
+            <div class="space-content">
+              <h4>Utility Room</h4>
+              <p>Discrete, accessible and structurally suitable for larger units.</p>
+            </div>
+          </div>
+          <div class="space-card" role="listitem">
+            <img src="assets/images/vaults/vault-room-interior.jpg" alt="Premium vault room" loading="lazy">
+            <div class="space-content">
+              <h4>Dedicated Vault Room</h4>
+              <p>Custom consultation required. For substantial collections.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 05. ASSESSMENT TO INSTALLATION ── -->
+    <section class="section bg-ivory" id="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-eyebrow">05 — Service Journey</span>
+          <h2 class="section-title" id="journey-title">From Assessment to Installation</h2>
+        </div>
+        <div class="editorial-split-grid reveal reveal--delay-1" style="align-items:center;">
+          <div>
+            <div style="display:flex;flex-direction:column;gap:20px;">
+              <div class="journey-item" style="display:flex;gap:16px;padding:20px;border-radius:var(--radius-lg);border:2px solid var(--border-color);cursor:pointer;transition:all var(--transition-base);">
+                <div class="process-step__num" style="flex-shrink:0;">1</div>
+                <div>
+                  <h4 style="margin-bottom:4px;">Initial Consultation</h4>
+                  <p class="fs-sm">Discuss your security needs, budget and preferred product type with our specialists.</p>
+                </div>
+              </div>
+              <div class="journey-item" style="display:flex;gap:16px;padding:20px;border-radius:var(--radius-lg);border:2px solid var(--border-color);cursor:pointer;transition:all var(--transition-base);">
+                <div class="process-step__num" style="flex-shrink:0;">2</div>
+                <div>
+                  <h4 style="margin-bottom:4px;">Site Assessment</h4>
+                  <p class="fs-sm">Our installer visits to assess structural suitability, access routes and optimal placement.</p>
+                </div>
+              </div>
+              <div class="journey-item" style="display:flex;gap:16px;padding:20px;border-radius:var(--radius-lg);border:2px solid var(--border-color);cursor:pointer;transition:all var(--transition-base);">
+                <div class="process-step__num" style="flex-shrink:0;">3</div>
+                <div>
+                  <h4 style="margin-bottom:4px;">Delivery &amp; Installation</h4>
+                  <p class="fs-sm">Professional team handles delivery with specialist equipment and floor protection throughout.</p>
+                </div>
+              </div>
+              <div class="journey-item" style="display:flex;gap:16px;padding:20px;border-radius:var(--radius-lg);border:2px solid var(--border-color);cursor:pointer;transition:all var(--transition-base);">
+                <div class="process-step__num" style="flex-shrink:0;">4</div>
+                <div>
+                  <h4 style="margin-bottom:4px;">Handover &amp; Support</h4>
+                  <p class="fs-sm">Full handover with documentation, code setup and ongoing after-installation support.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-xl);">
+            <img src="assets/images/hero/hero-installation.jpg" alt="Professional installers carefully placing a large residential safe" style="width:100%;height:400px;object-fit:cover;" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 06. SIZE MATTERS ── -->
+    <section class="section" id="size-matters" aria-labelledby="size2-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-eyebrow">06 — Capacity Guide</span>
+          <h2 class="section-title" id="size2-title">Size Matters</h2>
+          <p class="section-desc">Explore our interactive scale visualizer and capacity tiers to understand what fits inside each safe size. Real photography and precise capacity benchmarks guide your choice.</p>
+        </div>
+
+        <!-- Interactive Visualizer with Live Image Spotlight -->
+        <div class="size-visualizer reveal reveal--delay-1">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+            <div>
+              <h3 style="margin:0 0 4px 0;">Interactive Scale &amp; Capacity Visualizer</h3>
+              <p class="fs-sm text-muted" style="margin:0;">Select a size to view scale comparison and real interior capacity specs.</p>
+            </div>
+            <div class="visualizer-controls">
+              <label for="visualizer-safe-select" class="sr-only">Select safe size</label>
+              <select class="visualizer-select" id="visualizer-safe-select" aria-label="Select safe size">
+                <option value="compact">Compact (up to 25L)</option>
+                <option value="medium" selected>Medium (25–80L)</option>
+                <option value="large">Large (80–200L)</option>
+                <option value="xl">X-Large (200L+)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Split Layout: Left = Scale Canvas, Right = Live Safe Image Spotlight -->
+          <div class="visualizer-split">
+            <div class="visualizer-canvas-col">
+              <div class="visualizer-canvas" role="img" aria-label="Safe size visualization">
+                <!-- Person reference -->
+                <div class="visualizer-ref">
+                  <div class="visualizer-ref-obj visualizer-ref-obj--person" style="width:38px;height:165px;" aria-label="Average person for scale">
+                    <i class="fas fa-user visualizer-ref-icon" aria-hidden="true"></i>
+                  </div>
+                  <span class="visualizer-label">Person<br>~170cm</span>
+                </div>
+                <!-- Bedside reference -->
+                <div class="visualizer-ref">
+                  <div class="visualizer-ref-obj visualizer-ref-obj--bedside" style="width:48px;height:65px;" aria-label="Bedside table for scale">
+                    <i class="fas fa-archive visualizer-ref-icon" aria-hidden="true"></i>
+                  </div>
+                  <span class="visualizer-label">Bedside<br>~60cm</span>
+                </div>
+                <!-- Dynamic Safe Box -->
+                <div class="visualizer-ref visualizer-ref--safe-active">
+                  <div id="visualizer-safe" class="visualizer-safe-obj" style="width:70px;height:90px;" aria-live="polite">
+                    <div class="visualizer-safe-bezel">
+                      <i class="fas fa-shield-halved visualizer-safe-icon" aria-hidden="true"></i>
+                      <span class="visualizer-safe-dial"></span>
+                    </div>
+                  </div>
+                  <span class="visualizer-label" id="visualizer-dims">Medium 50×40cm</span>
+                </div>
+              </div>
+              <p class="visualizer-disclaimer">
+                <i class="fas fa-info-circle" aria-hidden="true"></i> Visualizations are approximate scale references. Always consult exact product specification sheets for external clearance and bolt-down tolerances.
+              </p>
+              <div class="visualizer-planning-grid" aria-label="Installation planning considerations">
+                <div class="visualizer-planning-item">
+                  <i class="fas fa-door-open" aria-hidden="true"></i>
+                  <div><strong>Door clearance</strong><span>Allow room for a full opening arc.</span></div>
+                </div>
+                <div class="visualizer-planning-item">
+                  <i class="fas fa-weight-hanging" aria-hidden="true"></i>
+                  <div><strong>Floor loading</strong><span>Confirm the structure supports the installed weight.</span></div>
+                </div>
+                <div class="visualizer-planning-item">
+                  <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
+                  <div><strong>Secure anchoring</strong><span>Match fixings to the wall or floor substrate.</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Safe Spotlight Preview with Photography -->
+            <div class="visualizer-spotlight-col">
+              <div class="visualizer-spotlight-card" id="visualizer-spotlight-card">
+                <div class="visualizer-spotlight-img-wrap">
+                  <img id="visualizer-spotlight-img" src="assets/images/safes/safe-sentinel.jpg" alt="Medium Safe Lineup — Fortiva Sentinel Grade I" class="visualizer-spotlight-img" loading="lazy">
+                  <span class="visualizer-spotlight-badge" id="visualizer-spotlight-badge">Medium • 25–80L</span>
+                </div>
+                <div class="visualizer-spotlight-body">
+                  <div>
+                    <h4 id="visualizer-spotlight-title" style="margin:0 0 4px 0;font-size:1.15rem;">Fortiva Sentinel Grade I</h4>
+                    <p id="visualizer-spotlight-category" class="fs-sm" style="color:var(--brass-text);margin:0;font-weight:700;">Residential Executive Class</p>
+                  </div>
+
+                  <div class="visualizer-specs-pills">
+                    <span class="visualizer-spec-pill" id="visualizer-spotlight-capacity"><i class="fas fa-box-open" style="color:var(--brass-text);margin-right:5px;"></i>25–80 Litres</span>
+                    <span class="visualizer-spec-pill" id="visualizer-spotlight-dims"><i class="fas fa-ruler-combined" style="color:var(--brass-text);margin-right:5px;"></i>50 × 40 × 35 cm</span>
+                    <span class="visualizer-spec-pill" id="visualizer-spotlight-weight"><i class="fas fa-weight-hanging" style="color:var(--brass-text);margin-right:5px;"></i>30–80 kg</span>
+                  </div>
+
+                  <div>
+                    <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-heading);margin-bottom:8px;">What Fits Inside:</div>
+                    <ul class="visualizer-fits-list" id="visualizer-spotlight-fits">
+                      <li class="visualizer-fits-item"><i class="fas fa-check" aria-hidden="true"></i> A4 legal document files, deeds &amp; binders</li>
+                      <li class="visualizer-fits-item"><i class="fas fa-check" aria-hidden="true"></i> Multi-unit motorized watch winder modules</li>
+                      <li class="visualizer-fits-item"><i class="fas fa-check" aria-hidden="true"></i> Camera lenses, electronics &amp; backup storage</li>
+                      <li class="visualizer-fits-item"><i class="fas fa-check" aria-hidden="true"></i> Family asset boxes, coin collections &amp; bullion</li>
+                    </ul>
+                  </div>
+
+                  <div style="margin-top:auto;padding-top:14px;border-top:1px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;">
+                    <span class="fs-xs" style="color:var(--body-text);"><i class="fas fa-location-dot" style="color:var(--brass);margin-right:4px;"></i> Study / Dressing Room</span>
+                    <a href="products.html?category=residential" id="visualizer-spotlight-link" class="btn btn-outline btn-sm" style="padding:6px 14px;font-size:0.75rem;">
+                      View Products <i class="fas fa-arrow-right" style="font-size:0.65rem;margin-left:4px;" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Card Capacity Showcase with Rich Images -->
+        <div style="margin-top: var(--space-3xl);">
+          <div style="text-align:center;margin-bottom:var(--space-xl);" class="reveal">
+            <span class="section-eyebrow">Size Classes &amp; Capacities</span>
+            <h3 style="margin-bottom:8px;">Choose the Right Capacity for Your Collection</h3>
+            <p class="fs-sm text-muted" style="max-width:620px;margin:0 auto;">From discreet wardrobe safes to full-scale private bank-grade vaults, browse Fortiva's standard capacity classifications.</p>
+          </div>
+
+          <div class="size-showcase-grid reveal reveal--delay-1">
+            <!-- Compact -->
+            <div class="size-showcase-card" data-size="compact" tabindex="0" role="button" aria-label="Select Compact Size Guide">
+              <div class="size-showcase-img-wrap">
+                <img src="assets/images/safes/safe-compact.jpg" alt="Compact Safe Model — Fortiva Aegis Grade II" class="size-showcase-img" loading="lazy">
+                <span class="size-showcase-badge">Up to 25L</span>
+              </div>
+              <div class="size-showcase-body">
+                <h4 class="size-showcase-title">Compact</h4>
+                <p class="size-showcase-model">Fortiva Aegis Grade II</p>
+                <ul class="size-showcase-details">
+                  <li class="size-showcase-detail"><i class="fas fa-ruler"></i><span><strong>Dims:</strong> Up to 35 × 25 × 25 cm</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-weight-scale"></i><span><strong>Weight:</strong> 15–30 kg</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-gem"></i><span><strong>Fits:</strong> Jewelry, passports, watches, cash</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-house-chimney"></i><span><strong>Ideal:</strong> Wardrobes &amp; bedside alcoves</span></li>
+                </ul>
+                <div class="size-showcase-footer" style="margin-top:auto;padding-top:10px;">
+                  <button type="button" class="btn btn-outline btn-sm w-100 size-card-select-btn" data-select-size="compact">
+                    <i class="fas fa-eye" style="margin-right:6px;" aria-hidden="true"></i> Compare Scale
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Medium -->
+            <div class="size-showcase-card is-active" data-size="medium" tabindex="0" role="button" aria-label="Select Medium Size Guide">
+              <div class="size-showcase-img-wrap">
+                <img src="assets/images/safes/safe-sentinel.jpg" alt="Medium Safe Lineup — Fortiva Sentinel Grade I" class="size-showcase-img" loading="lazy">
+                <span class="size-showcase-badge" style="background:rgba(180,148,100,0.9);color:var(--white);">25–80L • Popular</span>
+              </div>
+              <div class="size-showcase-body">
+                <h4 class="size-showcase-title">Medium</h4>
+                <p class="size-showcase-model">Fortiva Sentinel Grade I</p>
+                <ul class="size-showcase-details">
+                  <li class="size-showcase-detail"><i class="fas fa-ruler"></i><span><strong>Dims:</strong> 50 × 40 × 35 cm</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-weight-scale"></i><span><strong>Weight:</strong> 30–80 kg</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-gem"></i><span><strong>Fits:</strong> A4 deeds, watch winders, cameras</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-house-chimney"></i><span><strong>Ideal:</strong> Study cabinets &amp; dressing rooms</span></li>
+                </ul>
+                <div class="size-showcase-footer" style="margin-top:auto;padding-top:10px;">
+                  <button type="button" class="btn btn-primary btn-sm w-100 size-card-select-btn" data-select-size="medium">
+                    <i class="fas fa-eye" style="margin-right:6px;" aria-hidden="true"></i> Compare Scale
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Large -->
+            <div class="size-showcase-card" data-size="large" tabindex="0" role="button" aria-label="Select Large Size Guide">
+              <div class="size-showcase-img-wrap">
+                <img src="assets/images/safes/safe-murus.jpg" alt="Large Safe Installation — Fortiva PyroShield 120" class="size-showcase-img" loading="lazy">
+                <span class="size-showcase-badge">80–200L</span>
+              </div>
+              <div class="size-showcase-body">
+                <h4 class="size-showcase-title">Large</h4>
+                <p class="size-showcase-model">Fortiva PyroShield 120</p>
+                <ul class="size-showcase-details">
+                  <li class="size-showcase-detail"><i class="fas fa-ruler"></i><span><strong>Dims:</strong> 70 × 55 × 50 cm</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-weight-scale"></i><span><strong>Weight:</strong> 80–250 kg</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-gem"></i><span><strong>Fits:</strong> Lever-arch files, bullion, luxury bags</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-house-chimney"></i><span><strong>Ideal:</strong> Secure closets &amp; utility rooms</span></li>
+                </ul>
+                <div class="size-showcase-footer" style="margin-top:auto;padding-top:10px;">
+                  <button type="button" class="btn btn-outline btn-sm w-100 size-card-select-btn" data-select-size="large">
+                    <i class="fas fa-eye" style="margin-right:6px;" aria-hidden="true"></i> Compare Scale
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- X-Large / Vault -->
+            <div class="size-showcase-card" data-size="xl" tabindex="0" role="button" aria-label="Select X-Large / Vault Size Guide">
+              <div class="size-showcase-img-wrap">
+                <img src="assets/images/safes/safe-imperium.jpg" alt="X-Large Imperium safe vault for substantial collections" class="size-showcase-img" loading="lazy">
+                <span class="size-showcase-badge">200L+ • Vault</span>
+              </div>
+              <div class="size-showcase-body">
+                <h4 class="size-showcase-title">X-Large / Vault</h4>
+                <p class="size-showcase-model">Fortiva Sovereign Grade III</p>
+                <ul class="size-showcase-details">
+                  <li class="size-showcase-detail"><i class="fas fa-ruler"></i><span><strong>Dims:</strong> 100+ × 70 × 60 cm</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-weight-scale"></i><span><strong>Weight:</strong> 250–650+ kg</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-gem"></i><span><strong>Fits:</strong> Estate heirlooms, multi-watch suites</span></li>
+                  <li class="size-showcase-detail"><i class="fas fa-house-chimney"></i><span><strong>Ideal:</strong> Concrete slabs &amp; private vaults</span></li>
+                </ul>
+                <div class="size-showcase-footer" style="margin-top:auto;padding-top:10px;">
+                  <button type="button" class="btn btn-outline btn-sm w-100 size-card-select-btn" data-select-size="xl">
+                    <i class="fas fa-eye" style="margin-right:6px;" aria-hidden="true"></i> Compare Scale
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 07. COMPARE YOUR OPTIONS ── -->
+    <section class="section bg-ivory" id="compare" aria-labelledby="compare2-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-eyebrow">07 — Product Comparison</span>
+          <h2 class="section-title" id="compare2-title">Compare Your Options</h2>
+          <p class="section-desc">Side-by-side specification comparison for our most popular safe categories.</p>
+        </div>
+        <div class="card reveal reveal--delay-1" style="overflow-x:auto;">
+          <table class="compare-table" style="width:100%;" aria-label="Safe comparison table">
+            <thead>
+              <tr>
+                <th scope="col" style="background:var(--bg-page);width:180px;">Specification</th>
+                <th scope="col" style="text-align:center;"><div style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--brass-text);font-weight:700;margin-bottom:4px;">Entry</div>Home Safe</th>
+                <th scope="col" style="text-align:center;background:rgba(180,148,100,0.05);border-left:2px solid var(--brass);border-right:2px solid var(--brass);">
+                  <div style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--brass-text);font-weight:700;margin-bottom:4px;">Popular</div>
+                  Fire &amp; Burglary
+                </th>
+                <th scope="col" style="text-align:center;"><div style="font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--brass-text);font-weight:700;margin-bottom:4px;">Premium</div>Vault Grade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Burglary Grade</th>
+                <td style="text-align:center;">Grade 0–I</td>
+                <td style="text-align:center;background:rgba(180,148,100,0.04);">Grade I–II</td>
+                <td style="text-align:center;">Grade III–IV</td>
+              </tr>
+              <tr>
+                <th scope="row">Fire Rating</th>
+                <td style="text-align:center;">None / Optional</td>
+                <td style="text-align:center;background:rgba(180,148,100,0.04);">30–60 min</td>
+                <td style="text-align:center;">60–120 min</td>
+              </tr>
+              <tr>
+                <th scope="row">Steel Door</th>
+                <td style="text-align:center;">4–6mm</td>
+                <td style="text-align:center;background:rgba(180,148,100,0.04);">6–10mm</td>
+                <td style="text-align:center;">10mm+</td>
+              </tr>
+              <tr>
+                <th scope="row">Lock Type</th>
+                <td style="text-align:center;">Electronic</td>
+                <td style="text-align:center;background:rgba(180,148,100,0.04);">Electronic / Mech.</td>
+                <td style="text-align:center;">Certified Dual</td>
+              </tr>
+              <tr>
+                <th scope="row">Locking Bolts</th>
+                <td style="text-align:center;">2–3 bolts</td>
+                <td style="text-align:center;background:rgba(180,148,100,0.04);">4–6 bolts</td>
+                <td style="text-align:center;">6+ bolts, 3-4 sides</td>
+              </tr>
+              <tr>
+                <th scope="row">Typical Weight</th>
+                <td style="text-align:center;">15–50 kg</td>
+                <td style="text-align:center;background:rgba(180,148,100,0.04);">50–150 kg</td>
+                <td style="text-align:center;">150–500+ kg</td>
+              </tr>
+              <tr>
+                <th scope="row">Installation</th>
+                <td style="text-align:center;">Freestanding</td>
+                <td style="text-align:center;background:rgba(180,148,100,0.04);">Floor-anchored</td>
+                <td style="text-align:center;">Structural, specialist</td>
+              </tr>
+              <tr>
+                <th scope="row">Price Indication</th>
+                <td style="text-align:center;">£300–£800</td>
+                <td style="text-align:center;background:rgba(180,148,100,0.04);">£800–£3,000</td>
+                <td style="text-align:center;">Price on Request</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.75rem;color:var(--text-body);margin-top:12px;text-align:center;" class="reveal"><i class="fas fa-info-circle" aria-hidden="true"></i> Price ranges are illustrative only. Actual costs depend on the specific product and installation requirements. <a href="book-consultation.html">Request a personalized quote.</a></p>
+      </div>
+    </section>
+
+    <!-- ── 08. CARE & MAINTENANCE ── -->
+    <section class="section" id="maintenance" aria-labelledby="maint-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-eyebrow">08 — Ownership</span>
+          <h2 class="section-title" id="maint-title">Care &amp; Maintenance</h2>
+          <p class="section-desc">A well-maintained safe performs reliably for decades. Here's what responsible ownership looks like.</p>
+        </div>
+        <div class="maintenance-grid reveal reveal--delay-1" role="list" aria-label="Maintenance tips">
+          <div class="maintenance-card" role="listitem">
+            <div class="icon-wrap icon-wrap--lg" style="margin-bottom:16px;"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i></div>
+            <h4>Battery Maintenance</h4>
+            <p class="fs-sm">Electronic locks require fresh batteries annually or as indicated. Most units include an external emergency battery terminal. Never let batteries completely drain before replacement.</p>
+          </div>
+          <div class="maintenance-card" role="listitem">
+            <div class="icon-wrap icon-wrap--lg" style="margin-bottom:16px;"><i class="fas fa-oil-can" aria-hidden="true"></i></div>
+            <h4>Mechanism Lubrication</h4>
+            <p class="fs-sm">Locking bolts and door hinges should be lubricated with manufacturer-specified products annually. Never use standard household oils which can attract dust and degrade lock components.</p>
+          </div>
+          <div class="maintenance-card" role="listitem">
+            <div class="icon-wrap icon-wrap--lg" style="margin-bottom:16px;"><i class="fas fa-clipboard-check" aria-hidden="true"></i></div>
+            <h4>Regular Inspection</h4>
+            <p class="fs-sm">Inspect door seals, locking bolt engagement and interior condition periodically. After any fire event, have your safe professionally inspected before relying on it for continued use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 09. PORTFOLIO ── -->
+    <section class="section bg-ivory" id="portfolio" aria-labelledby="portfolio-title">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-eyebrow">09 — Installation Portfolio</span>
+          <h2 class="section-title" id="portfolio-title">Our Recent Installations</h2>
+          <p class="section-desc">A selection of completed residential installations. Client privacy is always maintained.</p>
+        </div>
+        <div class="portfolio-grid reveal reveal--delay-1" role="list" aria-label="Installation portfolio">
+          <div class="portfolio-item large" role="listitem" style="min-height:320px;">
+            <img src="assets/images/safes/safe-murus.jpg" alt="Concealed in-wall safe flush installed into luxury fluted millwork" style="min-height:320px;" loading="lazy">
+          </div>
+          <div class="portfolio-item medium" role="listitem" style="min-height:320px;">
+            <img src="assets/images/safes/safe-sentinel.jpg" alt="Compact luxury safe integrated into master suite dressing room" style="min-height:320px;" loading="lazy">
+          </div>
+          <div class="portfolio-item half" role="listitem" style="min-height:240px;">
+            <img src="assets/images/safes/safe-subterra.jpg" alt="Engineered in-floor safe with flush circular hatch and hydraulic lift" style="min-height:240px;" loading="lazy">
+          </div>
+          <div class="portfolio-item half" role="listitem" style="min-height:240px;">
+            <img src="assets/images/vaults/vault-citadel.jpg" alt="Class 3 modular architectural walk-in vault room" style="min-height:240px;" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 10. CONSULTATION CTA ── -->
+    <section class="cta-section" id="h2-cta" aria-labelledby="h2-cta-title">
+      <img src="assets/images/cta/cta-home2.jpg" alt="" class="cta-section__bg" aria-hidden="true" loading="lazy">
+      <div class="cta-section__overlay"></div>
+      <div class="container">
+        <div class="cta-section__inner">
+          <span class="cta-section__eyebrow">Speak to a Specialist</span>
+          <h2 class="cta-section__title" id="h2-cta-title">Connect with Our<br>Security Engineers</h2>
+          <p class="cta-section__desc">Every home is different. Our specialists provide tailored guidance — not generic advice. Book a no-obligation consultation today.</p>
+          <div class="cta-group" style="justify-content:center;">
+            <a href="book-consultation.html" class="btn btn-brass btn-xl" id="h2-final-cta"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Specialist Consultation</a>
+            <a href="products.html" class="btn btn-outline-white btn-xl" id="h2-view-products">View All Products</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same structure) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-brand-desc">Premium residential safe and vault installation. Protecting what matters most.</p>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item"><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+441234567890">+44 (0) 1234 567 890</a></li>
+            <li class="footer-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:enquiries@fortiva.co.uk">enquiries@fortiva.co.uk</a></li>
+          </ul>
+        </div>
+        <div><h3 class="footer-col-title">Services</h3><ul class="footer-nav-list"><li><a href="products.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Products</a></li><li><a href="installation.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Installation</a></li><li><a href="book-consultation.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Consultation</a></li><li><a href="security-guide.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Security Guide</a></li><li><a href="pricing.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Pricing</a></li></ul></div>
+        <div><h3 class="footer-col-title">Company</h3><ul class="footer-nav-list"><li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About</a></li><li><a href="home2.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home 2</a></li><li><a href="security-guide.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Security Guide</a></li><li><a href="pricing.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Pricing</a></li><li><a href="faq.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> FAQ</a></li><li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li></ul></div>
+        <div><h3 class="footer-col-title">Hours</h3><p style="font-size:0.8rem;color:rgba(255,255,255,0.5);line-height:1.9;margin:0;">Mon–Fri: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 4:00 PM</p></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Fortiva Safe &amp; Vault Solutions Ltd.</p>
+        <nav class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Journey items interaction
+    document.querySelectorAll('.journey-item').forEach((item, i) => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll('.journey-item').forEach(j => j.classList.remove('active'));
+        item.classList.add('active');
+      });
+      if (i === 0) item.classList.add('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Outer Shield Crest -->
+  <path d="M32 3L56 14V36C56 48.5 45.8 58.7 32 62C18.2 58.7 8 48.5 8 36V14L32 3Z" fill="#162D39" stroke="#B49464" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Inner Shield Layer -->
+  <path d="M32 9L49 18.5V36C49 45.8 41.2 53.8 32 56.4C22.8 53.8 15 45.8 15 36V18.5L32 9Z" fill="#203B4A" stroke="#B49464" stroke-width="1.2" stroke-opacity="0.6"/>
+  <!-- Golden Core Border & Accent -->
+  <path d="M32 14L43 21V36C43 42.6 37.8 48.2 32 50.4C26.2 48.2 21 42.6 21 36V21L32 14Z" fill="#14242F"/>
+  <!-- Polished Fortiva 'F' Monogram -->
+  <text x="32" y="39" text-anchor="middle" font-family="'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="900" fill="#B49464" letter-spacing="-0.02em">F</text>
+  <!-- Security Micro Star/Dot Accent -->
+  <circle cx="32" cy="46" r="1.8" fill="#D4AF37"/>
+</svg>

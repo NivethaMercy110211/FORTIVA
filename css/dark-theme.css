@@ -1,0 +1,198 @@
+/* ============================================================
+   FORTIVA — dark-theme.css
+   ============================================================ */
+
+/* Already handled via CSS variables in main.css [data-theme="dark"] */
+/* This file adds component-level overrides for the dark theme */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* ── Header ── */
+[data-theme="dark"] .site-header {
+  background: rgba(16, 26, 32, 0.95);
+  border-bottom-color: var(--dark-border);
+}
+
+[data-theme="dark"] .logo-brand { color: var(--dark-heading); }
+
+[data-theme="dark"] .nav-link { color: var(--dark-heading); }
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+  color: var(--brass-light);
+  background: rgba(180,148,100,0.12);
+}
+
+[data-theme="dark"] .nav-dropdown {
+  background: var(--dark-cards);
+  border-color: var(--dark-border);
+}
+
+[data-theme="dark"] .dropdown-link { color: var(--dark-body); }
+[data-theme="dark"] .dropdown-link:hover {
+  background: rgba(180,148,100,0.1);
+  color: var(--dark-heading);
+}
+
+/* ── Toggle Buttons ── */
+[data-theme="dark"] .toggle-btn {
+  border-color: var(--dark-border);
+  color: var(--dark-body);
+}
+[data-theme="dark"] .toggle-btn:hover {
+  background: var(--dark-cards);
+  color: var(--dark-heading);
+  border-color: var(--brass);
+}
+
+[data-theme="dark"] .mobile-toggle span { background: var(--dark-heading); }
+
+/* ── Mobile Menu ── */
+[data-theme="dark"] .mobile-menu { background: var(--dark-bg); }
+[data-theme="dark"] .mobile-nav-link {
+  color: var(--dark-heading);
+  border-bottom-color: var(--dark-border);
+}
+[data-theme="dark"] .mobile-sub-link { color: var(--dark-body); }
+[data-theme="dark"] .mobile-toggles { border-top-color: var(--dark-border); }
+
+/* ── Cards ── */
+[data-theme="dark"] .card { background: var(--dark-cards); border-color: var(--dark-border); }
+[data-theme="dark"] .card__footer { background: rgba(255,255,255,0.02); border-top-color: var(--dark-border); }
+
+/* ── Product Cards ── */
+[data-theme="dark"] .product-card { background: var(--dark-cards); border-color: var(--dark-border); }
+[data-theme="dark"] .product-card__image { background: #141E25; }
+
+/* ── Filters ── */
+[data-theme="dark"] .filters-panel { background: var(--dark-cards); border-color: var(--dark-border); }
+[data-theme="dark"] .filters-header { border-bottom-color: var(--dark-border); }
+[data-theme="dark"] .filter-group { border-bottom-color: var(--dark-border); }
+[data-theme="dark"] .filter-group-toggle { color: var(--dark-heading); }
+[data-theme="dark"] .filter-option { color: var(--dark-body); }
+[data-theme="dark"] .filter-count { background: rgba(255,255,255,0.05); }
+[data-theme="dark"] .price-range-input { background: rgba(255,255,255,0.04); border-color: var(--dark-border); color: var(--dark-heading); }
+
+/* ── Toolbar ── */
+[data-theme="dark"] .toolbar-sort { background: var(--dark-cards); border-color: var(--dark-border); color: var(--dark-heading); }
+[data-theme="dark"] .view-btn { background: var(--dark-cards); border-color: var(--dark-border); color: var(--dark-body); }
+
+/* ── Forms ── */
+[data-theme="dark"] .form-card { background: var(--dark-cards); border-color: var(--dark-border); }
+[data-theme="dark"] .form-control { background: rgba(255,255,255,0.04); border-color: var(--dark-border); color: var(--dark-heading); }
+[data-theme="dark"] .form-control:focus { background: rgba(255,255,255,0.07); border-color: var(--brass); }
+[data-theme="dark"] .form-label { color: var(--dark-heading); }
+[data-theme="dark"] .form-hint { color: var(--dark-body); }
+
+/* ── Spec Table ── */
+[data-theme="dark"] .spec-table tr { border-bottom-color: var(--dark-border); }
+[data-theme="dark"] .spec-table th { color: var(--dark-body); }
+[data-theme="dark"] .spec-table td { color: var(--dark-heading); }
+
+/* ── Spec Drawer ── */
+[data-theme="dark"] .spec-drawer { background: var(--dark-cards); border-left-color: var(--dark-border); }
+[data-theme="dark"] .spec-drawer__header { background: var(--dark-cards); border-bottom-color: var(--dark-border); }
+[data-theme="dark"] .spec-drawer__close { background: var(--dark-bg); border-color: var(--dark-border); }
+
+/* ── Process Steps ── */
+[data-theme="dark"] .process-step__title { color: var(--dark-heading); }
+[data-theme="dark"] .process-step__desc { color: var(--dark-body); }
+
+/* ── Spec Strip ── */
+[data-theme="dark"] .spec-item { border-right-color: var(--dark-border); }
+[data-theme="dark"] .spec-value { color: var(--dark-heading); }
+
+/* ── Badges ── */
+[data-theme="dark"] .badge--primary {
+  background: rgba(46,85,112,0.3);
+  color: var(--dark-heading);
+  border-color: rgba(46,85,112,0.5);
+}
+
+/* ── Icon Wrap ── */
+[data-theme="dark"] .icon-wrap { background: rgba(180,148,100,0.15); }
+
+/* ── Section Header ── */
+[data-theme="dark"] .section-eyebrow { color: var(--brass-light); }
+[data-theme="dark"] .section-desc { color: var(--dark-body); }
+
+/* ── Spec Tags ── */
+[data-theme="dark"] .spec-tag { background: rgba(255,255,255,0.04); border-color: var(--dark-border); color: var(--dark-body); }
+
+/* ── Active Filters ── */
+[data-theme="dark"] .active-filter-tag {
+  background: rgba(180,148,100,0.15);
+  border-color: rgba(180,148,100,0.3);
+  color: var(--brass-light);
+}
+
+/* ── HR ── */
+[data-theme="dark"] hr { border-top-color: var(--dark-border); }
+
+/* ── Footer ── */
+[data-theme="dark"] .footer-col-title { color: var(--dark-heading); }
+[data-theme="dark"] .footer-nav-list a { color: rgba(255,255,255,0.45); }
+[data-theme="dark"] .footer-nav-list a:hover { color: var(--brass-light); }
+
+/* ── Pricing Tables ── */
+[data-theme="dark"] .pricing-card { background: var(--dark-cards); border-color: var(--dark-border); }
+[data-theme="dark"] .pricing-row { border-bottom-color: var(--dark-border); }
+
+/* ── FAQ ── */
+[data-theme="dark"] .faq-item { border-bottom-color: var(--dark-border); }
+[data-theme="dark"] .faq-question { color: var(--dark-heading); }
+[data-theme="dark"] .faq-answer { color: var(--dark-body); }
+
+/* ── Security Guide ── */
+[data-theme="dark"] .guide-card { background: var(--dark-cards); border-color: var(--dark-border); }
+[data-theme="dark"] .guide-nav-link { color: var(--dark-body); }
+[data-theme="dark"] .guide-nav-link:hover { color: var(--brass-light); background: rgba(180,148,100,0.1); }
+[data-theme="dark"] .guide-nav-link.active { color: var(--brass-light); background: rgba(180,148,100,0.12); border-left-color: var(--brass-light); }
+
+/* ── Page Hero ── */
+[data-theme="dark"] .page-hero__eyebrow { color: var(--brass-light); }
+
+/* ── Ivory Sections & Content Visibility in Dark Mode ── */
+[data-theme="dark"] section[style*="var(--ivory)"],
+[data-theme="dark"] div[style*="var(--ivory)"],
+[data-theme="dark"] [style*="var(--ivory)"],
+[data-theme="dark"] .bg-ivory {
+  background: #14222B !important;
+  border-color: var(--dark-border) !important;
+}
+
+[data-theme="dark"] section[style*="var(--ivory)"] h1,
+[data-theme="dark"] section[style*="var(--ivory)"] h2,
+[data-theme="dark"] section[style*="var(--ivory)"] h3,
+[data-theme="dark"] section[style*="var(--ivory)"] h4,
+[data-theme="dark"] .bg-ivory h1,
+[data-theme="dark"] .bg-ivory h2,
+[data-theme="dark"] .bg-ivory h3,
+[data-theme="dark"] .bg-ivory h4 {
+  color: var(--dark-heading) !important;
+}
+
+[data-theme="dark"] section[style*="var(--ivory)"] p,
+[data-theme="dark"] section[style*="var(--ivory)"] li,
+[data-theme="dark"] section[style*="var(--ivory)"] label,
+[data-theme="dark"] .bg-ivory p {
+  color: var(--dark-body) !important;
+}
+
+[data-theme="dark"] section[style*="var(--ivory)"] .hero-eyebrow-text,
+[data-theme="dark"] .hero-eyebrow-text {
+  color: var(--brass-light) !important;
+}
+
+[data-theme="dark"] section[style*="var(--ivory)"] .hero-eyebrow-line,
+[data-theme="dark"] .hero-eyebrow-line {
+  background: var(--brass-light) !important;
+}
+
+[data-theme="dark"] section[style*="var(--ivory)"] .badge-brass {
+  background: rgba(180, 148, 100, 0.18) !important;
+  color: var(--brass-light) !important;
+  border-color: rgba(180, 148, 100, 0.45) !important;
+}
+

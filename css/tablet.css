@@ -1,0 +1,194 @@
+/* ============================================================
+   FORTIVA — tablet.css — 768px–1199px
+   Optimized for iPad Mini (768x1024) & iPad Pro (1024x1366)
+   ============================================================ */
+
+@media (max-width: 1199px) {
+  .header-nav { display: none; }
+  .mobile-toggle { display: flex; }
+  .header-actions {
+    grid-column: 3;
+    justify-self: end;
+  }
+  .header-actions #btn-book-consultation {
+    display: none;
+  }
+
+  .products-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filters-panel {
+    position: static;
+    display: none;
+  }
+
+  .filters-panel.open,
+  .filters-panel.mobile-open { display: block; }
+  .filters-panel.mobile-open .filters-mobile-close { display: flex; }
+  .filter-mobile-toggle { display: flex !important; }
+
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-xl); }
+
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .featured-grid { grid-template-columns: repeat(2, 1fr); }
+  .install-example-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-tiers-grid { grid-template-columns: repeat(2, 1fr); }
+  .maintenance-grid { grid-template-columns: repeat(2, 1fr); }
+  .anchor-tech-grid { grid-template-columns: repeat(2, 1fr); }
+  .size-showcase-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 991px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-col-full { grid-column: auto; }
+
+  .section { padding-block: var(--space-2xl); }
+
+  .process-steps {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .process-steps::before {
+    top: 0;
+    bottom: 0;
+    left: 23px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  [dir="rtl"] .process-steps::before {
+    left: auto;
+    right: 23px;
+  }
+
+  .process-step {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  [dir="rtl"] .process-step { text-align: right; }
+
+  .process-step__content { text-align: left; }
+  [dir="rtl"] .process-step__content { text-align: right; }
+
+  .hero-split { grid-template-columns: 1fr; min-height: auto; }
+  .hero-image-col { height: 380px; }
+
+  .hero-fullbleed { min-height: 680px; }
+
+  .spec-drawer { width: 100%; max-width: 100%; }
+
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-legal { justify-content: center; }
+
+  .date-time-row { grid-template-columns: 1fr; }
+
+  .compare-table { overflow-x: auto; }
+}
+
+/* ── iPad Mini (768x1024) & iPad Pro (1024x1366) Odd Grid Alignment ──
+   When a section grid has an odd number of items, align the last grid
+   card into the center without changing its card size. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #size-matters .size-visualizer > div:first-child {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  #size-matters .visualizer-controls,
+  #size-matters .visualizer-select {
+    width: min(100%, 460px);
+  }
+
+  #size-matters .visualizer-split,
+  #size-matters .visualizer-planning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #size-matters .visualizer-spotlight-col {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  #size-matters .visualizer-planning-item {
+    min-height: 0;
+  }
+
+  /* Keep the protection bento visually balanced when it collapses on tablets. */
+  #what-protecting .protection-bento .prot-cell,
+  #what-protecting .protection-bento .prot-cell--img .overlay-content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #what-protecting .protection-bento .prot-cell > p {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  #what-protecting .protection-bento .btn-arrow {
+    align-self: center;
+    justify-content: center;
+  }
+
+  #what-protecting .protection-bento .prot-proof-grid {
+    width: 100%;
+  }
+
+  #what-protecting .protection-bento .prot-proof-item {
+    text-align: center;
+  }
+
+  .safe-finder .finder-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .products-grid,
+  .featured-grid,
+  .install-example-grid,
+  .pricing-tiers-grid,
+  .maintenance-grid,
+  .anchor-tech-grid,
+  .size-showcase-grid {
+    --grid-gap: 18px;
+    gap: var(--grid-gap);
+  }
+
+  /* Center the last card in odd-numbered grids while preserving exact card size */
+  .grid-2 > :last-child:nth-child(odd),
+  .grid-3 > :last-child:nth-child(odd),
+  .grid-4 > :last-child:nth-child(odd),
+  .grid-auto > :last-child:nth-child(odd),
+  .products-grid:not(.list-view) > :last-child:nth-child(odd),
+  .products-grid:not(.list-view) > .grid-last-odd,
+  .featured-grid > :last-child:nth-child(odd),
+  .install-example-grid > :last-child:nth-child(odd),
+  .pricing-tiers-grid > :last-child:nth-child(odd),
+  .maintenance-grid > :last-child:nth-child(odd),
+  .anchor-tech-grid > :last-child:nth-child(odd),
+  .size-showcase-grid > :last-child:nth-child(odd),
+  .contact-cards-grid > :last-child:nth-child(odd),
+  .section .grid > :last-child:nth-child(odd),
+  .section [class*="grid-"]:not(.footer-grid):not(.category-selector):not(.protection-bento):not(.portfolio-grid):not(.anatomy-grid):not(.lock-types-grid) > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    margin-inline: auto !important;
+    width: calc((100% - var(--grid-gap, 18px)) / 2) !important;
+    max-width: calc((100% - var(--grid-gap, 18px)) / 2) !important;
+    box-sizing: border-box !important;
+  }
+}

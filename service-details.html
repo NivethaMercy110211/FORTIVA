@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Bespoke Vault Room &amp; Safe Room Integration | FORTIVA</title>
+  <meta name="description" content="Custom residential vault room architecture, modular fortified wall panels, and certified vault doors engineered for private residences and family security.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/editorial.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <style>
+    .vault-hero {
+      padding: calc(var(--space-2xl) + 20px) 0 var(--space-xl);
+      background: linear-gradient(135deg, #0d151a 0%, #16242c 100%);
+      color: var(--white);
+      position: relative;
+    }
+    .vault-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    .vault-feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    [data-theme="dark"] .vault-feature-card {
+      background: var(--dark-cards);
+      border-color: var(--dark-border);
+    }
+    @media (max-width: 991px) {
+      .vault-feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="stylesheet" href="css/compact.css">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="header-logo" aria-label="FORTIVA — Home">
+          <div class="logo-mark">
+            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M22 2L38 10V26C38 34.8 31 42 22 42C13 42 6 34.8 6 26V10L22 2Z" fill="#203B4A" stroke="#B49464" stroke-width="1.5"/>
+              <path d="M22 6L34 13V26C34 33.2 28.6 39.2 22 39.2C15.4 39.2 10 33.2 10 26V13L22 6Z" fill="#162D39"/>
+              <text x="22" y="28" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="16" font-weight="800" fill="#B49464">F</text>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-brand">Fortiva</span>
+            <span class="logo-tagline">Secure Living</span>
+          </div>
+        </a>
+        <nav class="header-nav" role="navigation" aria-label="Main navigation">
+          <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+          <div class="nav-item"><a href="home2.html" class="nav-link">Home 2</a></div>
+          <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+          <div class="nav-item"><a href="products.html" class="nav-link">Products</a></div>
+          <div class="nav-item"><a href="installation.html" class="nav-link">Installation</a></div>
+          <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></div>
+          <div class="nav-item"><a href="security-guide.html" class="nav-link">Security Guide</a></div>
+
+          <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+        </nav>
+        <div class="header-actions">
+          <button class="toggle-btn" data-theme-toggle title="Toggle dark mode" aria-label="Toggle dark mode">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <button class="toggle-btn" data-rtl-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction">
+            <i class="fas fa-align-right" aria-hidden="true"></i>
+          </button>
+          <a href="book-consultation.html" class="btn btn-primary btn-sm" id="btn-book-consultation">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Consultation
+          </a>
+          <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+      <div class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="home2.html" class="mobile-nav-link">Home 2</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <a href="products.html" class="mobile-nav-link">Products</a>
+        <a href="installation.html" class="mobile-nav-link">Installation</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing Guide</a>
+        <a href="security-guide.html" class="mobile-nav-link">Security Guide</a>
+
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+      </div>
+      <div class="mobile-menu-footer">
+        <a href="book-consultation.html" class="btn btn-primary btn-block"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Consultation</a>
+      </div>
+    </nav>
+  </header>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- ═══════════════════════════ MAIN CONTENT ═══════════════════════════ -->
+  <main id="main-content">
+    
+    <!-- Hero -->
+    <section class="vault-hero page-image-banner" style="--page-image:url('../assets/images/cta/home-2.png');">
+      <div class="container text-center">
+        <div style="max-width: 780px; margin: 0 auto; text-align: center;">
+          <div class="badge badge-brass" style="margin-bottom:16px;">Architectural Security Solutions</div>
+          <h1 style="color:var(--white); font-size:clamp(2.2rem, 3.6vw, 3.2rem); font-weight:800; line-height:1.15; margin-bottom:16px;">
+            Bespoke Residential Vault Rooms &amp; Reinforced Sanctuaries
+          </h1>
+          <p style="color:rgba(255,255,255,0.8); font-size:1.1rem; line-height:1.7; margin-bottom:28px;">
+            When individual safes cannot accommodate private horology galleries, fine art, or high-capacity family protection, FORTIVA designs and installs modular certified vault rooms seamlessly embedded into luxury residences.
+          </p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+            <a href="book-consultation.html?service=vault-room" class="btn btn-primary btn-lg">
+              <i class="fas fa-user-shield"></i> Commission Architectural Consultation
+            </a>
+            <a href="products.html" class="btn btn-outline btn-lg" style="color:var(--white); border-color:rgba(255,255,255,0.3);">
+              View Vault Doors
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Core Pillars of Residential Vaults -->
+    <section class="section">
+      <div class="container">
+        
+        <div class="text-center" style="max-width:680px; margin:0 auto var(--space-2xl);">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-line"></span>
+            <span class="hero-eyebrow-text">Total Perimeter Defense</span>
+          </div>
+          <h2 style="font-size:clamp(1.8rem, 3vw, 2.4rem); font-weight:800; color:var(--text-heading); margin-bottom:12px;">
+            Engineered from Modular FortiPanels™
+          </h2>
+          <p style="color:var(--text-body); font-size:0.95rem; line-height:1.7;">
+            Our modular vault panel system allows high-security walk-in rooms to be erected inside existing basements, master dressing suites, or newly designed residential wings without structural demolition.
+          </p>
+        </div>
+
+        <div class="vault-feature-grid">
+          
+          <div class="vault-feature-card">
+            <div style="width:48px; height:48px; border-radius:var(--radius-md); background:rgba(180,148,100,0.1); color:var(--brass); display:flex; align-items:center; justify-content:center; font-size:1.4rem;">
+              <i class="fas fa-cubes"></i>
+            </div>
+            <h3 style="font-size:1.2rem; font-weight:700; color:var(--text-heading);">Modular Interlocking Panels</h3>
+            <p style="font-size:0.9rem; color:var(--text-body); line-height:1.6; margin:0;">
+              Interlocking 100 mm to 200 mm composite panels manufactured with micro-reinforced fiber concrete, corundum carbide, and continuous internal anti-drill mesh. Tested to EN 1143-1 Vault Standards (Class 1 to Class 5).
+            </p>
+          </div>
+
+          <div class="vault-feature-card">
+            <div style="width:48px; height:48px; border-radius:var(--radius-md); background:rgba(180,148,100,0.1); color:var(--brass); display:flex; align-items:center; justify-content:center; font-size:1.4rem;">
+              <i class="fas fa-door-closed"></i>
+            </div>
+            <h3 style="font-size:1.2rem; font-weight:700; color:var(--text-heading);">Certified Vault Doors</h3>
+            <p style="font-size:0.9rem; color:var(--text-body); line-height:1.6; margin:0;">
+              Precision-hung steel vault doors weighing up to 900 kg engineered with quad-directional locking bolts, Sargent &amp; Greenleaf mechanical dials, and biometric authentication. Can be faced with matching woodwork.
+            </p>
+          </div>
+
+          <div class="vault-feature-card">
+            <div style="width:48px; height:48px; border-radius:var(--radius-md); background:rgba(180,148,100,0.1); color:var(--brass); display:flex; align-items:center; justify-content:center; font-size:1.4rem;">
+              <i class="fas fa-wind"></i>
+            </div>
+            <h3 style="font-size:1.2rem; font-weight:700; color:var(--text-heading);">Life Support &amp; Redundancy</h3>
+            <p style="font-size:0.9rem; color:var(--text-body); line-height:1.6; margin:0;">
+              Integrated positive-pressure HEPA air filtration system, concealed ballistic exhaust louvers, uninterruptible power supply (UPS), internal duress communication lines, and climate-controlled humidity regulation.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Architectural Collaboration Process -->
+    <section class="section" style="background:var(--ivory); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="container">
+        
+        <div class="editorial-split-grid" style="align-items:center;">
+          <div>
+            <div class="section-header" style="text-align: center; margin-bottom: 16px;">
+              <div class="badge badge-brass" style="margin-bottom:12px;">Architects &amp; Designers</div>
+              <h2 style="font-size:clamp(1.8rem, 3vw, 2.3rem); font-weight:800; color:var(--text-heading); margin-bottom:14px;">
+                Seamless Interior Harmonization
+              </h2>
+            </div>
+            <p style="color:var(--text-body); font-size:0.95rem; line-height:1.7; margin-bottom:16px;">
+              A vault room does not have to resemble a sterile concrete bunker. FORTIVA collaborates directly with leading residential interior design firms and private architects to disguise vault perimeters behind bespoke millwork, leather paneling, and discreet mirror doors.
+            </p>
+            <ul style="list-style:none; padding:0; margin:0 0 24px 0; display:flex; flex-direction:column; gap:10px;">
+              <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; font-weight:600; color:var(--text-heading);">
+                <i class="fas fa-check" style="color:var(--brass);"></i> Motorized hidden bookcase &amp; panel entrances
+              </li>
+              <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; font-weight:600; color:var(--text-heading);">
+                <i class="fas fa-check" style="color:var(--brass);"></i> Custom velvet jewelry islands with LED horology displays
+              </li>
+              <li style="display:flex; align-items:center; gap:10px; font-size:0.9rem; font-weight:600; color:var(--text-heading);">
+                <i class="fas fa-check" style="color:var(--brass);"></i> Full architectural BIM / Revit 3D CAD coordination
+              </li>
+            </ul>
+            <a href="book-consultation.html?service=vault-room" class="btn btn-primary">
+              <i class="fas fa-compass"></i> Request Architect Resource Pack
+            </a>
+          </div>
+
+          <div style="border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--border-color); box-shadow:var(--shadow-md);">
+            <img src="assets/images/interiors/study-cabinet.jpg" alt="Luxury study with concealed vault door" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Consultation CTA -->
+    <section class="section page-image-cta" style="--page-image:url('../assets/images/cta/cta-service-details.jpg');">
+      <div class="container text-center">
+        <div style="max-width:700px; margin:0 auto;">
+          <h2 style="color:var(--white); font-size:clamp(1.8rem, 3vw, 2.4rem); font-weight:800; margin-bottom:12px;">
+            Confidential Vault Room Commissioning
+          </h2>
+          <p style="color:rgba(255,255,255,0.8); font-size:1rem; line-height:1.7; margin-bottom:28px;">
+            Consult with our Director of Structural Engineering under a strict bilateral non-disclosure agreement.
+          </p>
+          <a href="book-consultation.html" class="btn btn-primary btn-lg">
+            <i class="fas fa-calendar-check"></i> Book Private Survey
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="header-logo" aria-label="FORTIVA — Home" style="margin-bottom:16px;display:inline-flex;">
+            <div class="logo-mark">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M22 2L38 10V26C38 34.8 31 42 22 42C13 42 6 34.8 6 26V10L22 2Z" fill="#203B4A" stroke="#B49464" stroke-width="1.5"/>
+                <path d="M22 6L34 13V26C34 33.2 28.6 39.2 22 39.2C15.4 39.2 10 33.2 10 26V13L22 6Z" fill="#162D39"/>
+                <text x="22" y="28" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="16" font-weight="800" fill="#B49464">F</text>
+              </svg>
+            </div>
+            <div class="logo-text">
+              <span class="logo-brand">Fortiva</span>
+              <span class="logo-tagline">Secure Living</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">Premium residential safe and vault installation. Protecting what matters most with engineered precision and professional care.</p>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item"><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+441234567890">+44 (0) 1234 567 890</a></li>
+            <li class="footer-contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:enquiries@fortiva.co.uk">enquiries@fortiva.co.uk</a></li>
+            <li class="footer-contact-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>12 Meridian House, London, EC2A 4PT</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Our Solutions</h3>
+          <ul class="footer-nav-list">
+            <li><a href="service-details.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Modular Vault Rooms</a></li>
+            <li><a href="products.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Residential Vault Doors</a></li>
+            <li><a href="installation.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Structural Concrete Anchoring</a></li>
+            <li><a href="service-details.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Panic Room Systems</a></li>
+            <li><a href="book-consultation.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Private Site Surveys</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Company</h3>
+          <ul class="footer-nav-list">
+            <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Fortiva</a></li>
+            <li><a href="home2.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home 2</a></li>
+            <li><a href="security-guide.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Security Guide</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Pricing Guide</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Opening Hours</h3>
+          <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);line-height:1.9;margin:0;">
+            Monday – Friday: 8:00 AM – 6:00 PM<br>
+            Saturday: 9:00 AM – 4:00 PM<br>
+            Sunday: Private Appointments Only<br>
+            24/7 Rapid Emergency Response
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Fortiva Safe &amp; Vault Solutions Ltd. All rights reserved.</p>
+        <nav class="footer-legal">
+          <a href="#">Privacy Protocol &amp; NDA</a>
+          <a href="#">Terms of Security Supply</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

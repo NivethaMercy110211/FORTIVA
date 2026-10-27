@@ -1,0 +1,549 @@
+/* ============================================================
+   FORTIVA — mobile.css — 360px–767px
+   ============================================================ */
+
+@media (max-width: 767px) {
+  :root {
+    --container-pad: 16px;
+    --space-3xl: 48px;
+    --space-2xl: 36px;
+    --space-xl: 24px;
+  }
+
+  /* ── Mobile Menu Drawer ── */
+  .site-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(246, 245, 241, 0.98) !important;
+  }
+  [data-theme="dark"] .site-header {
+    background: rgba(16, 26, 32, 0.98) !important;
+  }
+  .mobile-menu {
+    position: fixed !important;
+    top: 72px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 72px) !important;
+    height: calc(100dvh - 72px) !important;
+    background: var(--bg-page) !important;
+    z-index: 99999 !important;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+  }
+  [data-theme="dark"] .mobile-menu {
+    background: #101A20 !important;
+  }
+  .mobile-menu.open {
+    display: block !important;
+    transform: translateX(0) !important;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     1. ALL OVER WEBSITE: SECTION NAMES & HEADINGS CENTERED
+     ════════════════════════════════════════════════════════════ */
+  h1, h2, h3, h4, h5, h6,
+  .section-title,
+  .section-header,
+  .section-eyebrow,
+  .hero-eyebrow,
+  .hero-eyebrow-text,
+  .page-hero__title,
+  .page-hero__eyebrow,
+  .page-hero__desc,
+  .section-desc,
+  .brass-divider,
+  .custom-section-title,
+  .guide-section-block h2 {
+    text-align: center !important;
+    margin-inline: auto !important;
+    justify-content: center !important;
+  }
+
+  .section-header,
+  .section-header--center {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: var(--space-xl) !important;
+  }
+
+  .section-eyebrow,
+  .hero-eyebrow {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  .brass-divider {
+    margin-inline: auto !important;
+  }
+
+  .section-desc {
+    max-width: 100% !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* Keep section introductions clear of the fixed mobile navigation. */
+  main > section[id],
+  main > [id] {
+    scroll-margin-top: 96px;
+  }
+
+  main > section {
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+  }
+
+  /* Section-level clip paths create competing mobile stacking contexts and can
+     paint the previous grid over the next heading during reverse scrolling. */
+  .motion-ready main > .section-motion,
+  .motion-ready main > .section-motion.motion-visible {
+    clip-path: none !important;
+  }
+
+  .section > .container > .section-header,
+  .section > .container > .flex-between,
+  .section > .container > .text-center:first-child {
+    position: relative;
+    z-index: 3;
+    overflow: visible;
+  }
+
+  .section > .container > .section-header .section-title,
+  .section > .container > .flex-between .section-title,
+  .section > .container > .text-center:first-child .section-title {
+    scroll-margin-top: 104px;
+  }
+
+  .guide-section-block h2::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  [dir="rtl"] .guide-section-block h2::after {
+    right: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .page-hero__inner,
+  .about-hero .container > div,
+  .pricing-hero-inner,
+  .vault-hero .container > div,
+  .contact-hero .container > div,
+  .faq-hero .container > div,
+  .page-image-banner .container > div,
+  .page-image-cta .container > div {
+    margin-inline: auto !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     2. EVERY GRID: ALIGN ONE BY ONE (1 COLUMN) WITHOUT OVERLAP
+     ════════════════════════════════════════════════════════════ */
+  
+  /* Generic & System Grids */
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-auto {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  /* Page & Component Specific Grids */
+  .category-selector,
+  .featured-grid,
+  .protection-bento,
+  .prot-proof-grid,
+  .spec-explainer,
+  .install-example-grid,
+  .anatomy-grid,
+  .space-grid,
+  .compare-selector,
+  .maintenance-grid,
+  .portfolio-grid,
+  .bento-grid,
+  .hero-spec-strip-cards,
+  .hero-showcase__grid,
+  .split-section,
+  .stats-row,
+  .finder-options,
+  .visualizer-planning-grid,
+  .visualizer-split,
+  .size-showcase-grid,
+  .products-grid,
+  .products-layout,
+  .product-hero-grid,
+  .pricing-tiers-grid,
+  .calc-grid,
+  .lock-types-grid,
+  .guide-layout,
+  .feasibility-grid,
+  .anchor-tech-grid,
+  .vault-feature-grid,
+  .contact-grid-main,
+  .footer-grid,
+  .form-grid,
+  .date-time-row,
+  .editorial-split-grid,
+  .form-grid-2,
+  [style*="grid-template-columns"],
+  div[style*="grid-template-columns"],
+  [style*="display:grid"],
+  [style*="display: grid"],
+  .form-row[style*="grid"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  /* Reset all grid children spans to 1 column without overflow */
+  .grid > *,
+  .grid-2 > *,
+  .grid-3 > *,
+  .grid-4 > *,
+  .grid-auto > *,
+  .category-selector > *,
+  .featured-grid > *,
+  .protection-bento > *,
+  .prot-proof-grid > *,
+  .spec-explainer > *,
+  .install-example-grid > *,
+  .anatomy-grid > *,
+  .space-grid > *,
+  .compare-selector > *,
+  .maintenance-grid > *,
+  .portfolio-grid > *,
+  .bento-grid > *,
+  .hero-spec-strip-cards > *,
+  .split-section > *,
+  .stats-row > *,
+  .products-grid > *,
+  .pricing-tiers-grid > *,
+  .calc-grid > *,
+  .lock-types-grid > *,
+  .feasibility-grid > *,
+  .anchor-tech-grid > *,
+  .vault-feature-grid > *,
+  .footer-grid > *,
+  .form-grid > *,
+  [class*="span-"],
+  .prot-cell,
+  .bento-cell,
+  .portfolio-item,
+  .spec-exp-cell,
+  .anatomy-cell,
+  .form-col-full,
+  .tier-card,
+  .pillar-card,
+  .cat-card,
+  .featured-card,
+  .anchor-card,
+  .lock-type-card,
+  .vault-feature-card,
+  .space-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Specific Card Layout Corrections to prevent overlap */
+  .spec-exp-cell:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .prot-cell--img {
+    min-height: 220px !important;
+    position: relative !important;
+  }
+  .prot-cell--img .overlay-content {
+    position: relative !important;
+    background: linear-gradient(to top, rgba(16,26,32,0.96) 0%, rgba(16,26,32,0.85) 100%) !important;
+    padding: 20px !important;
+  }
+  .prot-cell--img img {
+    position: relative !important;
+    height: 180px !important;
+    width: 100% !important;
+  }
+
+  .space-card {
+    min-height: 250px !important;
+  }
+  .space-card img {
+    height: 100% !important;
+  }
+
+  .portfolio-item img {
+    min-height: 220px !important;
+  }
+
+  .bento-cell {
+    min-height: 220px !important;
+  }
+  .bento-cell__image {
+    min-height: 200px !important;
+  }
+
+  .cat-card {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    text-align: center !important;
+    background: var(--bg-card) !important;
+  }
+  .cat-card-image {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .cat-card-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 14px 14px !important;
+    text-align: center !important;
+    background: var(--bg-card) !important;
+  }
+  .cat-card-label {
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    color: var(--text-heading) !important;
+    margin-bottom: 2px !important;
+  }
+  .cat-card-count {
+    font-size: 0.78rem !important;
+    color: var(--text-body) !important;
+  }
+
+  .stat-trio {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px 28px !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+  }
+  .stat-trio > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    flex: 1 1 90px !important;
+    max-width: 150px !important;
+  }
+
+  /* Center all brass badges in mobile view across every page */
+  .badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
+  .badge--brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
+  .badge.badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge) {
+    display: flex !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .stats-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  .resource-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .cad-download-strip {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+  .cad-download-strip .btn {
+    width: 100% !important;
+  }
+
+  /* Section Padding */
+  .section { padding-block: var(--space-2xl); }
+
+  /* Products */
+  .products-grid.list-view .product-card { flex-direction: column; }
+  .products-grid.list-view .product-card__image { width: 100%; aspect-ratio: 4/3; }
+  .toolbar-right { gap: var(--space-sm); width: 100%; justify-content: space-between; }
+  .toolbar-view { display: none; }
+
+  /* Forms */
+  .form-card { padding: var(--space-lg); }
+
+  /* Header */
+  .header-inner { grid-template-columns: 1fr auto; }
+  .header-nav { display: none; }
+  .header-actions .btn { display: none; }
+  .mobile-toggle { display: flex; }
+
+  /* Hero */
+  .hero-split { grid-template-columns: 1fr; min-height: auto; }
+  .hero-image-col { height: 260px; order: -1; }
+  .hero-content { padding: var(--space-2xl) var(--container-pad); }
+  .hero-text-col { padding: 0; }
+  .hero-fullbleed { min-height: 540px; padding-top: 72px; }
+
+  .tech-strip .container { max-width: 100%; overflow: hidden; }
+  .tech-strip-inner { max-width: 100%; }
+
+  /* Process Steps */
+  .process-steps {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+  .process-steps::before {
+    top: 0; bottom: 0; left: 23px; right: auto; width: 1px; height: auto;
+  }
+  .process-step { flex-direction: row; text-align: left; gap: var(--space-md); }
+  [dir="rtl"] .process-step { text-align: right; }
+  [dir="rtl"] .process-steps::before { left: auto; right: 23px; }
+
+  /* Footer */
+  .footer-grid > *,
+  .footer-brand,
+  .footer-col { text-align: start; }
+  .footer-col-title {
+    width: 100%;
+    text-align: start !important;
+    margin-inline: 0 !important;
+    justify-content: flex-start !important;
+  }
+  .footer-col-title::after {
+    left: 0;
+    right: auto;
+  }
+  [dir="rtl"] .footer-col-title::after {
+    left: auto;
+    right: 0;
+  }
+  .footer-logo { justify-content: flex-start; }
+  .footer-brand-desc { margin-inline: 0; }
+  .footer-social,
+  .footer-contact-list,
+  .footer-certs { align-items: flex-start; justify-content: flex-start; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; text-align: start; }
+  .footer-legal { justify-content: flex-start; flex-wrap: wrap; gap: var(--space-md); }
+
+  /* CTA Group */
+  .cta-group { flex-direction: column; align-items: stretch; width: 100%; }
+  .cta-group .btn { width: 100%; justify-content: center; }
+
+  /* Spec Drawer */
+  .spec-drawer { width: 100%; bottom: 0; top: auto; right: 0; height: 90vh; transform: translateY(100%); border-left: none; border-top: 1px solid var(--border-color); }
+  .spec-drawer.open { transform: translateY(0); }
+
+  /* Compare Bar */
+  .compare-bar { flex-direction: column; gap: var(--space-sm); padding: var(--space-md) var(--container-pad); }
+  .compare-bar-items { flex-wrap: wrap; }
+  .product-card__compare { opacity: 1; }
+
+  /* Tables horizontal scroll wrapper */
+  .size-compare-table-wrap,
+  .table-responsive,
+  .compare-table,
+  .size-compare-table,
+  .guide-table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Pricing */
+  .pricing-table-header { font-size: 0.7rem; }
+  .quote-stepper { gap: 0; }
+  .quote-step-label { display: none; }
+
+  /* Toast */
+  .toast { left: 16px; right: 16px; bottom: 16px; max-width: 100%; }
+
+  /* Filter Sidebar */
+  .filter-mobile-toggle { display: flex !important; }
+  .filters-panel { display: none; }
+  .filters-panel.mobile-open { display: block; position: fixed; inset: 0; z-index: var(--z-overlay); overflow-y: auto; border-radius: 0; }
+  .filters-mobile-close { display: inline-flex; }
+  .active-filters { margin-bottom: var(--space-md); }
+}
+
+/* ════════════════════════════════════════════════════════════
+   3. MOBILE VIEWPORT 360px × 740px OPTIMIZATIONS
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 360px) {
+  :root {
+    --container-pad: 12px;
+  }
+  body, html, main, .container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  h1 { font-size: 1.65rem !important; }
+  h2 { font-size: 1.35rem !important; }
+  h3 { font-size: 1.1rem !important; }
+  .btn { padding: 11px 16px !important; font-size: 0.82rem !important; }
+  .btn-xl { padding: 14px 22px !important; font-size: 0.88rem !important; }
+  .card__body,
+  .product-card__body,
+  .pricing-card,
+  .form-card,
+  .guide-card,
+  .installation-card,
+  .pillar-card,
+  .tier-card,
+  .anchor-card,
+  .lock-type-card,
+  .vault-feature-card {
+    padding: 14px !important;
+  }
+  .cat-card {
+    padding: 0 !important;
+  }
+  .cat-card-label {
+    font-size: 0.88rem !important;
+  }
+}
+@media (max-width: 767px) {
+  .credential-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-card {
+    width: 100%;
+  }
+}

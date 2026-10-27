@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="relock-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101A20"/>
+      <stop offset="100%" stop-color="#162D39"/>
+    </linearGradient>
+    <linearGradient id="brass-bolt" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8A6E43"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8A6E43"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#relock-bg)" rx="16"/>
+
+  <!-- Header -->
+  <text x="40" y="50" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#F5F7F7">TEMPERED GLASS PLATE RELOCKER MECHANISM</text>
+  <text x="40" y="74" font-family="'Manrope', sans-serif" font-size="13" font-weight="600" fill="#B49464">PASSIVE ATTACK DETECTION &amp; PERMANENT DEADBOLT TRIGGER</text>
+
+  <!-- Door Frame Outline -->
+  <rect x="60" y="100" width="680" height="300" rx="10" fill="#1A2931" stroke="#243744" stroke-width="2"/>
+
+  <!-- Main Active Bolt Bar -->
+  <rect x="100" y="230" width="600" height="40" rx="4" fill="#2A3D4A" stroke="#3E5869" stroke-width="1.5"/>
+  <text x="400" y="255" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" fill="#C3D0D4">PRIMARY MULTI-DIRECTIONAL BOLTWORK CARRIAGE</text>
+
+  <!-- Locking Bolts -->
+  <rect x="700" y="160" width="50" height="36" rx="6" fill="url(#brass-bolt)"/>
+  <rect x="700" y="232" width="50" height="36" rx="6" fill="url(#brass-bolt)"/>
+  <rect x="700" y="304" width="50" height="36" rx="6" fill="url(#brass-bolt)"/>
+  <text x="725" y="360" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" font-weight="700" fill="#B49464">40mm BOLTS</text>
+
+  <!-- Glass Plate Area -->
+  <g transform="translate(240, 140)">
+    <!-- Glass Plate Frame -->
+    <rect x="0" y="0" width="220" height="150" rx="6" fill="rgba(180, 210, 230, 0.12)" stroke="#67B8DE" stroke-width="2" stroke-dasharray="8 4"/>
+    <text x="110" y="40" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#8CE0FF">OPTICAL TEMPERED GLASS PLATE</text>
+    <text x="110" y="60" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#C3D0D4">Shatters upon mechanical drill impact</text>
+
+    <!-- Spring Cable Tension Lines -->
+    <path d="M 20,75 L 200,75" stroke="#E74C3C" stroke-width="2" stroke-dasharray="4 2"/>
+    <text x="110" y="95" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" font-weight="700" fill="#E74C3C">HIGH-TENSILE SPRING CABLE NETWORK</text>
+
+    <!-- Electronic Lock Position Behind Plate -->
+    <rect x="60" y="110" width="100" height="30" rx="4" fill="#203B4A" stroke="#B49464"/>
+    <text x="110" y="130" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" font-weight="700" fill="#F5F7F7">VdS LOCK BODY</text>
+  </g>
+
+  <!-- Independent Deadlock Pins (Relockers) -->
+  <g transform="translate(520, 160)">
+    <rect x="0" y="0" width="30" height="60" rx="4" fill="#E74C3C" stroke="#FFFFFF" stroke-width="1.5"/>
+    <!-- Compressed Spring Symbol -->
+    <path d="M 15,-30 L 15,0" stroke="#E67E22" stroke-width="3" stroke-dasharray="3 3"/>
+    <text x="45" y="25" font-family="'Manrope', sans-serif" font-size="11" font-weight="800" fill="#E74C3C">RELOCKER PIN A</text>
+    <text x="45" y="40" font-family="'Manrope', sans-serif" font-size="9" fill="#C3D0D4">Spring fires instantly into carriage</text>
+  </g>
+
+  <g transform="translate(160, 280)">
+    <rect x="0" y="0" width="30" height="60" rx="4" fill="#E74C3C" stroke="#FFFFFF" stroke-width="1.5"/>
+    <text x="45" y="25" font-family="'Manrope', sans-serif" font-size="11" font-weight="800" fill="#E74C3C">RELOCKER PIN B</text>
+    <text x="45" y="40" font-family="'Manrope', sans-serif" font-size="9" fill="#C3D0D4">Thermal fuse triggers at 84°C torch heat</text>
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="steel-outer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#162D39"/>
+      <stop offset="100%" stop-color="#203B4A"/>
+    </linearGradient>
+    <linearGradient id="concrete-mat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2C3E4A"/>
+      <stop offset="50%" stop-color="#3A4E5C"/>
+      <stop offset="100%" stop-color="#233440"/>
+    </linearGradient>
+    <linearGradient id="manganese-plate" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8A6E43"/>
+      <stop offset="50%" stop-color="#B49464"/>
+      <stop offset="100%" stop-color="#8A6E43"/>
+    </linearGradient>
+    <pattern id="corundum-grain" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1.5" fill="#4B6070" opacity="0.6"/>
+      <circle cx="14" cy="8" r="2" fill="#B49464" opacity="0.4"/>
+      <circle cx="8" cy="16" r="1.5" fill="#162D39" opacity="0.7"/>
+      <circle cx="16" cy="16" r="1" fill="#FFFFFF" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="#101A20" rx="16"/>
+
+  <!-- Title & Meta -->
+  <text x="40" y="50" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#F5F7F7">FORTICORE™ BARRIER COMPOSITE MATRIX</text>
+  <text x="40" y="74" font-family="'Manrope', sans-serif" font-size="13" font-weight="500" fill="#B49464">EN 1143-1 GRADE III CROSS-SECTIONAL ARCHITECTURE</text>
+
+  <!-- Exploded Layers Diagram -->
+  <!-- Layer 1: Ballistic Outer Armor (6mm) -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="80" height="260" rx="6" fill="url(#steel-outer)" stroke="#B49464" stroke-width="1.5"/>
+    <text x="40" y="290" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" fill="#F5F7F7">LAYER 01</text>
+    <text x="40" y="306" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#95A8B2">Cold-Rolled</text>
+    <text x="40" y="320" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#95A8B2">Ballistic Steel (6mm)</text>
+  </g>
+
+  <!-- Connector Line -->
+  <line x1="140" y1="240" x2="180" y2="240" stroke="#B49464" stroke-dasharray="4 4" stroke-width="1.5"/>
+
+  <!-- Layer 2: FortiCore Micro-Silica Concrete (70mm) -->
+  <g transform="translate(180, 110)">
+    <rect x="0" y="0" width="220" height="260" rx="6" fill="url(#concrete-mat)"/>
+    <rect x="0" y="0" width="220" height="260" rx="6" fill="url(#corundum-grain)"/>
+    <rect x="0" y="0" width="220" height="260" rx="6" fill="none" stroke="#3A5364" stroke-width="1.5"/>
+    <text x="110" y="290" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" fill="#B49464">LAYER 02 (CORE)</text>
+    <text x="110" y="306" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#F5F7F7">FortiCore™ Micro-Silica Concrete</text>
+    <text x="110" y="320" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#95A8B2">Corundum Carbide Aggregates (Mohs 9)</text>
+  </g>
+
+  <!-- Connector Line -->
+  <line x1="400" y1="240" x2="440" y2="240" stroke="#B49464" stroke-dasharray="4 4" stroke-width="1.5"/>
+
+  <!-- Layer 3: Anti-Drill Manganese Plate (12mm) -->
+  <g transform="translate(440, 110)">
+    <rect x="0" y="0" width="90" height="260" rx="6" fill="url(#manganese-plate)"/>
+    <text x="45" y="290" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" fill="#F5F7F7">LAYER 03</text>
+    <text x="45" y="306" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#B49464">Work-Hardening</text>
+    <text x="45" y="320" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#95A8B2">Manganese Alloy</text>
+  </g>
+
+  <!-- Connector Line -->
+  <line x1="530" y1="240" x2="570" y2="240" stroke="#B49464" stroke-dasharray="4 4" stroke-width="1.5"/>
+
+  <!-- Layer 4: Thermal & Acoustic Seal + Inner Wall -->
+  <g transform="translate(570, 110)">
+    <rect x="0" y="0" width="150" height="260" rx="6" fill="#1A2931" stroke="#2B404E" stroke-width="1.5"/>
+    <rect x="15" y="20" width="120" height="220" rx="4" fill="#131F26" stroke="#B49464" stroke-dasharray="3 3"/>
+    <text x="75" y="120" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" fill="#B49464">CABINETRY</text>
+    <text x="75" y="138" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#C3D0D4">Walnut &amp; Suede</text>
+    <text x="75" y="290" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="11" font-weight="700" fill="#F5F7F7">INTERIOR</text>
+    <text x="75" y="306" text-anchor="middle" font-family="'Manrope', sans-serif" font-size="10" fill="#95A8B2">Climate Insulated</text>
+  </g>
+
+  <!-- Attack Vector Annotations -->
+  <path d="M 30,170 L 60,170" stroke="#E74C3C" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="35" y="160" font-family="'Manrope', sans-serif" font-size="9" font-weight="800" fill="#E74C3C">CORE DRILL ATTACK</text>
+  <path d="M 30,240 L 60,240" stroke="#E67E22" stroke-width="2.5"/>
+  <text x="35" y="230" font-family="'Manrope', sans-serif" font-size="9" font-weight="800" fill="#E67E22">THERMAL TORCH</text>
+</svg>

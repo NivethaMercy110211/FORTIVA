@@ -359,6 +359,58 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
   }
 }
 
+/* Products page tablet layout: keep the controls and cards on the full
+   available row instead of allowing intrinsic content to shrink the grid. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .products-layout,
+  .products-content,
+  .products-toolbar,
+  .products-grid:not(.list-view) {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  .products-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .products-content {
+    justify-self: stretch !important;
+  }
+
+  .filter-mobile-toggle {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .products-toolbar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .products-grid:not(.list-view) {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  .products-grid:not(.list-view) > .product-card {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .products-grid:not(.list-view) > .product-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: calc((100% - 18px) / 2) !important;
+    max-width: calc((100% - 18px) / 2) !important;
+  }
+}
+
 @media (max-width: 360px) {
   :root {
     --container-pad: 12px;

@@ -95,7 +95,183 @@
 /* ── iPad Mini (768x1024) & iPad Pro (1024x1366) Odd Grid Alignment ──
    When a section grid has an odd number of items, align the last grid
    card into the center without changing its card size. */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Center the final odd field only when the form resolves to two columns. */
+  #feasibility .feasibility-grid > div:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - var(--space-lg)) / 2);
+    min-width: 0;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1199px) {
+  /* Keep the image-overlay eyebrow readable over every photograph. */
+  #what-protecting .prot-cell--img .overlay-content > span {
+    display: inline-flex;
+    align-self: center;
+    width: fit-content;
+    padding: 6px 12px;
+    border: 1px solid rgba(245, 210, 150, 0.7);
+    border-radius: 999px;
+    background: rgba(7, 16, 22, 0.86);
+    color: #F5D296 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  }
+
+  /* Align headings and copy across the three technical-detail cards. */
+  #engineered .spec-exp-cell:not(:first-child) > div:last-child {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  #engineered .spec-exp-cell:not(:first-child) h4 {
+    min-height: 2.8em;
+    margin-bottom: 10px;
+    text-wrap: balance;
+  }
+
+  #engineered .spec-exp-cell:not(:first-child) p {
+    flex: 1;
+    min-height: 10.2em;
+  }
+
+  /* Certification pills use one consistent two-line footprint. */
+  .contact-protocol-panel .protocol-cert-box .cert-pill {
+    min-height: 64px !important;
+    padding: 10px 12px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    text-wrap: balance;
+  }
+
+  .about-difference-grid .stat-trio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .about-difference-grid .stat-trio > div {
+    flex: 0 0 calc((100% - 16px) / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  .about-difference-grid .stat-trio > div:last-child:nth-child(odd) {
+    margin-inline: auto;
+  }
+
+  .about-pillars-grid {
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
+
+  .about-pillars-grid .pillar-card {
+    height: 100%;
+  }
+
+  .about-pillars-grid .pillar-card h3 {
+    width: min(100%, 145px);
+    min-height: 2.7em;
+    text-wrap: balance;
+  }
+
+  .about-pillars-grid .pillar-card p {
+    min-height: 8em;
+    text-wrap: balance;
+  }
+
+  #find-protection .category-selector {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  #find-protection .category-selector > .category-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Index: keep the protection cards in balanced two-card rows on tablets. */
+  #what-protecting .protection-bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  #what-protecting .protection-bento > .prot-cell,
+  #what-protecting .protection-bento > .prot-cell.span-4,
+  #what-protecting .protection-bento > .prot-cell.span-5,
+  #what-protecting .protection-bento > .prot-cell.span-7,
+  #what-protecting .protection-bento > .prot-cell.span-8,
+  #what-protecting .protection-bento > .prot-cell.span-12 {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  #what-protecting .protection-bento > .prot-cell:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 18px) / 2);
+  }
+
+  /* Index featured cards: labels and specifications read consistently. */
+  #featured-products .featured-card__body > .section-eyebrow {
+    align-self: flex-start !important;
+    justify-content: flex-start !important;
+    width: auto !important;
+    margin-inline: 0 !important;
+    text-align: left !important;
+  }
+
+  #featured-products .featured-card__body .product-card__specs {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  #featured-products .featured-card__body .spec-tag {
+    justify-content: flex-start;
+    width: max-content;
+    max-width: 100%;
+  }
+
+  /* Draw the select chevron inward so it never touches the card edge. */
+  #size-guide #visualizer-safe-select,
+  #size-matters .visualizer-select {
+    padding-right: 72px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, currentColor 50%),
+      linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position:
+      calc(100% - 40px) 50%,
+      calc(100% - 32px) 50%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+  }
+
+  [dir="rtl"] #size-guide #visualizer-safe-select,
+  [dir="rtl"] #size-matters .visualizer-select {
+    padding-right: 16px;
+    padding-left: 72px;
+    background-position: 32px 50%, 40px 50%;
+  }
+
+  /* Keep the vertical process timeline centered inside its section. */
+  #how-we-work .process-steps {
+    width: min(100%, 720px);
+    margin-inline: auto;
+  }
+
+  #size-guide .size-visualizer > div:first-child,
   #size-matters .size-visualizer > div:first-child {
     flex-direction: column;
     align-items: center !important;
@@ -103,14 +279,27 @@
     text-align: center;
   }
 
+  #size-guide .visualizer-controls,
+  #size-guide .visualizer-select,
   #size-matters .visualizer-controls,
   #size-matters .visualizer-select {
     width: min(100%, 460px);
   }
 
-  #size-matters .visualizer-split,
-  #size-matters .visualizer-planning-grid {
+  #size-guide .visualizer-split,
+  #size-guide .visualizer-planning-grid,
+  #size-matters .visualizer-split {
     grid-template-columns: 1fr;
+  }
+
+  #size-matters .visualizer-planning-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  #size-matters .visualizer-planning-item {
+    min-width: 0;
+    height: 100%;
   }
 
   #size-matters .visualizer-spotlight-col {
@@ -121,6 +310,19 @@
 
   #size-matters .visualizer-planning-item {
     min-height: 0;
+  }
+
+  /* Give every statistics label the same balanced two-line footprint. */
+  .protection-stats .stat-label {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90px;
+    min-height: 2.7em;
+    margin: 6px auto 0;
+    line-height: 1.35;
+    text-align: center;
+    text-wrap: balance;
   }
 
   /* Keep the protection bento visually balanced when it collapses on tablets. */

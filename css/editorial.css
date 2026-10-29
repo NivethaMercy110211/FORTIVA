@@ -900,6 +900,14 @@
   gap: var(--space-md);
 }
 
+.telemetry-model-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
 .hero-spec-section {
   padding-block: 44px;
   background: var(--bg-page);
@@ -1287,6 +1295,7 @@
 .hero-signal-card__seal { gap:9px; margin-top:18px; padding:11px 14px; border-radius:999px; background:rgba(8,16,22,.5); color:#F5D296; font-size:.72rem; font-weight:700; width:fit-content; }
 
 @media (max-width: 900px) {
+  .hero-fullbleed { padding-bottom: clamp(48px, 8vw, 72px); }
   .hero-fullbleed__layout { grid-template-columns: 1fr; }
   .hero-signal-card { display: none; }
 }
@@ -1411,11 +1420,19 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid rgba(245, 210, 150, 0.72);
+  border-radius: 999px;
+  background: rgba(8, 18, 24, 0.88);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #F5D296;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
   margin-bottom: var(--space-md);
 }
 
@@ -1428,6 +1445,23 @@
   background: #F5D296;
   box-shadow: 0 0 0 0 rgba(245, 210, 150, 0.7);
   animation: pipPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Keep every photographic CTA badge readable on changing image tones. */
+.page-image-cta .badge.badge-brass,
+.installation-cta__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  border: 1px solid rgba(245, 210, 150, 0.72);
+  border-radius: 999px;
+  background: rgba(8, 18, 24, 0.88);
+  color: #F5D296;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .cta-section__title {
@@ -1505,6 +1539,20 @@
 
 .split-content__inner { max-width: 480px; }
 
+#journey .journey-media {
+  position: relative;
+  min-height: 0;
+}
+
+#journey .journey-media__image {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .installation-feature-list {
   width: 100%;
   margin-left: 0;
@@ -1525,6 +1573,9 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 24px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .inside-features li {
@@ -1546,6 +1597,19 @@
 
 .inside-features li i {
   color: #F5D296 !important;
+}
+
+@media (max-width: 767px) {
+  #inside-safe .inside-features {
+    width: min(100%, 360px);
+    margin-inline: auto;
+  }
+
+  #inside-safe .inside-features li {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* ── Bento Grid ── */
@@ -1875,12 +1939,18 @@
 
 @media (max-width: 575px) {
   #size-matters .visualizer-canvas {
-    gap: 8px;
-    padding: 20px 10px;
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: 16px;
+    padding: 20px;
+    overflow: visible;
   }
   #size-matters .visualizer-ref {
-    width: 92px;
-    padding-inline: 5px;
+    width: 100%;
+    height: 220px;
+    padding: 14px 10px;
   }
   #size-matters .visualizer-label { font-size: 0.65rem; }
 }
@@ -2020,6 +2090,7 @@
 
 .visualizer-planning-item > div {
   display: flex;
+  flex: 1 1 auto;
   min-width: 0;
   height: 100%;
   flex-direction: column;
@@ -2045,10 +2116,17 @@
   color: var(--body-text);
   font-size: 0.67rem;
   line-height: 1.45;
+  min-height: calc(3 * 1.45em);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 @media (max-width: 575px) {
   .visualizer-planning-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1023px) {
+  .visualizer-planning-item .planning-break { display: none; }
 }
 
 /* ── Enhanced Visualizer Layout & Imagery ── */
@@ -2216,6 +2294,16 @@
   color: var(--dark-heading);
 }
 
+#by-requirement .badge-brass {
+  background: rgba(8, 16, 22, 0.9) !important;
+  color: #F5D296 !important;
+  border-color: rgba(245, 210, 150, 0.72) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.34) !important;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+}
+
 .visualizer-fits-list {
   list-style: none;
   padding: 0;
@@ -2238,6 +2326,38 @@
   color: var(--brass-text);
   font-size: 0.75rem;
   flex-shrink: 0;
+}
+
+.visualizer-spotlight-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+.visualizer-spotlight-footer > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 575px) {
+  .visualizer-spotlight-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .visualizer-spotlight-footer > span {
+    text-align: center;
+  }
+
+  .visualizer-spotlight-footer .btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
 }
 
 [data-theme="dark"] .visualizer-fits-item i {
@@ -2478,6 +2598,55 @@
 
 .compare-table td { color: var(--text-body); }
 .compare-table td.highlight { color: var(--text-heading); font-weight: 600; }
+
+.compare-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 575px) {
+  #compare .compare-table-scroll {
+    --compare-mobile-col: calc((100vw - 48px) / 2);
+    overflow-x: auto !important;
+    scroll-snap-type: x proximity;
+  }
+
+  #compare .compare-table {
+    display: table !important;
+    width: calc(var(--compare-mobile-col) * 4) !important;
+    min-width: calc(var(--compare-mobile-col) * 4);
+    table-layout: fixed;
+    overflow: visible !important;
+  }
+
+  #compare .compare-table th,
+  #compare .compare-table td {
+    width: var(--compare-mobile-col) !important;
+    min-width: var(--compare-mobile-col);
+    max-width: var(--compare-mobile-col);
+    padding: 14px 12px;
+    overflow-wrap: anywhere;
+  }
+
+  #compare .compare-table thead th:not(:first-child),
+  #compare .compare-table tbody td {
+    scroll-snap-align: start;
+  }
+
+  #compare .compare-table th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: var(--bg-page) !important;
+    box-shadow: 1px 0 0 var(--border-color);
+  }
+
+  [dir="rtl"] #compare .compare-table th:first-child {
+    right: 0;
+    left: auto;
+    box-shadow: -1px 0 0 var(--border-color);
+  }
+}
 
 .compare-product-header {
   text-align: center;

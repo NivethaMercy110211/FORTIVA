@@ -40,52 +40,83 @@
   }
 
   /* ════════════════════════════════════════════════════════════
-     1. ALL OVER WEBSITE: SECTION NAMES & HEADINGS CENTERED
+     1. ALL OVER WEBSITE: GRIDS HEADINGS & SECTION TITLES LEFT ALIGNED
      ════════════════════════════════════════════════════════════ */
-  h1, h2, h3, h4, h5, h6,
   .section-title,
   .section-header,
+  .section-header--center,
   .section-eyebrow,
   .hero-eyebrow,
   .hero-eyebrow-text,
-  .page-hero__title,
-  .page-hero__eyebrow,
-  .page-hero__desc,
   .section-desc,
   .brass-divider,
   .custom-section-title,
-  .guide-section-block h2 {
-    text-align: center !important;
-    margin-inline: auto !important;
-    justify-content: center !important;
+  .guide-section-block h2,
+  .compare-col-header,
+  section .text-center,
+  .section .text-center,
+  .container > .text-center,
+  .section > .container > .text-center,
+  #built-in-space .flex-between,
+  #built-in-space .flex-between > div,
+  #featured-products .flex-between,
+  #featured-products .flex-between > div {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
   }
 
   .section-header,
-  .section-header--center {
+  .section-header--center,
+  section .text-center,
+  .section .text-center,
+  .container > .text-center,
+  .section > .container > .text-center,
+  #built-in-space .flex-between,
+  #featured-products .flex-between {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-inline: 0 !important;
     margin-bottom: var(--space-xl) !important;
+    max-width: 100% !important;
+  }
+
+  section .text-center > *,
+  .section .text-center > *,
+  .container > .text-center > *,
+  .section-header > *,
+  .section-header--center > * {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    align-self: flex-start !important;
   }
 
   .section-eyebrow,
   .hero-eyebrow {
     display: inline-flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    margin-inline: auto !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    margin-inline: 0 !important;
+    align-self: flex-start !important;
+  }
+
+  .guide-section-block h2::after {
+    left: 0 !important;
+    transform: none !important;
   }
 
   .brass-divider {
-    margin-inline: auto !important;
+    margin-inline: 0 !important;
   }
 
   .section-desc {
     max-width: 100% !important;
-    text-align: center !important;
-    margin-inline: auto !important;
+    text-align: left !important;
+    margin-inline: 0 !important;
   }
 
   /* Keep section introductions clear of the fixed mobile navigation. */
@@ -311,7 +342,7 @@
     overflow: hidden !important;
     border: 1px solid var(--border-color) !important;
     border-radius: var(--radius-lg) !important;
-    text-align: center !important;
+    text-align: left !important;
     background: var(--bg-card) !important;
   }
   .cat-card-image {
@@ -323,10 +354,10 @@
   .cat-card-content {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
     padding: 12px 14px 14px !important;
-    text-align: center !important;
+    text-align: left !important;
     background: var(--bg-card) !important;
   }
   .cat-card-label {
@@ -334,44 +365,185 @@
     font-weight: 700 !important;
     color: var(--text-heading) !important;
     margin-bottom: 2px !important;
+    text-align: left !important;
   }
   .cat-card-count {
     font-size: 0.78rem !important;
     color: var(--text-body) !important;
+    text-align: left !important;
+  }
+
+  /* All Cards & Card Content Left-Aligned */
+  .card,
+  .card__body,
+  .product-card,
+  .product-card__body,
+  .featured-card,
+  .featured-card__body,
+  .tier-card,
+  .pricing-card,
+  .guide-card,
+  .guide-card-content,
+  .installation-card,
+  .anchor-card,
+  .anchor-card-body,
+  .lock-type-card,
+  .vault-feature-card,
+  .space-card,
+  .space-card-content,
+  .logistics-card,
+  .contact-hub-card,
+  .protocol-card,
+  .advisor-card,
+  .consult-type-card,
+  .spec-exp-cell,
+  .bento-cell,
+  .resource-card,
+  .journey-step-card,
+  .step-details-body,
+  .credential-card,
+  .pillar-card,
+  .maintenance-card,
+  .portfolio-item,
+  .journey-item,
+  .hud-item,
+  .protection-bento .prot-cell,
+  .protection-bento .prot-proof-item,
+  .prot-cell--img .overlay-content,
+  .calculator-card,
+  .feasibility-box {
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+  /* All Card Headings & Titles Left-Aligned */
+  .card h1, .card h2, .card h3, .card h4, .card h5, .card h6,
+  .product-card h1, .product-card h2, .product-card h3, .product-card h4, .product-card h5, .product-card h6,
+  .product-card__title,
+  .featured-card h1, .featured-card h2, .featured-card h3, .featured-card h4, .featured-card h5, .featured-card h6,
+  .tier-card h1, .tier-card h2, .tier-card h3, .tier-card h4, .tier-card h5, .tier-card h6,
+  .tier-card-title,
+  .guide-card h1, .guide-card h2, .guide-card h3, .guide-card h4, .guide-card h5, .guide-card h6,
+  .guide-card-title,
+  .installation-card h1, .installation-card h2, .installation-card h3, .installation-card h4, .installation-card h5, .installation-card h6,
+  .anchor-card h1, .anchor-card h2, .anchor-card h3, .anchor-card h4, .anchor-card h5, .anchor-card h6,
+  .lock-type-card h1, .lock-type-card h2, .lock-type-card h3, .lock-type-card h4, .lock-type-card h5, .lock-type-card h6,
+  .vault-feature-card h1, .vault-feature-card h2, .vault-feature-card h3, .vault-feature-card h4, .vault-feature-card h5, .vault-feature-card h6,
+  .space-card h1, .space-card h2, .space-card h3, .space-card h4, .space-card h5, .space-card h6,
+  .logistics-card h1, .logistics-card h2, .logistics-card h3, .logistics-card h4, .logistics-card h5, .logistics-card h6,
+  .contact-hub-card h1, .contact-hub-card h2, .contact-hub-card h3, .contact-hub-card h4, .contact-hub-card h5, .contact-hub-card h6,
+  .protocol-card h1, .protocol-card h2, .protocol-card h3, .protocol-card h4, .protocol-card h5, .protocol-card h6,
+  .advisor-card h1, .advisor-card h2, .advisor-card h3, .advisor-card h4, .advisor-card h5, .advisor-card h6,
+  .consult-type-card h1, .consult-type-card h2, .consult-type-card h3, .consult-type-card h4, .consult-type-card h5, .consult-type-card h6,
+  .bento-cell h1, .bento-cell h2, .bento-cell h3, .bento-cell h4, .bento-cell h5, .bento-cell h6,
+  .spec-exp-cell h1, .spec-exp-cell h2, .spec-exp-cell h3, .spec-exp-cell h4, .spec-exp-cell h5, .spec-exp-cell h6,
+  .pillar-card h1, .pillar-card h2, .pillar-card h3, .pillar-card h4, .pillar-card h5, .pillar-card h6,
+  .maintenance-card h1, .maintenance-card h2, .maintenance-card h3, .maintenance-card h4, .maintenance-card h5, .maintenance-card h6,
+  .journey-item h1, .journey-item h2, .journey-item h3, .journey-item h4, .journey-item h5, .journey-item h6,
+  .hud-item h1, .hud-item h2, .hud-item h3, .hud-item h4, .hud-item h5, .hud-item h6,
+  .card-title,
+  .card__title,
+  [class*="-card"] [class*="-title"],
+  [class*="-card"] [class*="__title"] {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
+  }
+
+  /* All Card Details, Categories, Specs & Subtext Left-Aligned */
+  .card p,
+  [class*="-card"] p,
+  .products-grid .product-card__category,
+  .products-grid .product-card__footer > :first-child,
+  .product-card__specs,
+  .spec-tag,
+  .featured-card__body .product-card__specs,
+  .featured-card__body .spec-tag,
+  .protection-bento .prot-cell > p,
+  .protection-bento .prot-cell.span-4 > p,
+  .maintenance-card p,
+  .journey-item p {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    align-self: flex-start !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .products-grid .product-card__footer > :first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+  /* RTL Support on Mobile: Left aligned translates to start (right) alignment */
+  [dir="rtl"] .section-title,
+  [dir="rtl"] .section-header,
+  [dir="rtl"] .section-header--center,
+  [dir="rtl"] .section-eyebrow,
+  [dir="rtl"] .hero-eyebrow,
+  [dir="rtl"] .hero-eyebrow-text,
+  [dir="rtl"] .section-desc,
+  [dir="rtl"] .brass-divider,
+  [dir="rtl"] section .text-center,
+  [dir="rtl"] .container > .text-center,
+  [dir="rtl"] .card,
+  [dir="rtl"] [class*="-card"],
+  [dir="rtl"] .cat-card,
+  [dir="rtl"] .cat-card-content,
+  [dir="rtl"] .cat-card-label,
+  [dir="rtl"] .cat-card-count {
+    text-align: right !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    margin-inline: 0 !important;
   }
 
   .stat-trio {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     gap: 16px 28px !important;
-    margin-inline: auto !important;
+    margin-inline: 0 !important;
     width: 100% !important;
   }
   .stat-trio > div {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
     flex: 1 1 90px !important;
     max-width: 150px !important;
   }
 
-  /* Center all brass badges in mobile view across every page */
+  /* Left align brass badges in mobile view with uniform badge size */
   .badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
   .badge--brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
-  .badge.badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge) {
-    display: flex !important;
+  .badge.badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
+  .consult-type-badge,
+  .barrier-layer-badge {
+    display: inline-flex !important;
     width: fit-content !important;
     max-width: 100% !important;
-    margin-inline: auto !important;
-    justify-content: center !important;
+    margin-inline: 0 !important;
+    padding: 5px 12px !important;
+    min-height: 25px !important;
+    max-height: 26px !important;
+    font-size: 0.72rem !important;
+    line-height: 1.25 !important;
+    border-radius: 9999px !important;
+    box-sizing: border-box !important;
+    justify-content: flex-start !important;
     align-items: center !important;
-    text-align: center !important;
+    text-align: left !important;
+    align-self: flex-start !important;
   }
 
   .stats-row {
@@ -382,8 +554,8 @@
 
   .resource-card {
     flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
   }
 
   .cad-download-strip {
@@ -396,16 +568,63 @@
   }
 
   /* Section Padding */
-  .section { padding-block: var(--space-2xl); }
+  .section,
+  .section--lg,
+  .section--sm,
+  main > section:not(.hero-fullbleed):not(.page-hero):not(.page-image-banner):not(.booking-hero):not(.hero-showcase):not(.hero-split):not(.product-detail-hero):not(.install-hero),
+  .split-section,
+  .hero-spec-section,
+  .cta-section {
+    padding-block: clamp(52px, 7.5vw, 68px) !important;
+  }
 
-  /* Products */
-  .products-grid.list-view .product-card { flex-direction: column; }
-  .products-grid.list-view .product-card__image { width: 100%; aspect-ratio: 4/3; }
-  .toolbar-right { gap: var(--space-sm); width: 100%; justify-content: space-between; }
-  .toolbar-view { display: none; }
+  /* Forms & Form Cards */
+  .form-card,
+  .contact-form-panel,
+  .booking-form-panel,
+  .calculator-card,
+  .feasibility-box,
+  .protocol-card,
+  .protocol-steps-box,
+  .advisor-card,
+  .booking-hotline-box,
+  .calc-result-display {
+    padding: 20px 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
 
-  /* Forms */
-  .form-card { padding: var(--space-lg); }
+  .form-group,
+  .form-row,
+  .form-body,
+  .form-grid,
+  .form-grid-2,
+  .date-time-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .form-control,
+  select.form-control,
+  textarea.form-control,
+  input.form-control,
+  .form-select-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  select.form-control {
+    text-overflow: ellipsis !important;
+    padding-right: 36px !important;
+    padding-left: 14px !important;
+  }
+
 
   /* Header */
   .header-inner { grid-template-columns: 1fr auto; }
@@ -419,6 +638,49 @@
   .hero-content { padding: var(--space-2xl) var(--container-pad); }
   .hero-text-col { padding: 0; }
   .hero-fullbleed { min-height: 540px; padding-top: 72px; }
+
+  .hero-fullbleed .hero-fullbleed__inner {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .hero-fullbleed .hero-fullbleed__layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+    padding-bottom: 32px;
+  }
+
+  .hero-fullbleed .hero-signal-card {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    box-sizing: border-box;
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+
+  #anatomy .anatomy-showcase--3d {
+    overflow: visible !important;
+  }
+
+  #anatomy .anatomy-float-grid {
+    width: auto !important;
+    max-width: none !important;
+    margin-inline: 10px !important;
+    padding-bottom: 20px;
+    overflow: visible !important;
+  }
+
+  #anatomy .anatomy-float-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+  }
 
   .tech-strip .container { max-width: 100%; overflow: hidden; }
   .tech-strip-inner { max-width: 100%; }
@@ -455,6 +717,14 @@
   }
   .footer-logo { justify-content: flex-start; }
   .footer-brand-desc { margin-inline: 0; }
+  .footer-nav-list {
+    width: 100%;
+    margin-inline: 0;
+    padding-inline: 0;
+    align-items: flex-start;
+  }
+  .footer-nav-list li,
+  .footer-nav-list a { width: 100%; }
   .footer-social,
   .footer-contact-list,
   .footer-certs { align-items: flex-start; justify-content: flex-start; }
@@ -464,6 +734,295 @@
   /* CTA Group */
   .cta-group { flex-direction: column; align-items: stretch; width: 100%; }
   .cta-group .btn { width: 100%; justify-content: center; }
+
+  /* Center the first Safe Finder action beneath the option cards. */
+  #finder-next-1 {
+    display: flex;
+    margin-inline: auto;
+  }
+
+  /* Give mobile heading glyphs enough vertical room across every section. */
+  main .section-eyebrow,
+  main .editorial-eyebrow,
+  main .hero-eyebrow {
+    width: max-content;
+    max-width: 100%;
+    height: auto !important;
+    min-height: 1.55em;
+    padding-block: 3px !important;
+    line-height: 1.4 !important;
+    overflow: visible !important;
+  }
+
+  main .section-title,
+  main .cta-section__title,
+  main .section-header h2,
+  main .flex-between h2,
+  main .split-content__inner h2 {
+    height: auto !important;
+    min-height: 1.35em;
+    padding-block: 2px !important;
+    line-height: 1.3 !important;
+    overflow: visible !important;
+  }
+
+  main .section-header,
+  main .section-header--center {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  main .section-header > .section-eyebrow,
+  main .section-header > .section-title,
+  main .section-header--center > .section-eyebrow,
+  main .section-header--center > .section-title {
+    margin-inline: auto !important;
+    align-self: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  main .section-eyebrow,
+  main .brass-divider {
+    margin-inline: auto !important;
+    align-self: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Keep every internal-page banner panel clear of both viewport edges. */
+  main .page-image-banner > .container {
+    width: calc(100% - 32px) !important;
+    max-width: calc(100% - 32px) !important;
+    margin-inline: auto !important;
+    padding-inline: 18px !important;
+    box-sizing: border-box;
+  }
+
+  #inside-safe .split-content__inner {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  #inside-safe .split-content__inner > .section-eyebrow,
+  #inside-safe .split-content__inner > .section-title,
+  #size-matters .section-eyebrow {
+    margin-inline: auto !important;
+    align-self: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Home page section introductions stay centered on narrow screens. */
+  #featured-products .flex-between > div,
+  #built-in-space .flex-between > div,
+  #what-protecting .section-header,
+  #engineered .section-header,
+  #size-guide .section-header,
+  #how-we-work .section-header,
+  #expert-guidance .section-header,
+  #installation .split-content__inner {
+    width: 100%;
+    margin-inline: auto;
+    text-align: center !important;
+    align-items: center;
+  }
+
+  #featured-products .section-eyebrow,
+  #built-in-space .section-eyebrow,
+  #what-protecting .section-eyebrow,
+  #engineered .section-eyebrow,
+  #installation .section-eyebrow,
+  #size-guide .section-eyebrow,
+  #how-we-work .section-eyebrow,
+  #expert-guidance .section-eyebrow {
+    justify-content: center;
+    margin-inline: auto;
+  }
+
+  #what-protecting .prot-cell--img .overlay-content {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #view-full-guide {
+    display: flex;
+    width: fit-content;
+    margin-inline: auto !important;
+  }
+
+  #featured-products .flex-between,
+  #built-in-space .flex-between {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  #featured-products .flex-between > div,
+  #built-in-space .flex-between > div,
+  #featured-products .flex-between > div > *,
+  #built-in-space .flex-between > div > *,
+  #what-protecting .section-header > *,
+  #engineered .section-header > *,
+  #installation .split-content__inner > *,
+  #size-guide .section-header > *,
+  #how-we-work .section-header > *,
+  #expert-guidance .section-header > * {
+    margin-inline: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+  }
+
+  #what-protecting .prot-cell--img .overlay-content,
+  #what-protecting .prot-cell--img .overlay-content > * {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  #installation .installation-feature-list {
+    width: min(100%, 390px);
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+    text-align: left !important;
+    align-self: center !important;
+  }
+
+  #installation .installation-feature-list > li {
+    display: grid !important;
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-items: start !important;
+    gap: 10px !important;
+    width: 100%;
+    text-align: left !important;
+  }
+
+  #installation .installation-feature-list > li > i {
+    width: 18px;
+    margin-top: 4px !important;
+    text-align: center;
+  }
+
+  #installation .installation-feature-list > li > span {
+    min-width: 0;
+    text-align: left !important;
+    overflow-wrap: anywhere;
+  }
+
+  #journey .journey-media {
+    min-height: 360px;
+  }
+
+  #size-matters .visualizer-planning-item:first-child span {
+    width: 24ch;
+    max-width: 100%;
+  }
+
+  #size-matters #visualizer-spotlight-title {
+    font-size: 1rem !important;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  #size-matters .visualizer-specs-pills {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #size-matters .visualizer-spec-pill {
+    width: 180px;
+    max-width: 100%;
+    min-height: 38px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+  }
+
+  .pricing-tiers-grid > .tier-card.featured {
+    margin-top: 24px !important;
+  }
+
+  #consultation-form-section .contact-form-panel .badge-brass {
+    display: flex !important;
+    width: fit-content !important;
+    margin-inline: auto !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .page-image-cta > .container {
+    width: calc(100% - 32px) !important;
+    max-width: calc(100% - 32px) !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+  }
+
+  .page-image-cta .cta-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 18px !important;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .page-image-cta .cta-inner > *,
+  .page-image-cta .cta-inner > div,
+  .page-image-cta .cta-inner .badge,
+  .page-image-cta .cta-inner .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .page-image-cta .cta-inner .badge,
+  .page-image-cta .cta-inner h2,
+  .page-image-cta .cta-inner p {
+    overflow-wrap: anywhere;
+    text-align: center !important;
+  }
+
+  .journey-step-card .step-details-body > div[style*="display:flex"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    width: 100%;
+  }
+
+  .journey-step-card .step-details-body > div[style*="display:flex"] > span {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .contact-hub-card .contact-hub-header {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .contact-hub-card .contact-hub-header .badge-brass {
+    margin-inline: 0 !important;
+    align-self: flex-start;
+  }
+
+  .guide-sticky-nav .guide-nav-title,
+  .lock-schematic__content .lock-schematic__eyebrow {
+    display: block;
+    width: 100%;
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
 
   /* Spec Drawer */
   .spec-drawer { width: 100%; bottom: 0; top: auto; right: 0; height: 90vh; transform: translateY(100%); border-left: none; border-top: 1px solid var(--border-color); }
@@ -528,7 +1087,16 @@
   .tier-card,
   .anchor-card,
   .lock-type-card,
-  .vault-feature-card {
+  .vault-feature-card,
+  .contact-form-panel,
+  .booking-form-panel,
+  .calculator-card,
+  .feasibility-box,
+  .protocol-card,
+  .protocol-steps-box,
+  .advisor-card,
+  .booking-hotline-box,
+  .calc-result-display {
     padding: 14px !important;
   }
   .cat-card {

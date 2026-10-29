@@ -24,3 +24,24 @@
   .mobile-toggle { display: none; }
   .header-nav { display: flex; }
 }
+
+@media (min-width: 768px) {
+  #built-in-space .flex-between {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #built-in-space .flex-between > div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #built-in-space .section-eyebrow,
+  #built-in-space .section-title {
+    margin-inline: auto;
+    text-align: center;
+    justify-content: center;
+  }
+}

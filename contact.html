@@ -30,6 +30,17 @@
       background: var(--bg-page);
       border-bottom: 1px solid var(--border-color);
     }
+    .contact-hero .editorial-eyebrow {
+      padding: 7px 14px;
+      border: 1px solid rgba(245, 210, 150, 0.55);
+      border-radius: var(--radius-full);
+      background: rgba(5, 16, 22, 0.72);
+      color: #F5D296 !important;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
 
     /* ── Section 1: Contact Hub Cards Grid (Separate section, no empty space) ── */
     .contact-cards-grid {
@@ -191,6 +202,16 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
+    }
+    #contact-consult-form .form-body {
+      display: grid;
+      gap: 18px;
+    }
+    #contact-consult-form .form-group {
+      gap: 8px;
+    }
+    #contact-consult-form .form-label {
+      margin: 0 0 2px;
     }
     .contact-protocol-panel {
       display: flex;
@@ -448,6 +469,25 @@
       }
     }
     @media (max-width: 767px) {
+      .contact-form-layout {
+        gap: 32px !important;
+      }
+      .contact-form-panel {
+        padding: 20px 16px !important;
+        border-radius: var(--radius-lg) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .protocol-card,
+      .protocol-steps-box {
+        padding: 20px 16px !important;
+        border-radius: var(--radius-lg) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .contact-map-layout {
+        gap: 28px !important;
+      }
       .contact-form-panel > div:first-child > p {
         text-align: center;
         max-width: 30rem;
@@ -475,7 +515,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="css/compact.css">
+  <link rel="stylesheet" href="css/compact.css?v=20261029-2">
 </head>
 <body>
   <!-- Skip Link -->

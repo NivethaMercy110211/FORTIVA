@@ -61,13 +61,16 @@
   transform: translateX(-50%);
   background: var(--brass);
   color: var(--white);
-  padding: 4px 16px;
+  padding: 5px 12px;
+  min-height: 25px;
   border-radius: var(--radius-full);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  line-height: 1.25;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .tier-name {
@@ -207,11 +210,51 @@
   }
   .calc-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
   .calc-result-display {
     position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .calc-result-display #estimate-result {
+    width: 100%;
+    text-align: center;
+  }
+  .calc-result-display .calc-result-notes {
+    max-width: 620px;
+    margin-inline: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .calc-result-display .btn {
+    align-self: center;
+    width: min(100%, 440px);
+    justify-content: center;
   }
 }
+
+@media (max-width: 767px) {
+  .calculator-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+  .calc-grid {
+    gap: 28px;
+  }
+  .calc-result-display {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+  .calc-estimate-range {
+    font-size: clamp(1.75rem, 6.5vw, 2.2rem);
+    word-break: break-word;
+  }
+}
+
 /* Installation logistics — image-led pricing matrix */
 .logistics-layout { display:grid; grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr); gap:clamp(24px,4vw,48px); align-items:stretch; }
 .logistics-visual { position:relative; min-height:520px; margin:0; overflow:hidden; border-radius:var(--radius-xl); background:var(--slate-navy); box-shadow:var(--shadow-md); }

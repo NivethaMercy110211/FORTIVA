@@ -120,6 +120,38 @@
   text-align: right;
 }
 
+/* Keep machine-readable booking values LTR while aligning them with RTL fields. */
+[dir="rtl"] #book-email,
+[dir="rtl"] #book-email::placeholder,
+[dir="rtl"] #contact-email,
+[dir="rtl"] #contact-email::placeholder {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: isolate;
+}
+
+/* Chromium date controls need an explicit direction to mirror their inner UI. */
+[dir="rtl"] #book-date {
+  position: relative;
+  direction: rtl !important;
+  text-align: right;
+  padding-right: 16px;
+  padding-left: 44px;
+}
+
+[dir="rtl"] #book-date::-webkit-datetime-edit {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+[dir="rtl"] #book-date::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 14px;
+  right: auto;
+  margin: 0;
+}
+
 [dir="rtl"] #contact-phone + .form-error {
   direction: ltr;
   justify-content: flex-end;

@@ -1246,14 +1246,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const spotRect = spot.getBoundingClientRect();
       const popoverWidth = Math.min(260, window.innerWidth - 32);
       const safeInset = 8;
-      const idealViewportLeft = spotRect.left + (spotRect.width / 2) - (popoverWidth / 2);
       const minViewportLeft = Math.max(stageRect.left + safeInset, safeInset);
       const maxViewportLeft = Math.min(
         stageRect.right - popoverWidth - safeInset,
         window.innerWidth - popoverWidth - safeInset
       );
+      const centeredViewportLeft = stageRect.left + ((stageRect.width - popoverWidth) / 2);
       const clampedViewportLeft = Math.min(
-        Math.max(idealViewportLeft, minViewportLeft),
+        Math.max(centeredViewportLeft, minViewportLeft),
         Math.max(minViewportLeft, maxViewportLeft)
       );
 

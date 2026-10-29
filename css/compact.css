@@ -8,6 +8,49 @@
   --space-4xl: 88px;
 }
 
+/* Mobile Safe Finder clearance and one-per-row hero statistics. */
+@media (max-width: 767px) {
+  #find-protection .safe-finder .finder-body {
+    padding-bottom: 40px !important;
+  }
+
+  #find-protection .safe-finder .finder-step:not([hidden]) {
+    padding-bottom: 4px;
+  }
+
+  .hero-stage-card .hero-stage-hud {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 6px !important;
+    padding: 10px 14px !important;
+  }
+
+  .hero-stage-card .hero-stage-hud .hud-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    text-align: start !important;
+  }
+
+  .hero-stage-card .hero-stage-hud .hud-item__num,
+  .hero-stage-card .hero-stage-hud .hud-item__lbl {
+    white-space: normal !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-stage-card .hero-stage-hud .hud-item__lbl {
+    text-align: end !important;
+  }
+
+  .hero-stage-card .hero-stage-hud .hud-sep {
+    display: none !important;
+  }
+}
+
 html { overflow-x: clip; }
 
 body { font-size: .94rem; line-height: 1.62; }
@@ -90,9 +133,9 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
 .icon-wrap--lg { width: 52px; height: 52px; }
 
 .page-hero { height: 420px; }
-.page-image-banner { min-height: 360px !important; padding-block: 64px !important; }
+.page-image-banner { min-height: 420px !important; padding-block: 72px !important; }
 .page-image-cta { min-height: 380px; }
-.install-hero--simple { min-height: 380px; padding-block: 64px; }
+.install-hero--simple { min-height: 420px; padding-block: 72px; }
 .install-hero--simple .install-hero-content { max-width: 680px; }
 .install-hero--simple .install-hero-content p { margin-bottom: 0; }
 .hero-split { min-height: 600px; }
@@ -135,6 +178,25 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
    When a section grid has an odd number of items, align the last grid
    card into the center without changing its card size. */
 @media (min-width: 768px) and (max-width: 1199px) {
+  #engineered .spec-explainer {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  #engineered .spec-explainer > .spec-exp-cell:first-child {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #engineered .spec-explainer > .spec-exp-cell:last-child {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    width: calc((100% - 18px) / 2) !important;
+    max-width: calc((100% - 18px) / 2) !important;
+  }
+
   .grid-2,
   .grid-3,
   .grid-4,
@@ -179,16 +241,265 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
 
 
 @media (max-width: 767px) {
+  #hero-telemetry-badge {
+    left: 50% !important;
+    right: auto !important;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    height: auto !important;
+    min-height: 58px !important;
+    padding: 7px 10px !important;
+    transform: translateX(-50%) !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px !important;
+    border-radius: 14px;
+    box-sizing: border-box;
+    animation: none !important;
+    text-align: center;
+  }
+
+  #hero-telemetry-badge .telemetry-model-tag,
+  #hero-telemetry-badge .telemetry-grade-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    white-space: normal;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  #hero-telemetry-badge .telemetry-model-tag {
+    line-height: 1.25;
+  }
+
+  #hero-telemetry-badge .telemetry-grade-tag {
+    padding: 4px 10px;
+  }
+
+  .hero-stage-card .hero-hotspot.is-open .hotspot-popover {
+    text-align: center;
+  }
+  .product-details-page .lock-option-selector {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .product-details-page .lock-option-card {
+    width: 100% !important;
+    min-height: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .product-details-page .winder-options {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr;
+    gap: 10px !important;
+  }
+
+  .product-details-page .winder-options .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 62px !important;
+    height: 100%;
+    padding: 8px 6px !important;
+    font-size: 0.74rem !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-wrap: balance;
+  }
+
+  .product-details-page .product-detail-cta > .container {
+    width: calc(100% - 32px) !important;
+    max-width: calc(100% - 32px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-details-page .product-detail-cta > .container > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 24px 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-details-page .product-detail-cta .badge.badge-brass {
+    display: inline-flex !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-inline: auto !important;
+    padding: 8px 12px !important;
+    font-size: 0.64rem !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    text-align: center !important;
+  }
   :root { --container-pad: 16px; --space-2xl: 38px; --space-3xl: 52px; }
   body { font-size: .9rem; }
   h1 { font-size: 1.85rem; }
   h2 { font-size: 1.45rem; }
   h3 { font-size: 1.15rem; }
-  .section, .section--lg, .section--sm { padding-block: 44px; }
+  #size-guide .size-visualizer > div:first-child,
+  #size-matters .size-visualizer > div:first-child {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+  #size-guide .visualizer-controls,
+  #size-matters .visualizer-controls {
+    width: 100%;
+    justify-content: center;
+  }
+  #size-guide .visualizer-select,
+  #size-matters .visualizer-select {
+    width: min(100%, 260px);
+    min-height: 48px;
+    padding: 11px 44px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: calc(100% - 19px) 50%, calc(100% - 14px) 50%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-align-last: center;
+  }
+  [dir="rtl"] #size-guide .visualizer-select,
+  [dir="rtl"] #size-matters .visualizer-select {
+    background-position: 14px 50%, 19px 50%;
+  }
+  /* ── Mobile Section Spacing: Generous Breathing Room, Sections Never Touch ── */
+  .section,
+  .section--lg,
+  .section--sm,
+  main > section:not(.hero-fullbleed):not(.page-hero):not(.page-image-banner):not(.booking-hero):not(.hero-showcase):not(.hero-split):not(.product-detail-hero):not(.install-hero),
+  .split-section,
+  .hero-spec-section,
+  .cta-section {
+    padding-block: clamp(52px, 7.5vw, 68px) !important;
+    position: relative !important;
+  }
+
+  /* Clear visual division between consecutive sections on mobile */
+  main > section + section {
+    border-top: 1px solid var(--border-color);
+  }
+  [data-theme="dark"] main > section + section {
+    border-top-color: var(--dark-border);
+  }
+  main > section.page-image-banner + section,
+  main > section.hero-fullbleed + section,
+  main > section.hero-showcase + section,
+  main > section.booking-hero + section,
+  main > section.install-hero + section,
+  main > section.product-detail-hero + section,
+  main > section.page-image-cta,
+  main > section[style*="border-top"] {
+    border-top: none;
+  }
+
+  /* Split section mobile spacing: prevent image and content from touching neighboring sections */
+  .split-section .split-image {
+    min-height: 240px !important;
+    max-height: 320px !important;
+    width: 100% !important;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .split-section .split-content {
+    padding: 24px 16px !important;
+    width: 100% !important;
+  }
+
   .section-header { margin-bottom: 28px; }
   .section-desc { font-size: .9rem; }
   .grid { gap: 14px; }
-  .card__body, .product-card__body, .pricing-card, .form-card, .guide-card, .installation-card { padding: 16px; }
+
+  /* ── Form Panels & Cards on Mobile: prevent cropping and narrow compression ── */
+  .card__body,
+  .product-card__body,
+  .pricing-card,
+  .form-card,
+  .guide-card,
+  .installation-card,
+  .contact-form-panel,
+  .booking-form-panel,
+  .calculator-card,
+  .feasibility-box,
+  .protocol-card,
+  .protocol-steps-box,
+  .advisor-card,
+  .booking-hotline-box,
+  .calc-result-display,
+  .feasibility-result-alert {
+    padding: 20px 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  /* Form controls, groups, selects, date inputs: never overflow or crop */
+  .form-group,
+  .form-row,
+  .form-body,
+  .form-grid,
+  .form-grid-2,
+  .date-time-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .form-control,
+  select.form-control,
+  textarea.form-control,
+  input.form-control,
+  .form-select-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  select.form-control {
+    text-overflow: ellipsis !important;
+    padding-right: 36px !important;
+    padding-left: 14px !important;
+  }
+  [dir="rtl"] select.form-control {
+    padding-left: 36px !important;
+    padding-right: 14px !important;
+  }
+
+  input[type="date"].form-control,
+  input[type="time"].form-control {
+    min-height: 48px !important;
+  }
+
+  .calc-estimate-range {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem) !important;
+    line-height: 1.18 !important;
+    word-break: break-word !important;
+  }
+
   .page-hero { height: 330px; }
   .page-image-banner { min-height: 360px !important; padding-block: 52px !important; }
   .page-image-cta { min-height: 390px; }
@@ -206,30 +517,82 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
   .hero-showcase__title em { display: inline; }
   .hero-config-tabs { max-width: 100%; }
 
-  /* ── All Over Website: Center Section Names and Headings on Mobile ── */
-  h1, h2, h3, h4, h5, h6,
+  /* ── All Over Website: Left Align Cards and Grid Headings on Mobile ── */
   .section-title,
   .section-header,
+  .section-header--center,
   .section-eyebrow,
   .hero-eyebrow,
   .hero-eyebrow-text,
-  .page-hero__title,
-  .page-hero__eyebrow,
-  .page-hero__desc,
   .section-desc,
   .brass-divider,
   .guide-section-block h2,
-  .custom-section-title {
-    text-align: center !important;
-    margin-inline: auto !important;
-    justify-content: center !important;
+  .custom-section-title,
+  .compare-col-header,
+  section .text-center,
+  .section .text-center,
+  .container > .text-center,
+  .section > .container > .text-center,
+  #built-in-space .flex-between,
+  #built-in-space .flex-between > div,
+  #featured-products .flex-between,
+  #featured-products .flex-between > div {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
   }
 
-  .section-header {
+  .section-header,
+  .section-header--center,
+  section .text-center,
+  .section .text-center,
+  .container > .text-center,
+  .section > .container > .text-center,
+  #built-in-space .flex-between,
+  #featured-products .flex-between {
     display: flex !important;
     flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin-inline: 0 !important;
+    margin-bottom: var(--space-xl) !important;
+    max-width: 100% !important;
+  }
+
+  section .text-center > *,
+  .section .text-center > *,
+  .container > .text-center > *,
+  .section-header > *,
+  .section-header--center > * {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    align-self: flex-start !important;
+  }
+
+  .section-eyebrow,
+  .hero-eyebrow {
+    display: inline-flex !important;
     align-items: center !important;
-    text-align: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    margin-inline: 0 !important;
+    align-self: flex-start !important;
+  }
+
+  .guide-section-block h2::after {
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  .brass-divider {
+    margin-inline: 0 !important;
+  }
+
+  .section-desc {
+    max-width: 100% !important;
+    text-align: left !important;
+    margin-inline: 0 !important;
   }
 
   /* ── Every Grid Aligned One by One (1 Column) Without Overlap ── */
@@ -247,8 +610,19 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
   [style*="display:grid"], [style*="display: grid"] {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 14px !important;
+    gap: 16px !important;
     width: 100% !important;
+  }
+
+  /* Major multi-column page panels when stacked vertically need comfortable breathing room, not a tight gap */
+  .contact-form-layout,
+  .booking-content-layout,
+  .contact-map-layout,
+  .calc-grid,
+  .logistics-layout,
+  .visualizer-split,
+  .guide-layout {
+    gap: 32px !important;
   }
 
   /* Reset all grid child span classes to prevent overflow and overlap */
@@ -281,7 +655,7 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
     overflow: hidden !important;
     border: 1px solid var(--border-color) !important;
     border-radius: var(--radius-lg) !important;
-    text-align: center !important;
+    text-align: left !important;
     background: var(--bg-card) !important;
   }
   .cat-card-image {
@@ -293,10 +667,10 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
   .cat-card-content {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
     padding: 12px 14px 14px !important;
-    text-align: center !important;
+    text-align: left !important;
     background: var(--bg-card) !important;
   }
   .cat-card-label {
@@ -304,10 +678,141 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
     font-weight: 700 !important;
     color: var(--text-heading) !important;
     margin-bottom: 2px !important;
+    text-align: left !important;
   }
   .cat-card-count {
     font-size: 0.78rem !important;
     color: var(--text-body) !important;
+    text-align: left !important;
+  }
+
+  /* All Cards & Card Content Left-Aligned on Mobile */
+  .card,
+  .card__body,
+  .product-card,
+  .product-card__body,
+  .featured-card,
+  .featured-card__body,
+  .tier-card,
+  .pricing-card,
+  .guide-card,
+  .guide-card-content,
+  .installation-card,
+  .anchor-card,
+  .anchor-card-body,
+  .lock-type-card,
+  .vault-feature-card,
+  .space-card,
+  .space-card-content,
+  .logistics-card,
+  .contact-hub-card,
+  .protocol-card,
+  .advisor-card,
+  .consult-type-card,
+  .spec-exp-cell,
+  .bento-cell,
+  .resource-card,
+  .journey-step-card,
+  .step-details-body,
+  .credential-card,
+  .pillar-card,
+  .maintenance-card,
+  .portfolio-item,
+  .journey-item,
+  .hud-item,
+  .protection-bento .prot-cell,
+  .protection-bento .prot-proof-item,
+  .prot-cell--img .overlay-content,
+  .calculator-card,
+  .feasibility-box {
+    text-align: left !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+  /* All Card Headings & Titles Left-Aligned on Mobile */
+  .card h1, .card h2, .card h3, .card h4, .card h5, .card h6,
+  .product-card h1, .product-card h2, .product-card h3, .product-card h4, .product-card h5, .product-card h6,
+  .product-card__title,
+  .featured-card h1, .featured-card h2, .featured-card h3, .featured-card h4, .featured-card h5, .featured-card h6,
+  .tier-card h1, .tier-card h2, .tier-card h3, .tier-card h4, .tier-card h5, .tier-card h6,
+  .tier-card-title,
+  .guide-card h1, .guide-card h2, .guide-card h3, .guide-card h4, .guide-card h5, .guide-card h6,
+  .guide-card-title,
+  .installation-card h1, .installation-card h2, .installation-card h3, .installation-card h4, .installation-card h5, .installation-card h6,
+  .anchor-card h1, .anchor-card h2, .anchor-card h3, .anchor-card h4, .anchor-card h5, .anchor-card h6,
+  .lock-type-card h1, .lock-type-card h2, .lock-type-card h3, .lock-type-card h4, .lock-type-card h5, .lock-type-card h6,
+  .vault-feature-card h1, .vault-feature-card h2, .vault-feature-card h3, .vault-feature-card h4, .vault-feature-card h5, .vault-feature-card h6,
+  .space-card h1, .space-card h2, .space-card h3, .space-card h4, .space-card h5, .space-card h6,
+  .logistics-card h1, .logistics-card h2, .logistics-card h3, .logistics-card h4, .logistics-card h5, .logistics-card h6,
+  .contact-hub-card h1, .contact-hub-card h2, .contact-hub-card h3, .contact-hub-card h4, .contact-hub-card h5, .contact-hub-card h6,
+  .protocol-card h1, .protocol-card h2, .protocol-card h3, .protocol-card h4, .protocol-card h5, .protocol-card h6,
+  .advisor-card h1, .advisor-card h2, .advisor-card h3, .advisor-card h4, .advisor-card h5, .advisor-card h6,
+  .consult-type-card h1, .consult-type-card h2, .consult-type-card h3, .consult-type-card h4, .consult-type-card h5, .consult-type-card h6,
+  .bento-cell h1, .bento-cell h2, .bento-cell h3, .bento-cell h4, .bento-cell h5, .bento-cell h6,
+  .spec-exp-cell h1, .spec-exp-cell h2, .spec-exp-cell h3, .spec-exp-cell h4, .spec-exp-cell h5, .spec-exp-cell h6,
+  .pillar-card h1, .pillar-card h2, .pillar-card h3, .pillar-card h4, .pillar-card h5, .pillar-card h6,
+  .maintenance-card h1, .maintenance-card h2, .maintenance-card h3, .maintenance-card h4, .maintenance-card h5, .maintenance-card h6,
+  .journey-item h1, .journey-item h2, .journey-item h3, .journey-item h4, .journey-item h5, .journey-item h6,
+  .hud-item h1, .hud-item h2, .hud-item h3, .hud-item h4, .hud-item h5, .hud-item h6,
+  .card-title,
+  .card__title,
+  [class*="-card"] [class*="-title"],
+  [class*="-card"] [class*="__title"] {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
+  }
+
+  /* All Card Details, Categories, Specs & Subtext Left-Aligned on Mobile */
+  .card p,
+  [class*="-card"] p,
+  .products-grid .product-card__category,
+  .products-grid .product-card__footer > :first-child,
+  .product-card__specs,
+  .spec-tag,
+  .featured-card__body .product-card__specs,
+  .featured-card__body .spec-tag,
+  .protection-bento .prot-cell > p,
+  .protection-bento .prot-cell.span-4 > p,
+  .maintenance-card p,
+  .journey-item p {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    align-self: flex-start !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .products-grid .product-card__footer > :first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+  }
+
+  /* RTL Support on Mobile: Left aligned translates to start (right) alignment */
+  [dir="rtl"] .section-title,
+  [dir="rtl"] .section-header,
+  [dir="rtl"] .section-header--center,
+  [dir="rtl"] .section-eyebrow,
+  [dir="rtl"] .hero-eyebrow,
+  [dir="rtl"] .hero-eyebrow-text,
+  [dir="rtl"] .section-desc,
+  [dir="rtl"] .brass-divider,
+  [dir="rtl"] section .text-center,
+  [dir="rtl"] .container > .text-center,
+  [dir="rtl"] .card,
+  [dir="rtl"] [class*="-card"],
+  [dir="rtl"] .cat-card,
+  [dir="rtl"] .cat-card-content,
+  [dir="rtl"] .cat-card-label,
+  [dir="rtl"] .cat-card-count {
+    text-align: right !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    margin-inline: 0 !important;
   }
 
   .cta-group {
@@ -328,33 +833,180 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
     gap: 16px 28px !important;
-    margin-inline: auto !important;
+    margin-inline: 0 !important;
     width: 100% !important;
   }
   .stat-trio > div {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
     flex: 1 1 90px !important;
     max-width: 150px !important;
   }
 
-  /* Center all brass badges in mobile view across every page */
+  /* Left align brass badges in mobile view across every page */
   .badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
   .badge--brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
   .badge.badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge) {
     display: flex !important;
     width: fit-content !important;
     max-width: 100% !important;
-    margin-inline: auto !important;
-    justify-content: center !important;
+    margin-inline: 0 !important;
+    justify-content: flex-start !important;
     align-items: center !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+  }
+}
+
+/* The Home hero telemetry is a two-row status panel, not a standard pill. */
+@media (max-width: 767px) {
+  .hero-stage-card #hero-telemetry-badge {
+    height: auto !important;
+    min-height: 62px !important;
+    max-height: none !important;
+    padding: 7px 10px !important;
+    white-space: normal !important;
+    border-radius: 14px !important;
+    align-self: auto !important;
+  }
+}
+
+/* Final mobile heading guard: prevent reveal clipping and keep every section
+   introduction clear, centered, and visible beneath the fixed navigation. */
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 112px !important;
+  }
+
+  main > section[id],
+  main > section[id] .section-header,
+  main > section[id] .section-eyebrow,
+  main > section[id] .section-title {
+    scroll-margin-top: 112px !important;
+  }
+
+  main > section .section-header,
+  main > section .section-header--center {
+    width: 100% !important;
+    overflow: visible !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  main > section .section-header > .section-eyebrow,
+  main > section .section-header--center > .section-eyebrow {
+    display: inline-flex !important;
+    width: fit-content !important;
+    height: auto !important;
+    min-height: 1.75em !important;
+    margin-inline: auto !important;
+    padding-block: 4px !important;
+    overflow: visible !important;
+    align-self: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    position: relative;
+    z-index: 4;
+  }
+
+  main > section .section-header > .section-title,
+  main > section .section-header > .section-desc,
+  main > section .section-header--center > .section-title,
+  main > section .section-header--center > .section-desc,
+  #by-requirement .section-desc {
+    margin-inline: auto !important;
+    align-self: center !important;
+    text-align: center !important;
+  }
+
+  /* Mobile entrance transforms can briefly clip headings against the prior
+     section while reverse-scrolling, so headings render in their final state. */
+  main > section .section-header.reveal,
+  main > section .section-header--center.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Site-wide mobile section separation and fixed-header anchor clearance. */
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 112px;
+  }
+
+  main > section,
+  main > section[id],
+  .section-header,
+  .section-title,
+  .section-eyebrow,
+  [id][class*="section"] {
+    scroll-margin-top: 112px;
+  }
+
+  main > section:not(.page-image-banner):not(.page-image-cta):not(.hero-showcase):not(.hero-fullbleed):not(.booking-hero):not(.install-hero):not(.product-detail-hero) {
+    padding-top: max(56px, var(--space-2xl, 48px)) !important;
+    padding-bottom: max(56px, var(--space-2xl, 48px)) !important;
+  }
+
+  main > section > .container,
+  main > section > [class*="container"] {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  main > section [class$="-grid"],
+  main > section [class*="-grid "],
+  main > section .grid,
+  main > section .grid-auto,
+  main > section [role="list"] {
+    margin-bottom: 16px;
+  }
+
+  main > section [class$="-grid"] > :last-child,
+  main > section [class*="-grid "] > :last-child,
+  main > section .grid > :last-child,
+  main > section .grid-auto > :last-child,
+  main > section [role="list"] > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  main > section .section-header,
+  main > section > .container > .section-eyebrow:first-child,
+  main > section > .container > .section-title:first-child {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Keep the featured-solutions introduction on one centered mobile axis. */
+@media (max-width: 767px) {
+  #featured-products .flex-between,
+  #featured-products .flex-between > div {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  #featured-products .flex-between > div > .section-eyebrow,
+  #featured-products .flex-between > div > .section-title,
+  #featured-products #featured-view-all {
+    width: fit-content !important;
+    margin-inline: auto !important;
+    align-self: center !important;
+    justify-content: center !important;
     text-align: center !important;
   }
 }
@@ -423,7 +1075,21 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
   h2 { font-size: 1.35rem !important; }
   h3 { font-size: 1.1rem !important; }
   .btn { padding: 11px 16px !important; font-size: 0.82rem !important; }
-  .card__body, .product-card__body, .pricing-card, .form-card, .guide-card, .installation-card {
+  .card__body,
+  .product-card__body,
+  .pricing-card,
+  .form-card,
+  .guide-card,
+  .installation-card,
+  .contact-form-panel,
+  .booking-form-panel,
+  .calculator-card,
+  .feasibility-box,
+  .protocol-card,
+  .protocol-steps-box,
+  .advisor-card,
+  .booking-hotline-box,
+  .calc-result-display {
     padding: 14px !important;
   }
   .cat-card {
@@ -431,14 +1097,29 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
   }
 }
 
-/* Final alignment guard: section labels stay centered in every layout context. */
-.section-eyebrow {
-  display: flex !important;
-  width: fit-content;
-  max-width: 100%;
-  margin-inline: auto !important;
-  justify-content: center !important;
-  text-align: center !important;
+/* Final alignment guard: section labels stay centered on desktop/tablet only. */
+@media (min-width: 768px) {
+  .section-eyebrow {
+    display: flex !important;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-eyebrow {
+    display: inline-flex !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+  }
 }
 
 /* ============================================================
@@ -629,5 +1310,159 @@ h4 { font-size: clamp(1rem, 1.6vw, 1.2rem); }
   .installation-cta__inner {
     width: 100%;
     padding: 24px 18px;
+  }
+}
+
+/* ============================================================
+   FORTIVA — Universal Standard Badge Sizing For All Grids
+   Ensures all badges across all grids on every page share identical
+   dimensions, padding, typography, line-height, and pill geometry.
+   ============================================================ */
+.badge,
+.badge-brass,
+.badge--brass,
+.badge-dark,
+.badge--dark,
+.badge--primary,
+.badge--success,
+.tier-badge,
+.consult-type-badge,
+.journey-step-badge,
+.guide-img-badge,
+.barrier-layer-badge,
+.size-showcase-badge,
+.gallery-badge .badge,
+.product-card__img-wrap > .badge,
+.product-card__image > .badge,
+.product-card__badge-wrap .badge,
+.product-card .badge,
+.featured-card .badge,
+.tier-card .badge,
+.consult-type-card .badge,
+.logistics-card .badge,
+.contact-hub-card .badge,
+.advisor-card .badge,
+.journey-step-card .badge,
+.vault-feature-card .badge,
+.barrier-layer-item .badge,
+[class*="grid"] .badge,
+[class*="-grid"] .badge,
+[class*="-grid"] [class*="-badge"],
+[class*="-card"] .badge,
+[class*="-card"] [class*="-badge"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 5px 12px !important;
+  min-height: 25px !important;
+  max-height: 26px !important;
+  font-size: 0.72rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  border-radius: 9999px !important;
+  box-sizing: border-box !important;
+  vertical-align: middle !important;
+}
+
+/* Consistent icon sizing & vertical alignment across all badges */
+.badge i,
+.badge-brass i,
+.badge--brass i,
+.badge-dark i,
+.badge--dark i,
+.tier-badge i,
+.consult-type-badge i,
+.journey-step-badge i,
+.guide-img-badge i,
+.size-showcase-badge i,
+[class*="-badge"] i,
+[class*="-grid"] [class*="-badge"] i,
+[class*="-card"] [class*="-badge"] i {
+  font-size: 0.72rem !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+/* Harmonized color styles for badges across grids */
+.badge-brass,
+.badge--brass,
+.consult-type-badge,
+.barrier-layer-badge {
+  background: rgba(180, 148, 100, 0.12) !important;
+  color: var(--brass-dark, #8C6D3B) !important;
+  border: 1px solid rgba(180, 148, 100, 0.28) !important;
+}
+
+[data-theme="dark"] .badge-brass,
+[data-theme="dark"] .badge--brass,
+[data-theme="dark"] .consult-type-badge,
+[data-theme="dark"] .barrier-layer-badge {
+  background: rgba(180, 148, 100, 0.2) !important;
+  color: var(--brass-light, #E2C99A) !important;
+  border-color: rgba(180, 148, 100, 0.45) !important;
+}
+
+.badge-dark,
+.badge--dark {
+  background: rgba(15, 39, 51, 0.92) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.tier-badge {
+  background: var(--brass, #B49464) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.consult-type-card.selected .consult-type-badge {
+  background: var(--brass, #B49464) !important;
+  color: #FFFFFF !important;
+  border-color: var(--brass, #B49464) !important;
+}
+
+.journey-step-badge,
+.guide-img-badge,
+.size-showcase-badge {
+  background: rgba(16, 26, 32, 0.9) !important;
+  color: var(--brass-light, #E2C99A) !important;
+  border: 1px solid rgba(180, 148, 100, 0.35) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+}
+
+/* Ensure mobile layout retains exact uniform badge size */
+@media (max-width: 767px) {
+  .badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
+  .badge--brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
+  .badge.badge-brass:not([style*="position:absolute"]):not([style*="position: absolute"]):not(.gallery-badge .badge),
+  .consult-type-badge,
+  .barrier-layer-badge {
+    display: inline-flex !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    padding: 5px 12px !important;
+    min-height: 25px !important;
+    max-height: 26px !important;
+    font-size: 0.72rem !important;
+    border-radius: 9999px !important;
+    box-sizing: border-box !important;
+    align-self: flex-start !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-stage-card #hero-telemetry-badge {
+    height: auto !important;
+    min-height: 62px !important;
+    max-height: none !important;
+    padding: 7px 10px !important;
+    white-space: normal !important;
+    border-radius: 14px !important;
+    align-self: auto !important;
   }
 }

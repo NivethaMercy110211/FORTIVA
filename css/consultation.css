@@ -140,7 +140,7 @@
    BOOK CONSULTATION PAGE LAYOUT & COMPONENTS
    ══════════════════════════════════════════════════════════ */
 .booking-page-wrap {
-  padding-top: 72px;
+  padding-top: 0;
   background: var(--bg-page);
   min-height: 100vh;
 }
@@ -318,14 +318,37 @@
 }
 
 .consult-type-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   align-self: flex-start;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
+  line-height: 1.25;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--brass);
+  letter-spacing: 0.06em;
+  padding: 5px 12px;
+  min-height: 25px;
+  border-radius: var(--radius-full);
+  background: rgba(180, 148, 100, 0.12);
+  color: var(--brass-dark);
+  border: 1px solid rgba(180, 148, 100, 0.28);
   margin-top: 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .consult-type-badge {
+  background: rgba(180, 148, 100, 0.2);
+  color: var(--brass-light);
+  border-color: rgba(180, 148, 100, 0.45);
+}
+
+.consult-type-card.selected .consult-type-badge {
+  background: var(--brass);
+  color: #FFFFFF;
+  border-color: var(--brass);
 }
 
 /* ── Main Two-Column Layout ── */
@@ -624,22 +647,143 @@
   .booking-sidebar {
     position: static;
   }
+
+  .booking-sidebar > .advisor-card:first-child {
+    text-align: center;
+  }
+
+  .booking-sidebar > .advisor-card:first-child .advisor-header {
+    justify-content: center;
+  }
+
+  .booking-sidebar > .advisor-card:first-child .advisor-creds {
+    align-items: center;
+  }
+
+  .booking-sidebar > .advisor-card:first-child .advisor-cred-item {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
+  .consult-types-wrap {
+    margin-bottom: 32px;
+  }
+  .consult-types-heading {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .consult-types-heading__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .consult-types-heading__title h2 {
+    max-width: 280px;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .consult-types-heading__note {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    line-height: 1.5;
+  }
   .consult-types-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .booking-page .consult-type-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    align-items: center !important;
+    overflow: hidden;
+    text-align: center !important;
+  }
+  .consult-type-card > :not(.consult-type-image):not(.consult-type-radio) {
+    margin-inline: 16px;
+  }
+  .booking-page .consult-type-card p {
+    min-height: 0;
+    width: calc(100% - 32px) !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+    text-wrap: pretty;
+  }
+  .booking-page .consult-type-card h3 {
+    width: calc(100% - 32px) !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+    text-wrap: balance;
+  }
+  .booking-page .consult-type-card .consult-type-badge {
+    align-self: center !important;
+    margin-inline: auto !important;
+  }
+  .booking-content-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 36px;
   }
   .booking-form-panel {
-    padding: var(--space-lg);
+    padding: 20px 16px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    border-radius: var(--radius-lg);
+  }
+  .booking-form-step {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+  }
+  .booking-sidebar {
+    position: static;
+    gap: 20px;
+    width: 100%;
+    min-width: 0;
+  }
+  .advisor-card,
+  .booking-hotline-box {
+    padding: 20px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-lg);
   }
   .consultation-faq {
-    padding: var(--space-xl) 0 0;
+    margin-top: 40px;
+    padding: 32px 0 0;
   }
   .consultation-faq .accordion-button {
     padding: 16px 46px 16px 18px !important;
   }
   .consultation-faq .accordion-body {
     padding: 2px 18px 20px !important;
+  }
+
+  [dir="rtl"] .consultation-faq .accordion-button {
+    direction: ltr;
+    justify-content: flex-end;
+    padding: 16px 18px 16px 46px !important;
+    text-align: right;
+  }
+
+  [dir="rtl"] .consultation-faq .accordion-button::after {
+    right: auto;
+    left: 20px;
+  }
+
+  [dir="rtl"] .consultation-faq .accordion-body {
+    direction: ltr;
+    text-align: right;
   }
 }

@@ -353,13 +353,20 @@
   backdrop-filter: blur(6px);
   color: var(--brass-light);
   font-size: 0.72rem;
+  line-height: 1.25;
   font-weight: 700;
-  padding: 3px 9px;
-  border-radius: var(--radius-sm);
-  display: flex;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  min-height: 25px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   border: 1px solid rgba(180, 148, 100, 0.3);
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 @media (max-width: 991px) {
@@ -394,8 +401,13 @@
     margin-inline: auto;
     text-align: center;
   }
+  .feasibility-box {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
   .feasibility-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
   .feasibility-result-alert {
     width: 100%;

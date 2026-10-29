@@ -369,14 +369,18 @@ p:last-child { margin-bottom: 0; }
 .badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 4px 12px;
+  padding: 5px 12px;
+  min-height: 25px;
   border-radius: var(--radius-full);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
+  line-height: 1.25;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .badge--primary {
@@ -391,14 +395,25 @@ p:last-child { margin-bottom: 0; }
   border-color: rgba(46,85,112,0.4);
 }
 
+.badge-brass,
 .badge--brass {
   background: rgba(180,148,100,0.12);
   color: var(--brass-dark);
-  border: 1px solid rgba(180,148,100,0.25);
+  border: 1px solid rgba(180,148,100,0.28);
 }
 
+[data-theme="dark"] .badge-brass,
 [data-theme="dark"] .badge--brass {
+  background: rgba(180,148,100,0.2);
   color: var(--brass-light);
+  border-color: rgba(180,148,100,0.45);
+}
+
+.badge-dark,
+.badge--dark {
+  background: rgba(15, 39, 51, 0.92);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .badge--success {

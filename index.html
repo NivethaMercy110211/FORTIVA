@@ -94,10 +94,12 @@
     .prot-cell--img img { width:100%;height:100%;object-fit:cover;position:absolute;inset:0; }
     .prot-cell--img .overlay-content { position: absolute; inset: 0; padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(to top, rgba(7,16,22,0.96) 0%, rgba(7,16,22,0.72) 38%, transparent 72%); color: var(--white); text-shadow:0 2px 8px rgba(0,0,0,.9); }
     .prot-cell--img h3, .prot-cell--img h4 { color: var(--white); }
+    .prot-cell.span-4 > :first-child { min-height:48px; display:flex; align-items:center; }
     .prot-cell.span-4 > h4 { min-height:1.5em; margin:0; }
     .prot-cell.span-4 > p { height:4.35em; min-height:4.35em; margin:0; line-height:1.45; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; }
     .prot-cell.span-4 > .btn-arrow,
     .prot-cell.span-4 > .prot-proof-grid { margin-top:auto; }
+    .prot-metric-value { color:var(--deep-navy); font-family:var(--font-heading); font-size:2.5rem; font-weight:800; line-height:1; opacity:0.9; }
 
     .spec-explainer { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
     .spec-exp-cell { position:relative; background:var(--bg-card); padding:28px; display:flex; flex-direction:column; gap:18px; border:1px solid var(--border-color); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); transition:transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base); }
@@ -251,7 +253,19 @@
       .hero-spec-strip { flex-direction: column; gap: 0; }
     }
   </style>
-  <link rel="stylesheet" href="css/compact.css">
+  <link rel="stylesheet" href="css/compact.css?v=20261029-2">
+  <style>
+    @media (max-width: 767px) {
+      .hero-stage-card #hero-telemetry-badge {
+        height: auto !important;
+        min-height: 62px !important;
+        max-height: none !important;
+        padding: 7px 10px !important;
+        white-space: normal !important;
+        border-radius: 14px !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Skip Link -->
@@ -406,9 +420,11 @@
               </div>
 
               <!-- Top Telemetry Tag -->
-              <div class="hero-telemetry-badge" id="hero-telemetry-badge">
-                <span class="telemetry-live-dot"></span>
-                <span id="hero-model-tag">Fortiva Series IV • Executive Class</span>
+              <div class="hero-telemetry-badge" id="hero-telemetry-badge" style="height:auto!important;min-height:62px!important;max-height:none!important;white-space:normal!important;">
+                <span class="telemetry-model-tag">
+                  <span class="telemetry-live-dot"></span>
+                  <span id="hero-model-tag">Fortiva Series IV • Executive Class</span>
+                </span>
                 <span class="telemetry-grade-tag" id="hero-grade-tag">Grade II Certified</span>
               </div>
 
@@ -734,7 +750,7 @@
           </article>
           <article class="featured-card reveal reveal--delay-2">
             <div class="featured-card__img">
-              <img src="assets/images/hero/hero-home2.jpg" alt="Fortiva Vault Series — heavy-gauge steel vault door" loading="lazy">
+              <img src="assets/images/vaults/FORTIVA-Vault-Series.jpg" alt="Fortiva Vault Series — heavy-gauge steel vault door" loading="lazy">
             </div>
             <div class="featured-card__body">
               <span class="section-eyebrow" style="margin-bottom:6px;">Vault Solution</span>
@@ -790,7 +806,7 @@
           </div>
           <!-- Brass accent -->
           <div class="prot-cell prot-cell--brass span-4 reveal reveal--delay-2">
-            <div style="font-size:2.5rem;font-weight:800;opacity:0.3;font-family:var(--font-heading);">500+</div>
+            <div class="prot-metric-value">500+</div>
             <h4 style="color:var(--white);">Products Installed</h4>
             <p style="color:rgba(255,255,255,0.8);font-size:0.85rem;">Across carefully planned residential properties and private installations throughout the UK.</p>
             <div class="prot-proof-grid" aria-label="Installation experience">
@@ -1035,15 +1051,15 @@
         </div>
         <div class="install-example-grid">
           <div class="install-ex-card reveal">
-            <img src="assets/images/categories/cat-home.jpg" alt="Safe integrated into bedroom wardrobe cabinetry" loading="lazy">
+            <img src="assets/images/vaults/FORTIVA-Bedroom-Safe.jpg" alt="Safe integrated into bedroom wardrobe cabinetry" loading="lazy">
             <div class="install-ex-label"><i class="fas fa-door-open" aria-hidden="true"></i> Bedroom Wardrobe</div>
           </div>
           <div class="install-ex-card reveal reveal--delay-1">
-            <img src="assets/images/safes/safe-pyroshield.jpg" alt="Safe installed in home study" loading="lazy">
+            <img src="assets/images/vaults/FORTIVA-Home-Study-Safe.jpg" alt="Safe installed in home study" loading="lazy">
             <div class="install-ex-label"><i class="fas fa-book" aria-hidden="true"></i> Home Study</div>
           </div>
           <div class="install-ex-card reveal reveal--delay-2">
-            <img src="assets/images/safes/safe-murus.jpg" alt="Safe installed in utility room" loading="lazy">
+            <img src="assets/images/vaults/FORTIVA-Utility-Room-Safe.jpg" alt="Safe installed in utility room" loading="lazy">
             <div class="install-ex-label"><i class="fas fa-tools" aria-hidden="true"></i> Utility Room</div>
           </div>
         </div>
